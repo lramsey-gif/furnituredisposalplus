@@ -1,0 +1,10 @@
+<svg width="526" height="82" viewBox="0 0 526 82" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Furniture Disposal Plus, powered by LoadUp">
+<rect x="0" y="0" width="526" height="82" fill="#111111"/>
+  <title>Furniture Disposal Plus</title>
+  <desc>Furniture Disposal Plus wordmark, a brand of LoadUp Technologies. FURNITURE in LoadUp lime, DISPOSAL in near-black, lime plus glyph, powered by LoadUp.</desc>
+  <text x="0" y="42" font-family="'Archivo Variable', Archivo, sans-serif" font-weight="800" font-size="34" font-style="italic" font-stretch="expanded" letter-spacing="-1" fill="#D4FF3A">FURNITURE</text>
+  <text x="263" y="42" font-family="'Archivo Variable', Archivo, sans-serif" font-weight="800" font-size="34" font-style="italic" font-stretch="expanded" letter-spacing="-1" fill="#FFFFFF">DISPOSAL</text>
+  <g transform="translate(488, 11)"><rect x="12" y="0" width="8" height="34" rx="1" fill="#D4FF3A" transform="skewX(-8)"/><rect x="0" y="13" width="34" height="8" rx="1" fill="#D4FF3A" transform="skewX(-8)"/></g>
+  <text x="200" y="70" font-family="'Archivo Variable', Archivo, sans-serif" font-weight="500" font-size="13" fill="#6E7A80">Powered by</text>
+  <text x="272" y="70" font-family="'Archivo Variable', Archivo, sans-serif" font-weight="800" font-size="14" fill="#F7F4EE">LoadUp</text>
+</svg>

@@ -1,0 +1,4 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Furniture Disposal Plus">
+<rect width="512" height="512" rx="96" fill="#111111"/>
+<text x="236" y="330" font-family="'Archivo Variable', Archivo, sans-serif" font-weight="800" font-style="italic" font-stretch="expanded" font-size="210" fill="#FFFFFF" text-anchor="middle">FD</text>
+<g transform="translate(330, 150)"><rect x="33" y="0" width="22" height="88" rx="3" fill="#D4FF3A" transform="skewX(-8)"/><rect x="0" y="33" width="88" height="22" rx="3" fill="#D4FF3A" transform="skewX(-8)"/></g></svg>
