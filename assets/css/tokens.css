@@ -162,8 +162,8 @@ h3 {
   text-wrap: balance;
 }
 
-h1 { font-size: clamp(var(--text-xl), 5vw + 1rem, var(--text-4xl)); }
-h2 { font-size: clamp(var(--text-xl), 3vw + 1rem, var(--text-2xl)); }
+h1 { font-size: clamp(2rem, 2.5vw + 1rem, var(--text-3xl)); }
+h2 { font-size: clamp(var(--text-xl), 2vw + 0.75rem, var(--text-2xl)); }
 
 /* h3 and below stay in the body face. Display face never below 28px,
    and headings below h2 rarely earn 28px, so they do not get it. */
