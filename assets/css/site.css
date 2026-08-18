@@ -251,3 +251,30 @@
 .site-footer .loadup-lockup { color: #C9CDD0; margin-bottom: var(--space-2); }
 .site-footer .loadup-lockup a { color: var(--bone); }
 .site-footer small { color: var(--ash); }
+
+
+/* --------------------------------------------------------------------------
+   Full-screen section rhythm. Each section fills the viewport with a sliver
+   of the next section visible. Desktop only; mobile flows naturally.
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 900px) {
+  .hero {
+    min-height: calc(100vh - 4.25rem - 8vh);
+    display: grid;
+    align-items: center;
+  }
+  .section {
+    min-height: 92vh;
+    display: grid;
+    align-content: center;
+  }
+  .item-hero,
+  .page-hero {
+    min-height: calc(100vh - 4.25rem - 8vh);
+    display: grid;
+    align-items: center;
+  }
+  /* Anchor jumps land with the section top in view */
+  .section[id] { scroll-margin-top: 4.25rem; }
+}
