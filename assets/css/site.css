@@ -4,7 +4,7 @@
    tick marks, one lime accent doing real work.
    ========================================================================== */
 
-.section { padding-block: var(--space-16); }
+.section { padding-block: var(--space-12); }
 
 .section__label {
   display: flex; align-items: center; gap: var(--space-3);
@@ -61,7 +61,7 @@
 .doorway-card {
   border: 1px solid #2A2A2A; border-radius: var(--radius);
   background: linear-gradient(#1A1A1A, #151515);
-  padding: var(--space-6) var(--space-6) var(--space-4);
+  padding: var(--space-6);
   margin: 0;
 }
 .doorway-card svg { width: 100%; height: auto; display: block; }
@@ -92,7 +92,8 @@
 
 .booking__slot {
   border: 1px solid var(--rule); border-top: 4px solid var(--signal);
-  border-radius: var(--radius); background: #FFFFFF;
+  border-radius: var(--radius);
+  background: repeating-linear-gradient(-45deg, #FBFBFA 0 14px, #FFFFFF 14px 28px);
   min-height: 300px; display: grid; place-items: center; padding: var(--space-8);
 }
 .booking__slot [data-workmon-book]:empty::after {
@@ -126,32 +127,36 @@
    Item grid with line icons
    -------------------------------------------------------------------------- */
 
-.items { background: var(--bone); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.items { background: #F5F5F2; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 
 .item-grid {
   list-style: none; padding: 0; margin: 0; max-width: none;
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: var(--space-3);
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-4);
 }
 
 .item-grid a {
-  display: grid; grid-template-columns: 44px 1fr auto;
-  align-items: center; gap: var(--space-4);
-  padding: var(--space-4) var(--space-5);
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-5);
   border: 1px solid var(--rule); border-radius: var(--radius);
   text-decoration: none; background: #FFFFFF;
   transition: border-color var(--fast) var(--ease), transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease);
 }
 .item-grid a:hover {
-  border-color: var(--ink); transform: translateY(-2px);
-  box-shadow: 0 3px 0 var(--signal);
+  border-color: var(--ink); transform: translateY(-3px);
+  box-shadow: 0 4px 0 var(--signal);
 }
 .item-grid svg {
-  width: 44px; height: 34px;
-  stroke: var(--ink); stroke-width: 2; fill: none; stroke-linecap: square;
+  width: 58px; height: 46px;
+  stroke: var(--ink); stroke-width: 1.8; fill: none; stroke-linecap: square;
+  margin-bottom: var(--space-1);
 }
-.item-grid__name { font-weight: 500; font-size: var(--text-sm); }
-.item-grid__price { font-size: var(--text-xs); color: var(--ash); white-space: nowrap; }
+.item-grid__name { font-weight: 500; font-size: var(--text-base); }
+.item-grid__price {
+  font-size: var(--text-xs); color: var(--ink); white-space: nowrap;
+  background: #EFEFEA; padding: 3px 9px; border-radius: 3px;
+}
 
 /* --------------------------------------------------------------------------
    How it works
@@ -160,11 +165,15 @@
 .steps {
   list-style: none; padding: 0; margin: 0; max-width: none;
   display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 0; border: 1px solid var(--rule); border-radius: var(--radius);
-  overflow: hidden; background: #FFFFFF;
+  gap: var(--space-4);
 }
-.step { padding: var(--space-8) var(--space-6); border-left: 1px solid var(--rule); }
-.step:first-child { border-left: 0; }
+.step {
+  padding: var(--space-8) var(--space-6);
+  background: #FFFFFF;
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--signal);
+  border-radius: var(--radius);
+}
 .step__num {
   display: inline-block; font-size: var(--text-sm); color: var(--ink);
   background: var(--signal); padding: var(--space-1) var(--space-3);
@@ -173,10 +182,7 @@
 .step h3 { margin-bottom: var(--space-2); }
 .step p { color: var(--ash); font-size: var(--text-sm); }
 
-@media (max-width: 760px) {
-  .step { border-left: 0; border-top: 1px solid var(--rule); }
-  .step:first-child { border-top: 0; }
-}
+
 
 /* --------------------------------------------------------------------------
    Coverage band
@@ -189,7 +195,7 @@
 .coverage .btn { background: var(--signal); border-color: var(--signal); color: var(--ink); }
 
 .state-ticker {
-  margin-top: var(--space-8); padding-top: var(--space-6);
+  margin-top: var(--space-6); padding-top: var(--space-6);
   border-top: 1px solid #2A2A2A;
   font-family: var(--font-mono); font-size: var(--text-xs);
   letter-spacing: 0.3em; color: var(--ash);
@@ -203,10 +209,11 @@
    Reviews
    -------------------------------------------------------------------------- */
 
-.reviews { background: var(--bone); border-top: 1px solid var(--rule); }
+.reviews { background: #F5F5F2; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .reviews [data-workmon-trust]:empty {
   border: 1px solid var(--rule); border-radius: var(--radius);
-  min-height: 150px; display: grid; place-items: center; background: #FFFFFF;
+  min-height: 110px; display: grid; place-items: center;
+  background: repeating-linear-gradient(-45deg, #FBFBFA 0 14px, #FFFFFF 14px 28px);
 }
 .reviews [data-workmon-trust]:empty::after {
   content: "Verified customer reviews load at launch";
@@ -217,14 +224,24 @@
    FAQ
    -------------------------------------------------------------------------- */
 
+.faq details {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  background: #FFFFFF;
+}
+.faq details + details { margin-top: var(--space-3); }
+.faq details:last-of-type { border-bottom: 1px solid var(--rule); }
+.faq details[open] { border-color: var(--ink); box-shadow: 0 3px 0 var(--signal); }
 .faq details p { color: var(--ash); }
 .faq summary::marker { color: var(--signal); }
+.faq summary { list-style-position: inside; }
 
 /* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */
 
-.site-footer { padding-block: var(--space-12); }
+.site-footer { padding-block: var(--space-12); border-top: 3px solid var(--signal); }
 .footer-nav {
   list-style: none; padding: 0; margin: 0 0 var(--space-8); max-width: none;
   display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-8);
