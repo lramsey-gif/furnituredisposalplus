@@ -21,12 +21,7 @@
 
 .btn--lg { font-size: var(--text-lg); padding: var(--space-4) var(--space-8); }
 
-/* Tape-measure tick band used as a divider under the hero */
-.measure-strip {
-  height: 12px;
-  background-color: var(--dark);
-  background-image: repeating-linear-gradient(to right, var(--signal) 0 2px, transparent 2px 26px);
-}
+/* (measure strip removed) */
 
 /* --------------------------------------------------------------------------
    Hero
