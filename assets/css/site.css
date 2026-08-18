@@ -294,3 +294,48 @@
 /* Clickable state ticker */
 .state-ticker a { color: inherit; text-decoration: none; }
 .state-ticker a:hover { color: var(--signal); text-decoration: underline; text-decoration-color: var(--signal); text-underline-offset: 4px; }
+
+
+/* --------------------------------------------------------------------------
+   Core-page header: editorial two-column layout
+   Title left, intro right, tighter band, smaller display size.
+   -------------------------------------------------------------------------- */
+
+.page-hero {
+  padding-block: var(--space-12) var(--space-12);
+}
+
+.page-hero .container {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: var(--space-16);
+  row-gap: var(--space-4);
+  align-items: end;
+}
+
+.page-hero .breadcrumb {
+  grid-column: 1 / -1;
+  margin-bottom: var(--space-2);
+}
+
+.page-hero h1 {
+  grid-column: 1;
+  margin: 0;
+  font-size: clamp(1.75rem, 1.8vw + 0.9rem, 2.5rem);
+  padding-bottom: var(--space-3);
+  border-bottom: 3px solid var(--signal);
+  align-self: end;
+}
+
+.page-hero .hero__answer {
+  grid-column: 2;
+  margin: 0;
+  font-size: var(--text-base);
+  align-self: end;
+}
+
+@media (max-width: 900px) {
+  .page-hero .container { grid-template-columns: 1fr; }
+  .page-hero h1, .page-hero .hero__answer { grid-column: 1; }
+  .page-hero h1 { border-bottom: 0; padding-bottom: 0; }
+}
