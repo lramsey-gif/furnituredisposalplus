@@ -281,3 +281,12 @@
   /* Anchor jumps land with the section top in view */
   .section[id] { scroll-margin-top: 4.25rem; }
 }
+
+
+/* Breathing room under section titles */
+.section h2 {
+  margin-bottom: var(--space-8);
+}
+.section h2 + .section__lead {
+  margin-top: calc(-1 * var(--space-4));
+}
