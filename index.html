@@ -13,7 +13,7 @@
   <meta property="og:title" content="Furniture Removal and Haul-Away">
   <meta property="og:description" content="Upfront furniture removal pricing from $90. Pick your item, see the price, book online in under a minute.">
   <meta property="og:url" content="https://furnituredisposalplus.com/">
-  <meta property="og:image" content="https://furnituredisposalplus.com/assets/img/og-default-1600.png">
+  <meta property="og:image" content="https://furnituredisposalplus.com/assets/img/og-default-1600.webp">
 
   <link rel="icon" href="/assets/svg/favicon.svg" type="image/svg+xml">
 
@@ -26,15 +26,16 @@
   <style>
     /* Header and CSS-only navigation. No JavaScript. */
     .site-header { background: var(--bone); border-bottom: 1px solid var(--rule); position: relative; }
-    .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 4rem; }
+    .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 4.25rem; }
     .site-logo { display: inline-flex; align-items: center; text-decoration: none; }
-    .site-logo svg { height: 26px; width: auto; }
+    .site-logo svg { height: 24px; width: auto; }
     .nav-toggle-input { position: absolute; opacity: 0; pointer-events: none; }
     .nav-toggle { display: none; cursor: pointer; padding: var(--space-3); border: 1px solid var(--rule); border-radius: var(--radius); font-weight: 500; font-size: var(--text-sm); }
     .site-nav ul { display: flex; align-items: center; gap: var(--space-6); list-style: none; padding: 0; margin: 0; }
     .site-nav a { text-decoration: none; font-size: var(--text-sm); font-weight: 500; }
-    .site-nav .btn { padding: var(--space-3) var(--space-4); font-size: var(--text-sm); }
-    @media (max-width: 760px) {
+    .site-nav a:not(.btn):hover { text-decoration: underline; text-decoration-color: var(--signal); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+    .site-nav .btn { padding: var(--space-3) var(--space-5); font-size: var(--text-sm); text-decoration: none !important; }
+    @media (max-width: 820px) {
       .nav-toggle { display: inline-block; }
       .site-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bone); border-bottom: 1px solid var(--rule); padding: var(--space-4); z-index: 10; }
       .nav-toggle-input:checked ~ .site-nav { display: block; }
@@ -131,12 +132,6 @@
     ]
   }
   </script>
-<style>
-[data-workmon-book],[data-workmon-trust][data-variant="inline"]{border:2px dashed #ccc;border-radius:6px;padding:44px 24px;text-align:center;color:#999;font-size:14px;background:#fafafa;}
-[data-workmon-book]::after{content:"Booking widget loads here once Workmon codes are added";}
-[data-workmon-trust][data-variant="inline"]::after{content:"Reviews card loads here";}
-[data-workmon-trust][data-variant="floating"],[data-workmon-text]{display:none;}
-</style>
 </head>
 <body>
 
@@ -177,73 +172,184 @@
       <div class="container hero__grid">
         <div class="hero__copy">
           <p class="eyebrow">Nationwide furniture removal</p>
-          <h1>Get rid of old furniture without owning a truck</h1>
+          <h1>Old furniture, gone.<br>No truck. <em>No guessing.</em></h1>
 
           <p class="hero__answer">
-            To get rid of old furniture, pick your item below, see an upfront
+            To get rid of old furniture, pick your item, see an upfront
             price starting at <data value="90">$90</data>, and book a pickup
             online in under a minute. Your Loaders handle all the lifting.
-            Same-day and next-day slots are available in most areas.
+            Same-day and next-day slots in most areas.
           </p>
 
-          <p><a class="btn btn--lg" href="#book">Get my price</a></p>
+          <div class="hero__cta-row">
+            <a class="btn btn--lg" href="#book">Get my price</a>
+            <span class="hero__meta">FIRST ITEM $90 &middot; ADD'L FROM $20 &middot; ALL 50 STATES</span>
+          </div>
         </div>
 
-        <div class="hero__media">
-          <img
-            src="/assets/img/loaders-removing-large-couch-1000.png"
-            srcset="/assets/img/loaders-removing-large-couch-640.png 640w, /assets/img/loaders-removing-large-couch-1000.png 1000w, /assets/img/loaders-removing-large-couch-1600.png 1600w"
-            sizes="(max-width: 900px) 100vw, 50vw"
-            width="1000" height="750"
-            alt="Two Furniture Disposal Plus Loaders carrying a large three-seat couch out through a front doorway"
-            fetchpriority="high" decoding="async">
-        </div>
+        <figure class="doorway-card">
+          <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dt-title dt-desc">
+            <title id="dt-title">The Doorway Test</title>
+            <desc id="dt-desc">A to-scale diagram comparing a standard 84 inch three-seat sofa to a 32 inch wide by 80 inch tall interior doorway. The sofa is wider than the doorway opening.</desc>
+
+            <!-- ground line with measure ticks -->
+            <line x1="16" y1="316" x2="544" y2="316" stroke="#3A3A3A" stroke-width="2"/>
+            <g stroke="#3A3A3A" stroke-width="1">
+              <line x1="40" y1="316" x2="40" y2="308"/><line x1="88" y1="316" x2="88" y2="310"/>
+              <line x1="136" y1="316" x2="136" y2="308"/><line x1="184" y1="316" x2="184" y2="310"/>
+              <line x1="232" y1="316" x2="232" y2="308"/><line x1="280" y1="316" x2="280" y2="310"/>
+              <line x1="328" y1="316" x2="328" y2="308"/><line x1="376" y1="316" x2="376" y2="310"/>
+              <line x1="424" y1="316" x2="424" y2="308"/><line x1="472" y1="316" x2="472" y2="310"/>
+              <line x1="520" y1="316" x2="520" y2="308"/>
+            </g>
+
+            <!-- doorway: 32in wide x 80in tall at 2.9px/in -> 93 x 232 -->
+            <g>
+              <rect x="404" y="84" width="105" height="232" fill="none" stroke="#F7F4EE" stroke-width="3"/>
+              <rect x="416" y="96" width="81" height="220" fill="none" stroke="#4A4A4A" stroke-width="2"/>
+              <circle cx="486" cy="210" r="3.5" fill="#F7F4EE"/>
+              <!-- width dimension -->
+              <g stroke="#D4FF3A" stroke-width="1.5">
+                <line x1="416" y1="66" x2="497" y2="66"/>
+                <line x1="416" y1="60" x2="416" y2="72"/>
+                <line x1="497" y1="60" x2="497" y2="72"/>
+              </g>
+              <text x="456" y="52" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="15" fill="#D4FF3A">32 in</text>
+            </g>
+
+            <!-- sofa: 84in wide x 33in tall at 2.9px/in -> 244 x 96, sits on ground -->
+            <g>
+              <!-- body -->
+              <path d="M56 244 L56 268 Q56 282 70 282 L286 282 Q300 282 300 268 L300 244"
+                    fill="none" stroke="#D4FF3A" stroke-width="3"/>
+              <!-- back and arms -->
+              <path d="M68 244 L68 206 Q68 192 82 192 L274 192 Q288 192 288 206 L288 244"
+                    fill="none" stroke="#D4FF3A" stroke-width="3"/>
+              <path d="M56 244 Q42 244 42 230 L42 218 Q42 204 56 204 L68 204" fill="none" stroke="#D4FF3A" stroke-width="3"/>
+              <path d="M300 244 Q314 244 314 230 L314 218 Q314 204 300 204 L288 204" fill="none" stroke="#D4FF3A" stroke-width="3"/>
+              <!-- cushions -->
+              <line x1="142" y1="204" x2="142" y2="244" stroke="#D4FF3A" stroke-width="2"/>
+              <line x1="216" y1="204" x2="216" y2="244" stroke="#D4FF3A" stroke-width="2"/>
+              <line x1="68" y1="244" x2="288" y2="244" stroke="#D4FF3A" stroke-width="3"/>
+              <!-- legs -->
+              <line x1="76" y1="282" x2="76" y2="316" stroke="#D4FF3A" stroke-width="3"/>
+              <line x1="280" y1="282" x2="280" y2="316" stroke="#D4FF3A" stroke-width="3"/>
+              <!-- width dimension -->
+              <g stroke="#F7F4EE" stroke-width="1.5">
+                <line x1="42" y1="160" x2="314" y2="160"/>
+                <line x1="42" y1="154" x2="42" y2="166"/>
+                <line x1="314" y1="154" x2="314" y2="166"/>
+              </g>
+              <text x="178" y="146" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="15" fill="#F7F4EE">84 in</text>
+            </g>
+
+            <!-- verdict tag -->
+            <g>
+              <rect x="330" y="238" width="58" height="24" rx="3" fill="#D4FF3A"/>
+              <text x="359" y="255" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="13" font-weight="600" fill="#111111">&gt; 32"</text>
+            </g>
+          </svg>
+          <figcaption>
+            <span>A standard three-seat sofa will not fit a 32-inch doorway with legs on. We plan for that before your pickup.</span>
+            <span class="mono">The Doorway Test</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
+    <div class="measure-strip" aria-hidden="true"></div>
+
     <section id="book" class="section booking">
       <div class="container">
+        <p class="section__label">Book a pickup</p>
         <h2>See your price and book</h2>
         <p class="section__lead">Enter your item and address. The price you see is the price you pay, with no on-site estimate.</p>
-        <div
-          data-workmon-book
-          data-tenant="loadup"
-          data-brand="fdp"
-          data-category="furniture"
-        ></div>
-        <p class="booking__note mono">First item from $90 &middot; additional items from $20</p>
+
+        <div class="booking__grid">
+          <div class="booking__slot">
+            <div
+              data-workmon-book
+              data-tenant="loadup"
+              data-brand="fdp"
+              data-category="furniture"
+            ></div>
+          </div>
+
+          <div class="price-card">
+            <div class="price-card__head">Upfront pricing</div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>First item</td>
+                  <td>from <data value="90">$90</data></td>
+                </tr>
+                <tr>
+                  <td>Each additional item</td>
+                  <td>from <data value="20">$20</data></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="price-card__foot">Includes all labor, loading, hauling, and disposal or donation drop-off. No fuel fees, no stair fees.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section items">
       <div class="container">
+        <p class="section__label">What we take</p>
         <h2>Pick the furniture you need gone</h2>
-        <p class="section__lead">Item-level pricing, so the quote holds on service day. Tap an item for size guidance and its starting price.</p>
+        <p class="section__lead">Item-level pricing, so the quote holds on service day. Every item page includes to-scale size guidance.</p>
 
         <ul class="item-grid">
-          <li><a href="/remove/couch/"><span class="item-grid__name">Couch</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
-          <li><a href="/remove/sectional/"><span class="item-grid__name">Sectional</span><span class="item-grid__price mono">from <data value="120">$120</data></span></a></li>
-          <li><a href="/remove/recliner/"><span class="item-grid__name">Recliner</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
-          <li><a href="/remove/mattress/"><span class="item-grid__name">Mattress</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
-          <li><a href="/remove/dresser/"><span class="item-grid__name">Dresser</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
-          <li><a href="/remove/dining-set/"><span class="item-grid__name">Dining set</span><span class="item-grid__price mono">from <data value="110">$110</data></span></a></li>
-          <li><a href="/remove/bed-frame/"><span class="item-grid__name">Bed frame</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
-          <li><a href="/remove/desk/"><span class="item-grid__name">Desk</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
-          <li><a href="/remove/bookshelf/"><span class="item-grid__name">Bookshelf</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
-          <li><a href="/remove/office-furniture/"><span class="item-grid__name">Office furniture</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
-          <li><a href="/remove/patio-furniture/"><span class="item-grid__name">Patio furniture</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
-          <li><a href="/remove/armoire/"><span class="item-grid__name">Armoire</span><span class="item-grid__price mono">from <data value="110">$110</data></span></a></li>
+          <li><a href="/remove/couch/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><path d="M8 24 L8 14 Q8 10 12 10 L32 10 Q36 10 36 14 L36 24"/><path d="M8 18 Q3 18 3 22 L3 26 L41 26 L41 22 Q41 18 36 18"/><line x1="8" y1="26" x2="8" y2="30"/><line x1="36" y1="26" x2="36" y2="30"/><line x1="22" y1="12" x2="22" y2="18"/></svg>
+            <span class="item-grid__name">Couch</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
+          <li><a href="/remove/sectional/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><path d="M4 10 L28 10 L28 18 L40 18 L40 28 L4 28 Z"/><line x1="16" y1="10" x2="16" y2="28"/><line x1="28" y1="18" x2="28" y2="28"/></svg>
+            <span class="item-grid__name">Sectional</span><span class="item-grid__price mono">from <data value="120">$120</data></span></a></li>
+          <li><a href="/remove/recliner/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><path d="M14 24 L14 8 Q14 5 17 5 L27 5 Q30 5 30 8 L30 24"/><path d="M14 16 Q9 16 9 20 L9 26 L35 26 L35 20 Q35 16 30 16"/><line x1="9" y1="26" x2="6" y2="31"/><line x1="35" y1="26" x2="38" y2="31"/></svg>
+            <span class="item-grid__name">Recliner</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
+          <li><a href="/remove/mattress/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><rect x="4" y="12" width="36" height="12" rx="3"/><line x1="12" y1="16" x2="12" y2="20"/><line x1="22" y1="16" x2="22" y2="20"/><line x1="32" y1="16" x2="32" y2="20"/></svg>
+            <span class="item-grid__name">Mattress</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
+          <li><a href="/remove/dresser/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><rect x="8" y="5" width="28" height="24"/><line x1="8" y1="13" x2="36" y2="13"/><line x1="8" y1="21" x2="36" y2="21"/><line x1="19" y1="9" x2="25" y2="9"/><line x1="19" y1="17" x2="25" y2="17"/><line x1="19" y1="25" x2="25" y2="25"/></svg>
+            <span class="item-grid__name">Dresser</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
+          <li><a href="/remove/dining-set/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><line x1="8" y1="12" x2="36" y2="12"/><line x1="12" y1="12" x2="12" y2="28"/><line x1="32" y1="12" x2="32" y2="28"/><line x1="4" y1="18" x2="4" y2="28"/><line x1="40" y1="18" x2="40" y2="28"/><line x1="2" y1="18" x2="8" y2="18"/><line x1="36" y1="18" x2="42" y2="18"/></svg>
+            <span class="item-grid__name">Dining set</span><span class="item-grid__price mono">from <data value="110">$110</data></span></a></li>
+          <li><a href="/remove/bed-frame/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><line x1="6" y1="6" x2="6" y2="28"/><line x1="38" y1="12" x2="38" y2="28"/><line x1="6" y1="20" x2="38" y2="20"/><line x1="6" y1="14" x2="38" y2="14" stroke-dasharray="3 3"/></svg>
+            <span class="item-grid__name">Bed frame</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
+          <li><a href="/remove/desk/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><line x1="4" y1="10" x2="40" y2="10"/><line x1="7" y1="10" x2="7" y2="28"/><line x1="37" y1="10" x2="37" y2="28"/><rect x="24" y="14" width="13" height="8"/></svg>
+            <span class="item-grid__name">Desk</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
+          <li><a href="/remove/bookshelf/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><rect x="12" y="3" width="20" height="28"/><line x1="12" y1="10" x2="32" y2="10"/><line x1="12" y1="17" x2="32" y2="17"/><line x1="12" y1="24" x2="32" y2="24"/></svg>
+            <span class="item-grid__name">Bookshelf</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
+          <li><a href="/remove/office-furniture/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><rect x="14" y="5" width="16" height="11" rx="2"/><line x1="22" y1="16" x2="22" y2="24"/><line x1="14" y1="24" x2="30" y2="24"/><line x1="16" y1="24" x2="12" y2="30"/><line x1="28" y1="24" x2="32" y2="30"/><line x1="22" y1="24" x2="22" y2="30"/></svg>
+            <span class="item-grid__name">Office furniture</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
+          <li><a href="/remove/patio-furniture/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><line x1="22" y1="4" x2="22" y2="28"/><path d="M6 12 Q22 2 38 12"/><line x1="10" y1="20" x2="34" y2="20"/><line x1="13" y1="20" x2="13" y2="28"/><line x1="31" y1="20" x2="31" y2="28"/></svg>
+            <span class="item-grid__name">Patio furniture</span><span class="item-grid__price mono">from <data value="90">$90</data></span></a></li>
+          <li><a href="/remove/armoire/">
+            <svg viewBox="0 0 44 34" aria-hidden="true"><rect x="10" y="3" width="24" height="28"/><line x1="22" y1="3" x2="22" y2="31"/><line x1="18" y1="15" x2="18" y2="20"/><line x1="26" y1="15" x2="26" y2="20"/></svg>
+            <span class="item-grid__name">Armoire</span><span class="item-grid__price mono">from <data value="110">$110</data></span></a></li>
         </ul>
       </div>
     </section>
 
     <section class="section how">
       <div class="container">
-        <h2>How it works</h2>
+        <p class="section__label">How it works</p>
+        <h2>Three steps, no phone calls</h2>
         <ol class="steps">
           <li class="step">
             <span class="step__num mono">01</span>
-            <h3>Pick your item and see the price</h3>
+            <h3>Pick your item, see the price</h3>
             <p>Choose your furniture, enter your address, and get an upfront price. No walkthrough, no phone call.</p>
           </li>
           <li class="step">
@@ -260,8 +366,23 @@
       </div>
     </section>
 
+    <section class="section coverage section--dark">
+      <div class="container">
+        <div class="coverage__inner">
+          <div>
+            <p class="section__label" style="color:#8A9298;">Coverage</p>
+            <h2>Furniture removal in all 50 states</h2>
+            <p class="section__lead" style="color:#C9CDD0;">A nationwide network of vetted Loaders. Find disposal rules, recycling programs, and coverage for your state.</p>
+          </div>
+          <p><a class="btn" href="/furniture-removal/">Find your state</a></p>
+        </div>
+        <p class="state-ticker" aria-hidden="true">AL AK AZ AR CA CO CT DE FL <b>GA</b> HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY</p>
+      </div>
+    </section>
+
     <section class="section reviews">
       <div class="container">
+        <p class="section__label">Reviews</p>
         <h2>What customers say</h2>
         <div
           data-workmon-trust="loadup"
@@ -271,17 +392,9 @@
       </div>
     </section>
 
-    <section class="section coverage section--dark">
-      <div class="container">
-        <p class="eyebrow">All 50 states</p>
-        <h2>Furniture removal near you</h2>
-        <p class="section__lead">Furniture Disposal Plus operates a nationwide network of vetted Loaders. Find disposal rules, recycling programs, and coverage details for your state.</p>
-        <p><a class="btn" href="/furniture-removal/">Find your state</a></p>
-      </div>
-    </section>
-
     <section class="section faq">
       <div class="container">
+        <p class="section__label">Questions</p>
         <h2>Common questions</h2>
 
         <details>
@@ -349,13 +462,6 @@
 
     <div data-workmon-text data-brand="loadup"></div>
 
-    <!-- CONFIRM: replace both src values with current URLs from Workmon admin -->
-    
-    
-
-    <!-- CONFIRM: GA4 measurement ID -->
-    
-    
   </footer>
 
 </body>
