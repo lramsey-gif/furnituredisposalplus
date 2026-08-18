@@ -102,7 +102,9 @@
   color: var(--ash); letter-spacing: 0.04em;
 }
 
-.price-card { border: 2px solid var(--ink); border-radius: var(--radius); overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column; }
+.price-card { border: 2px solid var(--ink); border-radius: var(--radius); overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column; color: var(--ink); }
+.section--dark .price-card { border-color: #3A3A3A; }
+.section--dark .price-card__head { color: var(--signal); }
 .price-card__head {
   background: var(--ink); color: var(--bone);
   padding: var(--space-4) var(--space-6);
@@ -338,4 +340,22 @@
   .page-hero .container { grid-template-columns: 1fr; }
   .page-hero h1, .page-hero .hero__answer { grid-column: 1; }
   .page-hero h1 { border-bottom: 0; padding-bottom: 0; }
+}
+
+
+/* Hero photo: tall portrait card like the parent brand */
+.hero__media {
+  justify-self: end;
+  width: 100%;
+  max-width: 500px;
+}
+.hero__media img {
+  border-radius: 10px;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 900px) {
+  .hero__media { justify-self: stretch; max-width: none; }
 }
