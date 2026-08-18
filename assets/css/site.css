@@ -131,14 +131,14 @@
 
 .item-grid {
   list-style: none; padding: 0; margin: 0; max-width: none;
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: var(--space-4);
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-3);
 }
 
 .item-grid a {
   display: flex; flex-direction: column; align-items: flex-start;
-  gap: var(--space-3);
-  padding: var(--space-5);
+  gap: var(--space-2);
+  padding: var(--space-4);
   border: 1px solid var(--rule); border-radius: var(--radius);
   text-decoration: none; background: #FFFFFF;
   transition: border-color var(--fast) var(--ease), transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease);
@@ -148,11 +148,13 @@
   box-shadow: 0 4px 0 var(--signal);
 }
 .item-grid svg {
-  width: 58px; height: 46px;
+  width: 46px; height: 36px;
   stroke: var(--ink); stroke-width: 1.8; fill: none; stroke-linecap: square;
   margin-bottom: var(--space-1);
 }
-.item-grid__name { font-weight: 500; font-size: var(--text-base); }
+.item-grid__name { font-weight: 500; font-size: var(--text-sm); }
+@media (max-width: 1100px) { .item-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 700px) { .item-grid { grid-template-columns: repeat(2, 1fr); } }
 .item-grid__price {
   font-size: var(--text-xs); color: var(--ink); white-space: nowrap;
   background: #EFEFEA; padding: 3px 9px; border-radius: 3px;
@@ -164,11 +166,12 @@
 
 .steps {
   list-style: none; padding: 0; margin: 0; max-width: none;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: grid; grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4);
 }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
 .step {
-  padding: var(--space-8) var(--space-6);
+  padding: var(--space-6) var(--space-5);
   background: #FFFFFF;
   border: 1px solid var(--rule);
   border-top: 3px solid var(--signal);
@@ -264,7 +267,7 @@
     display: grid;
     align-items: center;
   }
-  .section {
+  .section.booking {
     min-height: 82vh;
     display: grid;
     align-content: center;
