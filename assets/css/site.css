@@ -272,8 +272,7 @@
     display: grid;
     align-content: center;
   }
-  .item-hero,
-  .page-hero {
+  .item-hero {
     min-height: calc(100vh - 4.25rem - 16vh);
     display: grid;
     align-items: center;
