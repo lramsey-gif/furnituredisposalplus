@@ -359,3 +359,47 @@
 @media (max-width: 900px) {
   .hero__media { justify-self: stretch; max-width: none; }
 }
+
+
+/* Service Areas hub: coverage stat panel */
+.coverage-stat {
+  justify-self: end;
+  width: 100%;
+  max-width: 440px;
+  border: 1px solid #2A2A2A;
+  border-top: 3px solid var(--signal);
+  border-radius: var(--radius);
+  padding: var(--space-8) var(--space-8) var(--space-6);
+  background: linear-gradient(#161616, #111);
+}
+.coverage-stat__big {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 125;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 7rem;
+  line-height: 0.9;
+  color: var(--signal);
+  letter-spacing: -0.03em;
+}
+.coverage-stat__label {
+  font-size: var(--text-lg);
+  color: var(--bone);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid #2A2A2A;
+}
+.coverage-stat__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-3) 0;
+  color: #C9CDD0;
+  font-size: var(--text-sm);
+}
+.coverage-stat__row + .coverage-stat__row { border-top: 1px solid #1F1F1F; }
+.coverage-stat__row .mono { color: var(--signal); font-family: var(--font-mono); font-size: var(--text-base); }
+@media (max-width: 900px) {
+  .coverage-stat { justify-self: stretch; max-width: none; }
+  .coverage-stat__big { font-size: 5rem; }
+}
