@@ -260,18 +260,18 @@
 
 @media (min-width: 900px) {
   .hero {
-    min-height: calc(100vh - 4.25rem - 8vh);
+    min-height: calc(100vh - 4.25rem - 16vh);
     display: grid;
     align-items: center;
   }
   .section {
-    min-height: 92vh;
+    min-height: 82vh;
     display: grid;
     align-content: center;
   }
   .item-hero,
   .page-hero {
-    min-height: calc(100vh - 4.25rem - 8vh);
+    min-height: calc(100vh - 4.25rem - 16vh);
     display: grid;
     align-items: center;
   }
