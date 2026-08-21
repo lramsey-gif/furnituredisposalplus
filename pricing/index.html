@@ -126,16 +126,25 @@
             <span class="hero__meta">FIRST ITEM $90 &middot; ADD'L FROM $20</span>
           </div>
         </div>
-        <div class="price-card" style="max-width:460px;justify-self:end;width:100%;">
-          <div class="price-card__head">Upfront pricing</div>
-          <table>
-            <tbody>
-              <tr><td>First item</td><td>from <data value="90">$90</data></td></tr>
-              <tr><td>Each additional item</td><td>from <data value="20">$20</data></td></tr>
-            </tbody>
-          </table>
-          <p class="price-card__foot">Includes all labor, loading, hauling, and disposal or donation drop-off. No fuel fees, no stair fees.</p>
-        </div>
+        <figure class="pricing-media">
+          <img
+            src="/assets/img/loaders-loading-sectional-1000.webp"
+            srcset="/assets/img/loaders-loading-sectional-640.webp 640w, /assets/img/loaders-loading-sectional-1000.webp 1000w"
+            sizes="(max-width: 900px) 100vw, 46vw"
+            width="1000" height="750"
+            alt="Two Furniture Disposal Plus Loaders lifting a sectional sofa into a truck"
+            fetchpriority="high" decoding="async">
+          <div class="price-card pricing-media__card">
+            <div class="price-card__head">Upfront pricing</div>
+            <table>
+              <tbody>
+                <tr><td>First item</td><td>from <data value="90">$90</data></td></tr>
+                <tr><td>Each additional item</td><td>from <data value="20">$20</data></td></tr>
+              </tbody>
+            </table>
+            <p class="price-card__foot">Includes all labor, loading, hauling, and disposal or donation drop-off. No fuel fees, no stair fees.</p>
+          </div>
+        </figure>
       </div>
     </section>
 
