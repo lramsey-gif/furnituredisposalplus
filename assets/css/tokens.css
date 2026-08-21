@@ -10,21 +10,24 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  /* Foundation */
-  --ink:        #111111;   /* near-black, body text and dark surfaces */
-  --bone:       #FFFFFF;   /* white, page ground */
-  --ash:        #6E7A80;   /* utility gray, captions and meta */
+  /* Foundation. Warm palette: cream ground, warm charcoal ink, teal accent. */
+  --ink:        #2A2622;   /* warm charcoal, body text and dark surfaces */
+  --bone:       #FBF7F0;   /* warm cream, page ground */
+  --ash:        #8A8072;   /* warm taupe gray, captions and meta */
 
   /* Brand */
-  --dark:       #111111;   /* black, hero and section fills */
-  --signal:     #D4FF3A;   /* LoadUp lime, CTAs and active states only */
+  --dark:       #22303A;   /* deep warm teal-slate, hero and dark sections */
+  --signal:     #17B5AE;   /* teal, CTAs and active states. Deep enough for white text. */
+  --signal-soft: #4FD3CF;  /* lighter teal for accents on dark, highlights */
 
-  /* Reserved, parent attribution lockup only. Never used elsewhere. */
+  /* Reserved, parent attribution lockup only. */
   --loadup-teal: #4FD3CF;
 
   /* Derived */
-  --rule:       #E6E6E6;   /* hairline dividers */
-  --signal-12:  #D4FF3A1F; /* 12 percent lime tint for quiet fills */
+  --rule:       #EAE2D4;   /* warm hairline dividers */
+  --signal-12:  #17B5AE1F; /* 12 percent teal tint for quiet fills */
+  --cream-card: #FFFFFF;   /* white cards lift off the cream ground */
+  --cream-sink: #F3ECDF;   /* slightly deeper cream for alternating bands */
 
   /* Type faces */
   --font-display: "Archivo Variable", "Archivo", system-ui, sans-serif;
@@ -55,12 +58,12 @@
   /* Layout */
   --measure:      66ch;     /* max line length for running text */
   --container:    72rem;    /* page max width */
-  --radius:       6px;      /* small, utilitarian. This is freight, not SaaS. */
-  --radius-lg:    12px;     /* photo cards and large surfaces */
+  --radius:       12px;     /* soft, friendly, rounded like the parent brand */
+  --radius-lg:    20px;     /* photo cards and large surfaces */
 
-  /* Depth. Hard offset shadows, freight-sticker style, never blur clouds. */
-  --lift-ink:     0 3px 0 var(--ink);
-  --lift-lime:    0 4px 0 var(--signal);
+  /* Depth. Soft warm shadows now, not hard freight offsets. */
+  --lift-ink:     0 4px 16px rgba(42,38,34,0.10);
+  --lift-lime:    0 6px 20px rgba(23,181,174,0.18);
 
   /* Motion */
   --ease: cubic-bezier(0.2, 0, 0, 1);
@@ -282,18 +285,19 @@ details[open] summary {
   font-size: var(--text-base);
   line-height: 1;
   padding: var(--space-4) var(--space-6);
-  border: 2px solid var(--ink);
-  border-radius: var(--radius);
+  border: 0;
+  border-radius: 999px;
   background: var(--signal);
-  color: var(--ink);
+  color: #FFFFFF;
   text-decoration: none;
   cursor: pointer;
-  transition: transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease);
+  transition: transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease), background var(--fast) var(--ease);
 }
 
 .btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 2px 0 var(--ink);
+  background: #12A099;
+  box-shadow: var(--lift-lime);
 }
 
 .btn:active {
@@ -303,7 +307,8 @@ details[open] summary {
 
 .btn--quiet {
   background: transparent;
-  border-color: var(--rule);
+  border: 1px solid var(--rule);
+  color: var(--ink);
 }
 
 /* --------------------------------------------------------------------------
