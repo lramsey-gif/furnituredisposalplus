@@ -710,3 +710,161 @@
 @media (max-width: 560px) {
   .footer-cols { grid-template-columns: 1fr; }
 }
+
+
+/* ==========================================================================
+   GOLOADUP-STYLE SECTIONS
+   Stats bar, why-us grid, upgraded steps, reviews frame, pickup table,
+   item detail cards. Warm teal-on-cream palette throughout.
+   ========================================================================== */
+
+/* --- Stats bar ------------------------------------------------------------ */
+.stats-bar { background: var(--dark); padding-block: var(--space-12); }
+.stats-bar__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6); max-width: none; text-align: center;
+}
+.stats-bar__num {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 125;
+  font-weight: 800; font-style: italic;
+  font-size: clamp(2.2rem, 3vw + 1rem, 3.25rem);
+  line-height: 1; color: var(--signal-soft);
+  letter-spacing: -0.02em;
+}
+.stats-bar__label {
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: #C9D2D2; margin-top: var(--space-3);
+}
+.stats-bar__note {
+  text-align: center; margin: var(--space-6) auto 0; max-width: none;
+  font-size: var(--text-xs); color: var(--ash);
+}
+.stats-bar__grid > div { display: flex; flex-direction: column; align-items: center; }
+@media (max-width: 720px) { .stats-bar__grid { grid-template-columns: 1fr 1fr; gap: var(--space-8); } }
+
+/* --- Why-us 4-card grid --------------------------------------------------- */
+.why { background: var(--cream-sink); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.why-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4); max-width: none;
+}
+.why-card {
+  background: var(--cream-card); border: 1px solid var(--rule);
+  border-radius: var(--radius); padding: var(--space-8);
+  box-shadow: 0 2px 10px rgba(42,38,34,0.05);
+}
+.why-card__ico {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--dark); color: var(--signal-soft);
+  display: grid; place-items: center; margin-bottom: var(--space-4);
+}
+.why-card__ico svg { width: 22px; height: 22px; }
+.why-card h3 { margin-bottom: var(--space-2); font-size: var(--text-lg); }
+.why-card p { color: var(--ash); font-size: var(--text-sm); max-width: 46ch; }
+@media (max-width: 720px) { .why-grid { grid-template-columns: 1fr; } }
+
+/* --- Upgraded steps (big numbered, dark) ---------------------------------- */
+.how--dark { background: var(--dark); }
+.how--dark .section__label { color: #8A9298; }
+.how--dark h2 { color: var(--bone); }
+.steps--big { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8); max-width: none; margin-top: var(--space-8); }
+.steps--big .step {
+  background: transparent; border: 0; border-top: 1px solid rgba(255,255,255,0.14);
+  border-radius: 0; box-shadow: none; padding: var(--space-6) 0 0;
+}
+.steps--big .step__num {
+  display: block; background: transparent; padding: 0;
+  font-family: var(--font-display); font-variation-settings: "wdth" 125;
+  font-style: italic; font-weight: 800;
+  font-size: clamp(2.5rem, 4vw + 1rem, 3.5rem);
+  color: var(--signal-soft); line-height: 1; margin-bottom: var(--space-4);
+}
+.steps--big .step h3 { color: var(--bone); font-size: var(--text-lg); margin-bottom: var(--space-2); }
+.steps--big .step p { color: #C9D2D2; font-size: var(--text-sm); }
+.step__badge {
+  display: inline-block; margin-top: var(--space-4);
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  background: var(--signal-12); color: var(--signal-soft);
+  padding: var(--space-1) var(--space-3); border-radius: 6px;
+}
+@media (max-width: 800px) { .steps--big { grid-template-columns: 1fr; gap: var(--space-6); } }
+
+/* --- Reviews frame -------------------------------------------------------- */
+.reviews__frame {
+  display: grid; grid-template-columns: 320px 1fr;
+  gap: var(--space-8); align-items: start; max-width: none;
+}
+.reviews__score {
+  background: var(--dark); border-radius: var(--radius);
+  padding: var(--space-8); text-align: center; color: var(--bone);
+}
+.reviews__score .worktrust-tag {
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  letter-spacing: 0.1em; text-transform: uppercase; color: #C9D2D2;
+  margin-bottom: var(--space-3);
+}
+.reviews__score .big {
+  font-family: var(--font-display); font-variation-settings: "wdth" 125;
+  font-weight: 800; font-style: italic; font-size: 4rem; line-height: 1;
+  color: var(--signal-soft);
+}
+.reviews__score .stars { color: var(--signal-soft); font-size: var(--text-lg); margin: var(--space-3) 0; letter-spacing: 2px; }
+.reviews__score .count { font-size: var(--text-sm); color: #C9D2D2; }
+@media (max-width: 800px) { .reviews__frame { grid-template-columns: 1fr; } }
+
+/* --- Pickup / service comparison table ------------------------------------ */
+.svc-table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--cream-card); }
+.svc-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); min-width: 620px; }
+.svc-table thead th {
+  background: var(--dark); color: #C9D2D2;
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  text-align: left; padding: var(--space-4) var(--space-5); border: 0;
+}
+.svc-table tbody td { padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--rule); vertical-align: middle; }
+.svc-table tbody tr:last-child td { border-bottom: 0; }
+.svc-table .svc-name { font-weight: 500; color: var(--ink); }
+.svc-table .svc-price { font-family: var(--font-mono); color: var(--signal); white-space: nowrap; }
+.svc-badge {
+  display: inline-block; font-family: var(--font-mono);
+  font-size: var(--text-xs); letter-spacing: 0.04em; text-transform: uppercase;
+  background: var(--signal-12); color: var(--signal);
+  padding: 3px 9px; border-radius: 6px; white-space: nowrap;
+}
+.svc-badge--muted { background: var(--cream-sink); color: var(--ash); }
+
+/* --- Item detail cards (replaces bare grid where used) -------------------- */
+.item-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); max-width: none; }
+.item-card {
+  display: flex; flex-direction: column;
+  background: var(--cream-card); border: 1px solid var(--rule);
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 2px 10px rgba(42,38,34,0.05);
+  transition: transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease);
+}
+.item-card:hover { transform: translateY(-4px); box-shadow: var(--lift-lime); }
+.item-card__top {
+  background: linear-gradient(160deg, var(--signal-12), var(--cream-sink));
+  padding: var(--space-8) var(--space-6); display: grid; place-items: center;
+  position: relative; min-height: 130px;
+}
+.item-card__top svg { width: 64px; height: 48px; stroke: var(--signal); stroke-width: 1.6; fill: none; }
+.item-card__badge {
+  position: absolute; top: var(--space-3); right: var(--space-3);
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  letter-spacing: 0.04em; text-transform: uppercase;
+  background: var(--signal); color: #FFFFFF; padding: 3px 9px; border-radius: 6px;
+}
+.item-card__body { padding: var(--space-5); display: flex; flex-direction: column; flex: 1; }
+.item-card__body h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+.item-card__body p { color: var(--ash); font-size: var(--text-sm); margin-bottom: var(--space-4); }
+.item-card__foot { margin-top: auto; }
+.item-card__price { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--ash); margin-bottom: var(--space-3); }
+.item-card__price data { font-size: var(--text-xl); color: var(--signal); }
+.item-card .btn { display: block; text-align: center; width: 100%; background: var(--dark); color: #FFFFFF; }
+.item-card .btn:hover { background: #17232B; }
+@media (max-width: 1000px) { .item-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .item-cards { grid-template-columns: 1fr; } }
