@@ -55,7 +55,12 @@
   /* Layout */
   --measure:      66ch;     /* max line length for running text */
   --container:    72rem;    /* page max width */
-  --radius:       4px;      /* small, utilitarian. This is freight, not SaaS. */
+  --radius:       6px;      /* small, utilitarian. This is freight, not SaaS. */
+  --radius-lg:    12px;     /* photo cards and large surfaces */
+
+  /* Depth. Hard offset shadows, freight-sticker style, never blur clouds. */
+  --lift-ink:     0 3px 0 var(--ink);
+  --lift-lime:    0 4px 0 var(--signal);
 
   /* Motion */
   --ease: cubic-bezier(0.2, 0, 0, 1);
