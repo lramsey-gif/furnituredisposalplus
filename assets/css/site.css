@@ -93,13 +93,7 @@
 .booking__slot {
   border: 1px solid var(--rule); border-top: 4px solid var(--signal);
   border-radius: var(--radius);
-  background: repeating-linear-gradient(-45deg, #FBFBFA 0 14px, #FFFFFF 14px 28px);
-  min-height: 300px; display: grid; place-items: center; padding: var(--space-8);
-}
-.booking__slot [data-workmon-book]:empty::after {
-  content: "Live booking activates at launch";
-  font-family: var(--font-mono); font-size: var(--text-sm);
-  color: var(--ash); letter-spacing: 0.04em;
+  padding: var(--space-8);
 }
 
 .price-card { border: 2px solid var(--ink); border-radius: var(--radius); overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column; color: var(--ink); }
@@ -871,6 +865,53 @@
 
 /* Launcher-era additions */
 button.btn { font-family: inherit; }
-.booking__slot { min-height: 0; }
-.booking__slot-note { margin-top: var(--space-4); font-family: var(--font-mono); font-size: var(--text-sm); color: var(--ash); letter-spacing: 0.04em; text-align: center; }
+.booking__slot {
+  min-height: 0;
+  display: flex; flex-direction: column; align-items: flex-start;
+  place-items: initial;
+  background: linear-gradient(160deg, var(--signal-12), #FFFFFF 60%);
+  text-align: left; gap: 0;
+}
+.booking__slot-eyebrow {
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--signal); margin-bottom: var(--space-3);
+}
+.booking__slot-headline {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: var(--text-2xl); line-height: 1.1;
+  color: var(--ink); margin-bottom: var(--space-5); max-width: 20ch;
+}
+.booking__slot-list {
+  list-style: none; padding: 0; margin: 0 0 var(--space-8);
+  display: flex; flex-direction: column; gap: var(--space-3);
+}
+.booking__slot-list li {
+  position: relative; padding-left: var(--space-6);
+  font-size: var(--text-base); color: var(--ink);
+}
+.booking__slot-list li::before {
+  content: ""; position: absolute; left: 0; top: 0.55em;
+  width: 10px; height: 6px; border-left: 2px solid var(--signal);
+  border-bottom: 2px solid var(--signal); transform: rotate(-45deg);
+}
+.booking__slot .btn { align-self: stretch; text-align: center; }
+.booking__slot-note { margin-top: var(--space-4); font-family: var(--font-mono); font-size: var(--text-sm); color: var(--ash); letter-spacing: 0.04em; text-align: center; align-self: center; }
 .reviews__more p { margin-bottom: var(--space-4); color: var(--ash); }
+
+/* Fuller item-card icon tiles */
+.item-card__top {
+  min-height: 150px;
+  background: linear-gradient(160deg, var(--signal-12), var(--cream-sink));
+}
+.item-card__top::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 45%, rgba(23,181,174,0.10), transparent 62%);
+  pointer-events: none;
+}
+.item-card__top svg {
+  width: 88px; height: 66px; stroke-width: 2.1;
+  position: relative; z-index: 1;
+  filter: drop-shadow(0 2px 4px rgba(23,181,174,0.18));
+}
+.item-card:hover .item-card__top svg { transform: translateY(-2px); transition: transform var(--fast) var(--ease); }
