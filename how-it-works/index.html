@@ -14,8 +14,8 @@
   <link rel="icon" href="/assets/svg/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=5">
-  <link rel="stylesheet" href="/assets/css/site.css?v=5">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=6">
+  <link rel="stylesheet" href="/assets/css/site.css?v=6">
   <style>
     .site-header { background: var(--dark); border-bottom: 1px solid #2A2A2A; position: relative; }
     .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 4.25rem; }
@@ -151,6 +151,59 @@
           </div>
         </div>
         <p class="netband__note">Representative recent pickups from the LoadUp network, which powers Furniture Disposal Plus.</p>
+      </div>
+    </section>
+
+    <section class="section est">
+      <div class="container">
+        <p class="section__label">Try it</p>
+        <h2>Build your price in real time</h2>
+        <p class="section__lead">This is the same math the booking runs. Pick an item, add extras, and watch the price move. Your exact price for your address is confirmed when you book.</p>
+
+        <div class="est__grid">
+          <div class="est__controls">
+            <label class="est__field">
+              <span class="est__label">First item</span>
+              <select class="est__select" id="est-item">
+                <option value="90" data-name="Couch">Couch</option>
+                <option value="120" data-name="Sectional">Sectional</option>
+                <option value="90" data-name="Recliner">Recliner</option>
+                <option value="90" data-name="Mattress">Mattress</option>
+                <option value="90" data-name="Dresser">Dresser</option>
+                <option value="110" data-name="Dining set">Dining set</option>
+                <option value="90" data-name="Bed frame">Bed frame</option>
+                <option value="90" data-name="Desk">Desk</option>
+                <option value="90" data-name="Bookshelf">Bookshelf</option>
+                <option value="90" data-name="Office furniture">Office furniture</option>
+                <option value="90" data-name="Patio furniture">Patio furniture</option>
+                <option value="110" data-name="Armoire">Armoire</option>
+              </select>
+            </label>
+
+            <div class="est__field">
+              <span class="est__label">Additional items <span class="est__hint mono">$20 each</span></span>
+              <div class="est__stepper" role="group" aria-label="Additional items">
+                <button type="button" class="est__step" id="est-minus" aria-label="Remove an item">&minus;</button>
+                <output class="est__count mono" id="est-count" aria-live="polite">0</output>
+                <button type="button" class="est__step" id="est-plus" aria-label="Add an item">+</button>
+              </div>
+            </div>
+
+            <ul class="est__included">
+              <li>All labor, loading, and hauling</li>
+              <li>Disposal or donation drop-off</li>
+              <li>No fuel fees, no stair fees</li>
+            </ul>
+          </div>
+
+          <div class="est__readout">
+            <p class="est__readout-tag mono">Estimated total</p>
+            <p class="est__total mono" id="est-total">$90</p>
+            <p class="est__breakdown" id="est-breakdown">Couch <span class="mono">$90</span></p>
+            <button class="btn btn--lg est__btn" data-workmon-open>Get Price</button>
+            <p class="est__note">Starting prices. Your exact price confirms at booking.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -304,6 +357,28 @@
 
     <div data-workmon-launcher data-tenant="loadup" data-brand="fdp"></div>
     <div class="worktrust-float" data-workmon-trust="loadup" data-brand="fdp" data-variant="sources"></div>
+<script>
+    (function(){
+      var item=document.getElementById('est-item'), count=document.getElementById('est-count'),
+          total=document.getElementById('est-total'), bd=document.getElementById('est-breakdown'),
+          plus=document.getElementById('est-plus'), minus=document.getElementById('est-minus');
+      if(!item) return;
+      var extra=0;
+      function render(){
+        var base=parseInt(item.value,10), name=item.options[item.selectedIndex].dataset.name;
+        var t=base+extra*20;
+        total.textContent='$'+t;
+        count.textContent=extra;
+        var line=name+' <span class="mono">$'+base+'</span>';
+        if(extra>0) line+=' &middot; '+extra+' add\'l <span class="mono">$'+(extra*20)+'</span>';
+        bd.innerHTML=line;
+      }
+      item.addEventListener('change',render);
+      plus.addEventListener('click',function(){ if(extra<20){extra++;render();} });
+      minus.addEventListener('click',function(){ if(extra>0){extra--;render();} });
+      render();
+    })();
+    </script>
     <script type="module" src="https://workmon.ai/embed.js"></script>
     <script src="https://workmon.ai/embed/trust.js" async></script>
   </footer>
