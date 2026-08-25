@@ -1290,3 +1290,10 @@ button.btn { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .hero__live-dot { animation: none; }
 }
+
+/* Doorway card (item hero) gets the same hover lift as photo heroes */
+.hero--anim .doorway-card { transition: transform 0.5s var(--ease); }
+.hero--anim .doorway-card:hover { transform: translateY(-6px); }
+@media (prefers-reduced-motion: reduce) {
+  .hero--anim .doorway-card:hover { transform: none; }
+}

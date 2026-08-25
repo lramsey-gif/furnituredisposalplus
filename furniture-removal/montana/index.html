@@ -14,8 +14,8 @@
   <link rel="icon" href="/assets/svg/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=8">
-  <link rel="stylesheet" href="/assets/css/site.css?v=8">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=9">
+  <link rel="stylesheet" href="/assets/css/site.css?v=9">
   <style>
     .site-header { background: var(--dark); border-bottom: 1px solid #2A2A2A; position: relative; }
     .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 4.25rem; }
@@ -140,18 +140,23 @@
     </div>
   </header>
   <main id="main">
-    <section class="page-hero">
+    <section class="page-hero hero--anim">
       <div class="container state-hero__grid">
         <div class="state-hero__copy">
-        <p class="breadcrumb" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--ash);letter-spacing:0.05em;max-width:none;"><a href="/" style="color:var(--ash);">Home</a> / <a href="/furniture-removal/" style="color:var(--ash);">Service Areas</a> / Montana</p>
-        <h1>Furniture removal in Montana</h1>
-        <p class="hero__answer" style="font-size:var(--text-lg);line-height:1.55;">Furniture Disposal Plus removes couches, mattresses, dressers, and every other bulky piece across Montana, including Billings, Missoula, and Bozeman. Pick your item, see the exact price for your address, and book a pickup window online in under a minute.</p>
-        <div class="hero__cta-row" style="margin-top:var(--space-6);">
+        <p class="breadcrumb reveal" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--ash);letter-spacing:0.05em;max-width:none;--i:0"><a href="/" style="color:var(--ash);">Home</a> / <a href="/furniture-removal/" style="color:var(--ash);">Service Areas</a> / Montana</p>
+        <h1 class="reveal" style="--i:1">Furniture removal in Montana</h1>
+        <p class="hero__answer reveal" style="font-size:var(--text-lg);line-height:1.55;--i:2">Furniture Disposal Plus removes couches, mattresses, dressers, and every other bulky piece across Montana, including Billings, Missoula, and Bozeman. Pick your item, see the exact price for your address, and book a pickup window online in under a minute.</p>
+        <div class="hero__cta-row reveal" style="margin-top:var(--space-6);--i:3">
           <button class="btn btn--lg" data-workmon-open>Get Price</button>
           <span class="hero__meta">FROM $90 &middot; MT STATEWIDE</span>
         </div>
+          <p class="hero__live reveal" style="--i:4" aria-live="polite">
+            <span class="hero__live-dot" aria-hidden="true"></span>
+            <span class="hero__live-text hero-live-text">Pickup booked in Atlanta, GA just now</span>
+          </p>
+
       </div>
-        <div class="hero__media">
+        <div class="hero__media reveal reveal--media" style="--i:2">
           <img
             src="/assets/img/loaders-loading-sectional-1000.webp"
             srcset="/assets/img/loaders-loading-sectional-640.webp 640w, /assets/img/loaders-loading-sectional-1000.webp 1000w"
@@ -297,6 +302,22 @@
 
     <div data-workmon-launcher data-tenant="loadup" data-brand="fdp"></div>
     <div class="worktrust-float" data-workmon-trust="loadup" data-brand="fdp" data-variant="sources"></div>
+<script>
+    (function(){
+      var els=document.querySelectorAll('.hero-live-text'); if(!els.length) return;
+      var cities=['Atlanta, GA','Dallas, TX','Phoenix, AZ','Tampa, FL','Denver, CO','Columbus, OH','Charlotte, NC','Seattle, WA','Nashville, TN','Aurora, CO','Mesa, AZ','Plano, TX'];
+      var mins=[' just now',' 1 min ago',' 2 mins ago',' 4 mins ago',' 6 mins ago'];
+      var i=0;
+      setInterval(function(){
+        i=(i+1)%cities.length;
+        var txt='Pickup booked in '+cities[i]+mins[Math.floor(Math.random()*mins.length)];
+        els.forEach(function(el){
+          el.style.opacity=0;
+          setTimeout(function(){ el.textContent=txt; el.style.opacity=1; },260);
+        });
+      },3200);
+    })();
+    </script>
     <script type="module" src="https://workmon.ai/embed.js"></script>
     <script src="https://workmon.ai/embed/trust.js" async></script>
   </footer>

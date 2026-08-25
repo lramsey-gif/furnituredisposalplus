@@ -14,8 +14,8 @@
   <link rel="icon" href="/assets/svg/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=8">
-  <link rel="stylesheet" href="/assets/css/site.css?v=8">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=9">
+  <link rel="stylesheet" href="/assets/css/site.css?v=9">
   <style>
     .site-header { background: var(--dark); border-bottom: 1px solid #2A2A2A; position: relative; }
     .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 4.25rem; }
@@ -105,18 +105,23 @@
   </header>
 
   <main id="main">
-    <section class="hero">
+    <section class="hero hero--anim">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="eyebrow">About us</p>
-          <h1>About Furniture Disposal Plus</h1>
-          <p class="hero__answer">Furniture Disposal Plus is a brand of LoadUp Technologies, LLC, founded in 2014 and headquartered in Alpharetta, Georgia. It operates a nationwide network of vetted independent Loaders, with booking and dispatch running on the Workmon.ai platform.</p>
-          <div class="hero__cta-row">
+          <p class="eyebrow reveal" style="--i:0">About us</p>
+          <h1 class="reveal" style="--i:1">About Furniture Disposal Plus</h1>
+          <p class="hero__answer reveal" style="--i:2">Furniture Disposal Plus is a brand of LoadUp Technologies, LLC, founded in 2014 and headquartered in Alpharetta, Georgia. It operates a nationwide network of vetted independent Loaders, with booking and dispatch running on the Workmon.ai platform.</p>
+          <div class="hero__cta-row reveal" style="--i:3">
             <button class="btn btn--lg" data-workmon-open>Get Price</button>
             <span class="hero__meta">A LOADUP TECHNOLOGIES BRAND &middot; EST. 2014</span>
           </div>
+          <p class="hero__live reveal" style="--i:4" aria-live="polite">
+            <span class="hero__live-dot" aria-hidden="true"></span>
+            <span class="hero__live-text hero-live-text">Pickup booked in Atlanta, GA just now</span>
+          </p>
+
         </div>
-        <div class="hero__media">
+        <div class="hero__media reveal reveal--media" style="--i:2">
           <img
             src="/assets/img/loader-carrying-patio-lounger-700.webp"
             srcset="/assets/img/loader-carrying-patio-lounger-480.webp 480w, /assets/img/loader-carrying-patio-lounger-700.webp 700w"
@@ -238,6 +243,22 @@
 
     <div data-workmon-launcher data-tenant="loadup" data-brand="fdp"></div>
     <div class="worktrust-float" data-workmon-trust="loadup" data-brand="fdp" data-variant="sources"></div>
+<script>
+    (function(){
+      var els=document.querySelectorAll('.hero-live-text'); if(!els.length) return;
+      var cities=['Atlanta, GA','Dallas, TX','Phoenix, AZ','Tampa, FL','Denver, CO','Columbus, OH','Charlotte, NC','Seattle, WA','Nashville, TN','Aurora, CO','Mesa, AZ','Plano, TX'];
+      var mins=[' just now',' 1 min ago',' 2 mins ago',' 4 mins ago',' 6 mins ago'];
+      var i=0;
+      setInterval(function(){
+        i=(i+1)%cities.length;
+        var txt='Pickup booked in '+cities[i]+mins[Math.floor(Math.random()*mins.length)];
+        els.forEach(function(el){
+          el.style.opacity=0;
+          setTimeout(function(){ el.textContent=txt; el.style.opacity=1; },260);
+        });
+      },3200);
+    })();
+    </script>
     <script type="module" src="https://workmon.ai/embed.js"></script>
     <script src="https://workmon.ai/embed/trust.js" async></script>
   </footer>
