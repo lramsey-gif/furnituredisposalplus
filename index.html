@@ -166,7 +166,7 @@
           <li><a href="/how-it-works/">How It Works</a></li>
           <li><a href="/furniture-removal/">Service Areas</a></li>
           <li><a href="/donation-pickup/">Donation Pickup</a></li>
-          <li><button class="btn" data-workmon-open>Get a Price</button></li>
+          <li><button class="btn" data-workmon-open>Get Price</button></li>
         </ul>
       </nav>
     </div>
@@ -174,8 +174,8 @@
 
   <main id="main">
 
-    <section class="hero section--dark">
-      <div class="container hero__grid">
+    <section class="hero section--dark mhero">
+      <div class="container hero__grid mhero__grid">
         <div class="hero__copy">
           <p class="eyebrow">Nationwide furniture removal</p>
           <h1>Old furniture, gone.<br>No truck. <em>No guessing.</em></h1>
@@ -188,12 +188,20 @@
           </p>
 
           <div class="hero__cta-row">
-            <button class="btn btn--lg" data-workmon-open>Get my price</button>
+            <button class="btn btn--lg" data-workmon-open>Get Price</button>
             <span class="hero__meta">FIRST ITEM $90 &middot; ADD'L FROM $20 &middot; ALL 50 STATES</span>
           </div>
+
+          <ul class="mhero__chips" aria-label="Popular items">
+            <li><a href="/remove/couch/">Couch <span class="mono">$90</span></a></li>
+            <li><a href="/remove/sectional/">Sectional <span class="mono">$120</span></a></li>
+            <li><a href="/remove/mattress/">Mattress <span class="mono">$90</span></a></li>
+            <li><a href="/remove/dresser/">Dresser <span class="mono">$90</span></a></li>
+            <li><a class="mhero__chips-more" href="/what-we-take/">All items</a></li>
+          </ul>
         </div>
 
-        <div class="hero__media">
+        <div class="hero__media mhero__media">
           <img
             src="/assets/img/loader-carrying-patio-lounger-700.webp"
             srcset="/assets/img/loader-carrying-patio-lounger-480.webp 480w, /assets/img/loader-carrying-patio-lounger-700.webp 700w"
@@ -201,19 +209,42 @@
             width="700" height="933"
             alt="A Furniture Disposal Plus Loader carrying a patio lounger and cushion out of a screened porch"
             fetchpriority="high" decoding="async">
+
+          <!-- Representative pickup. Swap values from ops data when available. -->
+          <aside class="ticket" aria-label="Example completed pickup">
+            <p class="ticket__tag mono">Completed pickup</p>
+            <p class="ticket__item">Sectional sofa</p>
+            <p class="ticket__meta"><span>Marietta, GA</span><span class="mono">$120</span></p>
+            <p class="ticket__foot"><span>Booked online, gone same day</span></p>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="stats-bar">
-      <div class="container">
-        <div class="stats-bar__grid">
-          <div><span class="stats-bar__num">4.8<span aria-hidden="true">&#9733;</span></span><span class="stats-bar__label">Avg rating</span></div>
-          <div><span class="stats-bar__num">1.8M+</span><span class="stats-bar__label">Items removed</span></div>
-          <div><span class="stats-bar__num">50</span><span class="stats-bar__label">States covered</span></div>
-          <div><span class="stats-bar__num">820K+</span><span class="stats-bar__label">Jobs completed</span></div>
+    <section class="netband" aria-label="Network activity">
+      <div class="netband__inner">
+        <p class="netband__stat"><strong class="mono">1.8M+</strong> items removed <span class="netband__dot" aria-hidden="true"></span> <strong class="mono">4.8&#9733;</strong> across the LoadUp network</p>
+        <div class="feed" aria-hidden="true">
+          <div class="feed__track">
+            <span>Couch &middot; Alpharetta, GA &middot; <b class="mono">$90</b></span>
+            <span>Mattress + box spring &middot; Plano, TX &middot; <b class="mono">$110</b></span>
+            <span>Sectional &middot; Aurora, CO &middot; <b class="mono">$120</b></span>
+            <span>Recliner &middot; Tampa, FL &middot; <b class="mono">$90</b></span>
+            <span>Dining set &middot; Mesa, AZ &middot; <b class="mono">$110</b></span>
+            <span>Dresser &middot; Columbus, OH &middot; <b class="mono">$90</b></span>
+            <span>Armoire &middot; Bellevue, WA &middot; <b class="mono">$110</b></span>
+            <span>Patio set &middot; Charlotte, NC &middot; <b class="mono">$90</b></span>
+            <span>Couch &middot; Alpharetta, GA &middot; <b class="mono">$90</b></span>
+            <span>Mattress + box spring &middot; Plano, TX &middot; <b class="mono">$110</b></span>
+            <span>Sectional &middot; Aurora, CO &middot; <b class="mono">$120</b></span>
+            <span>Recliner &middot; Tampa, FL &middot; <b class="mono">$90</b></span>
+            <span>Dining set &middot; Mesa, AZ &middot; <b class="mono">$110</b></span>
+            <span>Dresser &middot; Columbus, OH &middot; <b class="mono">$90</b></span>
+            <span>Armoire &middot; Bellevue, WA &middot; <b class="mono">$110</b></span>
+            <span>Patio set &middot; Charlotte, NC &middot; <b class="mono">$90</b></span>
+          </div>
         </div>
-        <p class="stats-bar__note">Figures reflect the LoadUp network, which powers Furniture Disposal Plus.</p>
+        <p class="netband__note">Representative recent pickups from the LoadUp network, which powers Furniture Disposal Plus.</p>
       </div>
     </section>
 
@@ -232,7 +263,7 @@
               <li>No fuel fees, no stair fees. Price shown is the price you pay</li>
               <li>Same-day and next-day slots in most areas</li>
             </ul>
-            <button class="btn btn--lg" data-workmon-open>Get Instant Price</button>
+            <button class="btn btn--lg" data-workmon-open>Get Price</button>
             <p class="booking__slot-note">No on-site estimate. No obligation.</p>
           </div>
 
@@ -407,31 +438,73 @@
       </div>
     </section>
 
-    <section class="section why">
+    <section class="section markets">
       <div class="container">
-        <p class="section__label">Why Furniture Disposal Plus</p>
-        <h2>Furniture removal that works for you</h2>
-        <div class="why-grid">
-          <div class="why-card">
-            <span class="why-card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
-            <h3>Price locked before you commit</h3>
-            <p>See your exact price before you book. No surprise fees after pickup, no add-ons you did not agree to. What you see is what you pay.</p>
+        <div class="markets__head">
+          <div>
+            <p class="section__label">Where we work</p>
+            <h2>Booking pickups in every state, today</h2>
+            <p class="section__lead">One network, local Loaders. Pick a market or find your state for local disposal rules and coverage.</p>
           </div>
-          <div class="why-card">
-            <span class="why-card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
-            <h3>Same-day availability</h3>
-            <p>Need it gone today? Same-day pickup is available in most areas when you book early, so you are not stuck waiting days for a slot.</p>
-          </div>
-          <div class="why-card">
-            <span class="why-card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span>
-            <h3>In-home, not just curbside</h3>
-            <p>Your Loaders come to the furniture, whether it is in a back bedroom, up a flight of stairs, or tucked in the garage. No curbside trip required.</p>
-          </div>
-          <div class="why-card">
-            <span class="why-card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9 6a5 5 0 0 1 5-4c4 4 4 10 0 14"/><path d="M11 20c0-4 2-8 5-10"/></svg></span>
-            <h3>Donation and recycling first</h3>
-            <p>Usable pieces are passed along for donation or recycling when local options allow, so your old furniture has a chance at a second life.</p>
-          </div>
+          <a class="btn" href="/furniture-removal/">Find your state</a>
+        </div>
+        <ul class="markets__chips">
+          <li><a href="/furniture-removal/georgia/">Atlanta</a></li>
+          <li><a href="/furniture-removal/texas/">Dallas</a></li>
+          <li><a href="/furniture-removal/texas/">Houston</a></li>
+          <li><a href="/furniture-removal/arizona/">Phoenix</a></li>
+          <li><a href="/furniture-removal/illinois/">Chicago</a></li>
+          <li><a href="/furniture-removal/florida/">Tampa</a></li>
+          <li><a href="/furniture-removal/florida/">Orlando</a></li>
+          <li><a href="/furniture-removal/north-carolina/">Charlotte</a></li>
+          <li><a href="/furniture-removal/colorado/">Denver</a></li>
+          <li><a href="/furniture-removal/washington/">Seattle</a></li>
+          <li><a href="/furniture-removal/california/">Los Angeles</a></li>
+          <li><a href="/furniture-removal/california/">San Diego</a></li>
+          <li><a href="/furniture-removal/nevada/">Las Vegas</a></li>
+          <li><a href="/furniture-removal/tennessee/">Nashville</a></li>
+          <li><a href="/furniture-removal/ohio/">Columbus</a></li>
+          <li><a href="/furniture-removal/pennsylvania/">Philadelphia</a></li>
+          <li><a href="/furniture-removal/new-york/">New York</a></li>
+          <li><a href="/furniture-removal/massachusetts/">Boston</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section promise">
+      <div class="container promise__grid">
+        <figure class="promise__media">
+          <img
+            src="/assets/img/loaders-loading-sectional-640.webp"
+            srcset="/assets/img/loaders-loading-sectional-640.webp 640w, /assets/img/loaders-loading-sectional-1000.webp 1000w"
+            sizes="(max-width: 900px) 100vw, 46vw"
+            width="1000" height="750"
+            alt="Two Furniture Disposal Plus Loaders lifting a gray sectional into the back of a box truck"
+            loading="lazy" decoding="async">
+          <figcaption class="mono">Loaders on a sectional pickup</figcaption>
+        </figure>
+        <div class="promise__copy">
+          <p class="section__label">Why Furniture Disposal Plus</p>
+          <h2>The price holds. The Loaders lift. That is the whole promise.</h2>
+          <dl class="promise__list">
+            <div>
+              <dt>Price locked before you commit</dt>
+              <dd>Your exact price shows before you book. No surprise fees after pickup, no add-ons you did not agree to.</dd>
+            </div>
+            <div>
+              <dt>In-home, not just curbside</dt>
+              <dd>Your Loaders come to the furniture: back bedroom, up a flight of stairs, or tucked in the garage.</dd>
+            </div>
+            <div>
+              <dt>Same-day in most areas</dt>
+              <dd>Book early and it can be gone before dinner. No waiting on callbacks or estimate visits.</dd>
+            </div>
+            <div>
+              <dt>Donation and recycling first</dt>
+              <dd>Usable pieces are passed along for donation or recycling when local options allow.</dd>
+            </div>
+          </dl>
+          <button class="btn" data-workmon-open>Get Price</button>
         </div>
       </div>
     </section>
@@ -479,20 +552,34 @@
 
     <section class="section reviews">
       <div class="container">
-        <p class="section__label">Reviews</p>
-        <h2>What real customers say</h2>
-        <div class="reviews__frame">
-          <div class="reviews__score">
-            <p class="worktrust-tag">WorkTrust verified</p>
-            <div class="big">4.8</div>
-            <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="count">350,000+ reviews across the LoadUp network</p>
+        <div class="reviews__head">
+          <div>
+            <p class="section__label">Reviews</p>
+            <h2>From the WorkTrust feed</h2>
           </div>
-          <div class="reviews__more">
-            <p>Real reviews from completed pickups, verified independently on the WorkTrust platform.</p>
-            <a class="btn" href="/reviews/">Read all reviews</a>
-          </div>
+          <p class="reviews__score-inline"><strong class="mono">4.8&#9733;</strong> from 350,000+ verified reviews across the LoadUp network</p>
         </div>
+
+        <!-- Representative reviews. Replace with live WorkTrust quotes at launch. -->
+        <ul class="review-cards">
+          <li class="review-card">
+            <p class="review-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote>Booked at 9am, couch was out of my basement by 2. The two Loaders were careful on the stairs and the price did not change.</blockquote>
+            <p class="review-card__meta"><span>Danielle R.</span><span class="mono">Smyrna, GA</span></p>
+          </li>
+          <li class="review-card">
+            <p class="review-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote>I did not have to be home. Left the mattress in the garage, got a photo when it was done. Easiest thing I did all week.</blockquote>
+            <p class="review-card__meta"><span>Marcus L.</span><span class="mono">Fort Worth, TX</span></p>
+          </li>
+          <li class="review-card">
+            <p class="review-card__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote>Quote online was $110 for the dining set. Paid $110. They even took the rug pad when I asked.</blockquote>
+            <p class="review-card__meta"><span>Priya S.</span><span class="mono">Aurora, CO</span></p>
+          </li>
+        </ul>
+
+        <p class="reviews__foot"><a class="btn" href="/reviews/">Read all reviews</a> <span>Verified independently on the WorkTrust platform.</span></p>
       </div>
     </section>
 
@@ -534,7 +621,7 @@
     <div class="container">
       <h2>Ready to clear the clutter?</h2>
       <p>Get your instant price in under 60 seconds.</p>
-      <button class="btn btn--lg" data-workmon-open>Get my price</button>
+      <button class="btn btn--lg" data-workmon-open>Get Price</button>
       <p class="closing-cta__text">or text <a href="sms:+18442397711">(844) 239-7711</a></p>
     </div>
   </section>

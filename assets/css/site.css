@@ -993,3 +993,132 @@ button.btn { font-family: inherit; }
   .state-hero__grid .hero__media { justify-self: stretch; max-width: none; order: -1; }
   .state-hero__grid .hero__media img { aspect-ratio: 16 / 10; }
 }
+
+/* --------------------------------------------------------------------------
+   Homepage marketplace redesign (Aug 2026). New classes only, nothing shared
+   above was changed, so item, state, and core pages are unaffected.
+   -------------------------------------------------------------------------- */
+
+/* Hero: asymmetric grid, media column carries the pickup ticket */
+.mhero { overflow: hidden; }
+.mhero__grid { align-items: center; }
+.mhero__media { position: relative; }
+.mhero__media img { border-radius: var(--radius-lg); transform: rotate(1.2deg); }
+
+.ticket {
+  position: absolute;
+  left: -2.25rem;
+  bottom: 2rem;
+  width: min(15.5rem, 78%);
+  background: var(--bone);
+  color: var(--ink);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  box-shadow: 0 14px 34px rgba(14,20,23,0.35);
+  transform: rotate(-2deg);
+  border-top: 4px solid var(--signal);
+}
+.ticket__tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--signal);
+  margin-bottom: var(--space-2);
+}
+.ticket__item { font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg); line-height: 1.15; }
+.ticket__meta {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-top: var(--space-2); font-size: var(--text-sm); color: var(--ash);
+}
+.ticket__meta .mono { font-family: var(--font-mono); font-weight: 600; font-size: var(--text-base); color: var(--ink); }
+.ticket__foot { margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px dashed var(--rule); font-size: var(--text-xs); color: var(--ash); }
+
+.mhero__chips { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; padding: 0; margin: var(--space-6) 0 0; }
+.mhero__chips a {
+  display: inline-flex; align-items: baseline; gap: 0.5ch;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(251,247,240,0.28);
+  border-radius: 999px;
+  color: var(--bone);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: border-color var(--fast) var(--ease), background var(--fast) var(--ease);
+}
+.mhero__chips a:hover { border-color: var(--signal-soft); background: rgba(79,211,207,0.10); }
+.mhero__chips .mono { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--signal-soft); }
+.mhero__chips-more { border-style: dashed; }
+
+@media (max-width: 900px) {
+  .ticket { left: var(--space-4); bottom: var(--space-4); }
+  .mhero__media img { transform: none; }
+}
+
+/* Network activity band with CSS-only ticker */
+.netband { background: var(--dark); border-top: 1px solid rgba(251,247,240,0.08); padding-block: var(--space-6); }
+.netband__inner { max-width: var(--container); margin-inline: auto; padding-inline: var(--space-6); }
+.netband__stat { color: var(--bone); font-size: var(--text-sm); margin-bottom: var(--space-3); }
+.netband__stat .mono { font-family: var(--font-mono); color: var(--signal-soft); font-size: var(--text-base); }
+.netband__dot { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--ash); margin-inline: var(--space-2); vertical-align: middle; }
+.netband__note { color: #8A9298; font-size: var(--text-xs); margin-top: var(--space-3); }
+
+.feed { overflow: hidden; position: relative; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.feed__track { display: inline-flex; gap: var(--space-8); white-space: nowrap; animation: feed-scroll 48s linear infinite; will-change: transform; }
+.feed__track span { color: #C9CDD0; font-size: var(--text-sm); }
+.feed__track b { font-family: var(--font-mono); font-weight: 600; color: var(--signal-soft); }
+@keyframes feed-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .feed__track { animation: none; flex-wrap: wrap; white-space: normal; }
+}
+
+/* Popular markets */
+.markets__head { display: flex; justify-content: space-between; align-items: end; gap: var(--space-8); margin-bottom: var(--space-8); }
+.markets__head .btn { flex-shrink: 0; }
+.markets__chips { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; padding: 0; margin: 0; }
+.markets__chips a {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  background: var(--cream-card);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: border-color var(--fast) var(--ease), box-shadow var(--fast) var(--ease);
+}
+.markets__chips a:hover { border-color: var(--signal); box-shadow: var(--lift-ink); }
+@media (max-width: 720px) { .markets__head { flex-direction: column; align-items: flex-start; } }
+
+/* Promise: editorial split replacing the 4-card why grid */
+.promise__grid { display: grid; grid-template-columns: 46% 1fr; gap: var(--space-12); align-items: center; }
+.promise__media img { border-radius: var(--radius-lg); width: 100%; height: auto; }
+.promise__media figcaption { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--ash); margin-top: var(--space-2); }
+.promise__list { margin: var(--space-8) 0; display: grid; gap: var(--space-6); }
+.promise__list dt { font-weight: 600; font-size: var(--text-base); }
+.promise__list dt::before { content: ""; display: inline-block; width: 0.55rem; height: 0.55rem; background: var(--signal); border-radius: 2px; margin-right: var(--space-3); transform: rotate(45deg); }
+.promise__list dd { margin: var(--space-1) 0 0 1.35rem; color: var(--ash); font-size: var(--text-sm); max-width: 52ch; }
+@media (max-width: 900px) { .promise__grid { grid-template-columns: 1fr; gap: var(--space-8); } }
+
+/* Reviews as dated, city-tagged cards */
+.reviews__head { display: flex; justify-content: space-between; align-items: end; gap: var(--space-8); margin-bottom: var(--space-8); }
+.reviews__score-inline { font-size: var(--text-sm); color: var(--ash); max-width: 24rem; text-align: right; }
+.reviews__score-inline .mono { font-family: var(--font-mono); color: var(--ink); font-size: var(--text-lg); }
+.review-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); list-style: none; padding: 0; margin: 0; }
+.review-card {
+  background: var(--cream-card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  display: flex; flex-direction: column; gap: var(--space-3);
+}
+.review-card__stars { color: var(--signal); letter-spacing: 0.15em; font-size: var(--text-sm); }
+.review-card blockquote { margin: 0; font-size: var(--text-base); line-height: 1.55; flex-grow: 1; }
+.review-card__meta { display: flex; justify-content: space-between; align-items: baseline; font-size: var(--text-sm); color: var(--ash); border-top: 1px solid var(--rule); padding-top: var(--space-3); }
+.review-card__meta .mono { font-family: var(--font-mono); font-size: var(--text-xs); }
+.reviews__foot { display: flex; align-items: center; gap: var(--space-6); margin-top: var(--space-8); font-size: var(--text-sm); color: var(--ash); }
+@media (max-width: 900px) {
+  .review-cards { grid-template-columns: 1fr; }
+  .reviews__head { flex-direction: column; align-items: flex-start; }
+  .reviews__score-inline { text-align: left; }
+}
