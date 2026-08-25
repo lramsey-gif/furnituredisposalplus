@@ -963,6 +963,10 @@ button.btn { font-family: inherit; }
   align-items: center;
 }
 .state-hero__copy { min-width: 0; }
+.state-hero__copy .hero__answer { max-width: 42ch; }
+.state-hero__copy .breadcrumb { margin-bottom: var(--space-4); }
+.state-hero__copy h1 { margin-bottom: var(--space-5); }
+.state-hero__copy .hero__cta-row { margin-top: var(--space-8) !important; }
 .state-hero__grid .hero__media {
   justify-self: end; width: 100%; max-width: 460px;
 }
