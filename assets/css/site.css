@@ -970,3 +970,26 @@ button.btn { font-family: inherit; }
   font-size: 1.15em; letter-spacing: -0.02em;
   color: var(--signal);
 }
+
+/* --------------------------------------------------------------------------
+   State + core page hero with photo (two-column above the fold)
+   -------------------------------------------------------------------------- */
+.state-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: var(--space-12);
+  align-items: center;
+}
+.state-hero__copy { min-width: 0; }
+.state-hero__grid .hero__media {
+  justify-self: end; width: 100%; max-width: 460px;
+}
+.state-hero__grid .hero__media img {
+  border-radius: 10px; width: 100%;
+  aspect-ratio: 3 / 4; object-fit: cover; display: block;
+}
+@media (max-width: 900px) {
+  .state-hero__grid { grid-template-columns: 1fr; gap: var(--space-8); }
+  .state-hero__grid .hero__media { justify-self: stretch; max-width: none; order: -1; }
+  .state-hero__grid .hero__media img { aspect-ratio: 16 / 10; }
+}
