@@ -46,7 +46,7 @@
 .hero__copy h1 em { font-style: normal; color: var(--signal); white-space: nowrap; }
 
 .hero__answer {
-  font-size: var(--text-lg); line-height: 1.55; color: #D5D8DA;
+  font-size: var(--text-lg); line-height: 1.55; color: #56514B;
   margin-bottom: var(--space-8);
 }
 .hero__answer data { color: var(--signal); }
@@ -418,8 +418,8 @@
 ::selection { background: var(--signal-soft); color: var(--ink); }
 
 /* Warm the eyebrow ticks and hero answer */
-.hero__answer { color: #D8E0E0; }
-.hero__answer data { color: var(--signal-soft); }
+.hero__answer { color: #56514B; }
+.hero__answer data { color: var(--signal); }
 .section--dark .eyebrow { color: var(--signal-soft); }
 .section__label::before,
 .hero .eyebrow::before { background: var(--signal); }
@@ -568,9 +568,6 @@
   border: 1px solid var(--rule); border-radius: var(--radius);
   background: var(--cream-card);
 }
-
-/* Header stays warm-dark for contrast against cream body */
-.site-header { background: var(--dark) !important; }
 
 @media (prefers-reduced-motion: reduce) {
   .btn:hover, .item-grid a:hover { transform: none; }
