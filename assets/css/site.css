@@ -1151,3 +1151,61 @@ button.btn { font-family: inherit; }
 .booking.section--dark .section__lead { color: #C9CDD0; }
 .booking.section--dark .section__label { color: var(--signal-soft); }
 .booking.section--dark .booking__slot { border-color: rgba(255,255,255,0.14); border-top-color: var(--signal); }
+
+/* --------------------------------------------------------------------------
+   Booking conversion block (Aug 2026): two columns on the dark slate.
+   Left sells, right is the booking console that will hold the Workmon embed.
+   -------------------------------------------------------------------------- */
+.bookx__grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(20rem, 26rem);
+  gap: var(--space-12);
+  align-items: center;
+}
+.bookx .section__label { color: var(--signal-soft); justify-content: flex-start; text-align: left; margin-left: 0; }
+.bookx h2 { color: #FFFFFF; max-width: 20ch; margin-left: 0; text-align: left; }
+.bookx__lead { color: #C9CDD0; font-size: var(--text-lg); line-height: 1.55; max-width: 52ch; margin-top: var(--space-4); }
+.bookx__list { list-style: none; padding: 0; margin: var(--space-8) 0 0; display: grid; gap: var(--space-3); }
+.bookx__list li { color: #E7EAEB; font-size: var(--text-base); padding-left: 1.6rem; position: relative; }
+.bookx__list li::before {
+  content: ""; position: absolute; left: 0; top: 0.42em;
+  width: 0.6rem; height: 0.6rem; border-radius: 2px;
+  background: var(--signal); transform: rotate(45deg);
+}
+.bookx__list data { color: var(--signal-soft); font-family: var(--font-mono); }
+.bookx__trust { margin-top: var(--space-8); color: #8A9298; font-size: var(--text-sm); }
+.bookx__trust .mono { font-family: var(--font-mono); color: var(--signal-soft); font-size: var(--text-base); }
+
+.bookx__panel {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border-top: 4px solid var(--signal);
+  padding: var(--space-8);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+.bookx__panel-tag {
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--signal); margin-bottom: var(--space-6);
+}
+.bookx__steps { list-style: none; padding: 0; margin: 0 0 var(--space-6); display: grid; gap: var(--space-4); }
+.bookx__steps li { display: flex; align-items: center; gap: var(--space-4); color: var(--ink); font-weight: 500; }
+.bookx__steps .mono {
+  font-family: var(--font-mono); font-size: var(--text-sm);
+  width: 1.8rem; height: 1.8rem; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--signal); border-radius: 50%; color: var(--signal);
+}
+.bookx__price {
+  font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.04em;
+  color: var(--ash); border-top: 1px dashed var(--rule);
+  padding-top: var(--space-4); margin-bottom: var(--space-4);
+}
+.bookx__btn { width: 100%; text-align: center; }
+.bookx__panel-note { margin-top: var(--space-3); font-size: var(--text-sm); color: var(--ash); text-align: center; }
+.bookx__panel-alt { margin-top: var(--space-2); font-size: var(--text-sm); color: var(--ash); text-align: center; }
+.bookx__panel-alt a { color: var(--ink); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .bookx__grid { grid-template-columns: 1fr; gap: var(--space-8); }
+}
