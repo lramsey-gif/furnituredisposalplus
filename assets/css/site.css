@@ -86,7 +86,8 @@
 
 .booking__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  grid-template-columns: minmax(0, 640px);
+  justify-content: center;
   gap: var(--space-8); align-items: stretch;
 }
 
@@ -895,6 +896,7 @@ button.btn { font-family: inherit; }
   width: 10px; height: 6px; border-left: 2px solid var(--signal);
   border-bottom: 2px solid var(--signal); transform: rotate(-45deg);
 }
+.booking__slot-list li strong { font-family: var(--font-mono); color: var(--signal); font-weight: 500; }
 .booking__slot .btn { align-self: stretch; text-align: center; }
 .booking__slot-note { margin-top: var(--space-4); font-family: var(--font-mono); font-size: var(--text-sm); color: var(--ash); letter-spacing: 0.04em; text-align: center; align-self: center; }
 .reviews__more p { margin-bottom: var(--space-4); color: var(--ash); }
