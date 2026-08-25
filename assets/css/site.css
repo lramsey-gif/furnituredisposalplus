@@ -852,7 +852,7 @@
   padding: var(--space-8) var(--space-6); display: grid; place-items: center;
   position: relative; min-height: 130px;
 }
-.item-card__top svg { width: 64px; height: 48px; stroke: var(--signal); stroke-width: 1.6; fill: none; }
+.item-card__top svg { width: 76px; height: 76px; fill: currentColor; }
 .item-card__badge {
   position: absolute; top: var(--space-3); right: var(--space-3);
   font-family: var(--font-mono); font-size: var(--text-xs);
@@ -918,11 +918,18 @@ button.btn { font-family: inherit; }
   pointer-events: none;
 }
 .item-card__top svg {
-  width: 88px; height: 66px; stroke-width: 2.1;
+  width: 76px; height: 76px; stroke: none;
   position: relative; z-index: 1;
-  filter: drop-shadow(0 2px 4px rgba(23,181,174,0.18));
+  filter: drop-shadow(0 3px 6px rgba(23,181,174,0.22));
 }
+.item-card__top svg .ic-a { fill: var(--signal); }
+.item-card__top svg .ic-b { fill: var(--dark); }
+.item-card__top svg .ic-c { fill: var(--bone); }
 .item-card:hover .item-card__top svg { transform: translateY(-2px); transition: transform var(--fast) var(--ease); }
+
+/* Title breathing room below the icon tile */
+.item-card__body { padding-top: var(--space-6); }
+.item-card__body h3 { margin-top: 0; }
 
 /* --------------------------------------------------------------------------
    Section background rhythm (scroll cadence)
