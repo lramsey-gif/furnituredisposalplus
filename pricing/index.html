@@ -26,8 +26,8 @@
     .site-nav ul { display: flex; align-items: center; gap: var(--space-6); list-style: none; padding: 0; margin: 0; }
     .site-nav a { text-decoration: none; font-size: var(--text-sm); font-weight: 500; color: var(--bone); white-space: nowrap; }
     .site-nav a:not(.btn):hover { text-decoration: underline; text-decoration-color: var(--signal); text-decoration-thickness: 2px; text-underline-offset: 6px; }
-    .site-nav a.btn { display: inline-block; padding: 0.7rem 1.1rem; line-height: 1; background: var(--signal); color: #111111; font-weight: 600; font-size: var(--text-sm); border: 0; border-radius: 5px; text-decoration: none !important; }
-    .site-nav a.btn:hover { transform: translateY(-1px); box-shadow: 0 2px 0 rgba(212,255,58,0.4); }
+    .site-nav .btn { display: inline-block; padding: 0.7rem 1.1rem; line-height: 1; background: var(--signal); color: #111111; font-weight: 600; font-size: var(--text-sm); border: 0; border-radius: 5px; text-decoration: none !important; }
+    .site-nav .btn:hover { transform: translateY(-1px); box-shadow: 0 2px 0 rgba(212,255,58,0.4); }
     @media (max-width: 1080px) {
       .nav-toggle { display: inline-block; }
       .site-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--dark); border-bottom: 1px solid #2A2A2A; padding: var(--space-4); z-index: 10; }
@@ -108,7 +108,7 @@
           <li><a href="/how-it-works/">How It Works</a></li>
           <li><a href="/furniture-removal/">Service Areas</a></li>
           <li><a href="/donation-pickup/">Donation Pickup</a></li>
-          <li><a class="btn" href="/#book">Get a Price</a></li>
+          <li><button class="btn" data-workmon-open>Get a Price</button></li>
         </ul>
       </nav>
     </div>
@@ -122,7 +122,7 @@
           <h1>Upfront furniture removal pricing</h1>
           <p class="hero__answer">Furniture removal starts at $90 for the first item, and each additional item starts at $20. The exact price for your item and address shows before you book, and it includes all labor, loading, hauling, and disposal or donation drop-off.</p>
           <div class="hero__cta-row">
-            <a class="btn btn--lg" href="/#book">See my exact price</a>
+            <button class="btn btn--lg" data-workmon-open>See my exact price</button>
             <span class="hero__meta">FIRST ITEM $90 &middot; ADD'L FROM $20</span>
           </div>
         </div>
@@ -200,9 +200,12 @@
             <p class="worktrust-tag">WorkTrust verified</p>
             <div class="big">4.8</div>
             <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="count">227,000+ reviews across the LoadUp network</p>
+            <p class="count">350,000+ reviews across the LoadUp network</p>
           </div>
-          <div data-workmon-trust="loadup" data-variant="inline" data-style="card"></div>
+          <div class="reviews__more">
+            <p>Real reviews from completed pickups, verified independently on the WorkTrust platform.</p>
+            <a class="btn" href="/reviews/">Read all reviews</a>
+          </div>
         </div>
       </div>
     </section>
@@ -226,7 +229,7 @@
           <summary>Are there stair, fuel, or hidden fees?</summary>
           <p>No. The upfront price includes labor, loading, hauling, and disposal or donation drop-off. There are no fuel surcharges and no stair fees.</p>
         </details>
-        <p style="margin-top:2rem;"><a class="btn" href="/#book">See my exact price</a></p>
+        <p style="margin-top:2rem;"><button class="btn" data-workmon-open>See my exact price</button></p>
       </div>
     </section>
   </main>
@@ -235,7 +238,7 @@
     <div class="container">
       <h2>Ready to clear the clutter?</h2>
       <p>Get your instant price in under 60 seconds.</p>
-      <a class="btn btn--lg" href="/#book">Get my price</a>
+      <button class="btn btn--lg" data-workmon-open>Get my price</button>
       <p class="closing-cta__text">or text <a href="sms:+18442397711">(844) 239-7711</a></p>
     </div>
   </section>
@@ -263,6 +266,7 @@
           <h3>Company</h3>
           <ul>
             <li><a href="/about/">About</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
             <li><a href="/contact/">Contact</a></li>
             <li><a href="/faq/">FAQ</a></li>
           </ul>
@@ -296,8 +300,10 @@
       </div>
     </div>
 
-    <div data-workmon-trust="loadup" data-variant="floating" data-style="sources" data-position="bottom-right"></div>
-    <div data-workmon-text data-brand="loadup"></div>
+    <div data-workmon-launcher data-tenant="loadup" data-brand="fdp"></div>
+    <div data-workmon-trust="loadup" data-brand="fdp" data-variant="sources"></div>
+    <script type="module" src="https://workmon.ai/embed.js"></script>
+    <script src="https://workmon.ai/embed/trust.js" async></script>
   </footer>
 </body>
 </html>

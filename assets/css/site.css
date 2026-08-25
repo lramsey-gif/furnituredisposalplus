@@ -868,3 +868,9 @@
 .item-card .btn:hover { background: #17232B; }
 @media (max-width: 1000px) { .item-cards { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .item-cards { grid-template-columns: 1fr; } }
+
+/* Launcher-era additions */
+button.btn { font-family: inherit; }
+.booking__slot { min-height: 0; }
+.booking__slot-note { margin-top: var(--space-4); font-family: var(--font-mono); font-size: var(--text-sm); color: var(--ash); letter-spacing: 0.04em; text-align: center; }
+.reviews__more p { margin-bottom: var(--space-4); color: var(--ash); }

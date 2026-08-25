@@ -26,8 +26,8 @@
     .site-nav ul { display: flex; align-items: center; gap: var(--space-6); list-style: none; padding: 0; margin: 0; }
     .site-nav a { text-decoration: none; font-size: var(--text-sm); font-weight: 500; color: var(--bone); white-space: nowrap; }
     .site-nav a:not(.btn):hover { text-decoration: underline; text-decoration-color: var(--signal); text-decoration-thickness: 2px; text-underline-offset: 6px; }
-    .site-nav a.btn { display: inline-block; padding: 0.7rem 1.1rem; line-height: 1; background: var(--signal); color: #111111; font-weight: 600; font-size: var(--text-sm); border: 0; border-radius: 5px; text-decoration: none !important; }
-    .site-nav a.btn:hover { transform: translateY(-1px); box-shadow: 0 2px 0 rgba(212,255,58,0.4); }
+    .site-nav .btn { display: inline-block; padding: 0.7rem 1.1rem; line-height: 1; background: var(--signal); color: #111111; font-weight: 600; font-size: var(--text-sm); border: 0; border-radius: 5px; text-decoration: none !important; }
+    .site-nav .btn:hover { transform: translateY(-1px); box-shadow: 0 2px 0 rgba(212,255,58,0.4); }
     @media (max-width: 1080px) {
       .nav-toggle { display: inline-block; }
       .site-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--dark); border-bottom: 1px solid #2A2A2A; padding: var(--space-4); z-index: 10; }
@@ -134,7 +134,7 @@
           <li><a href="/how-it-works/">How It Works</a></li>
           <li><a href="/furniture-removal/">Service Areas</a></li>
           <li><a href="/donation-pickup/">Donation Pickup</a></li>
-          <li><a class="btn" href="/#book">Get a Price</a></li>
+          <li><button class="btn" data-workmon-open>Get a Price</button></li>
         </ul>
       </nav>
     </div>
@@ -146,7 +146,7 @@
         <h1>Furniture removal in Maine</h1>
         <p class="hero__answer" style="font-size:var(--text-lg);line-height:1.55;color:#D5D8DA;">Furniture Disposal Plus removes couches, mattresses, dressers, and every other bulky piece across Maine, including Portland, Lewiston, and Bangor. Pick your item, see the exact price for your address, and book a pickup window online in under a minute.</p>
         <div class="hero__cta-row" style="margin-top:var(--space-6);">
-          <a class="btn btn--lg" href="#book">Get my price</a>
+          <button class="btn btn--lg" data-workmon-open>Get my price</button>
           <span class="hero__meta">FROM $90 &middot; ME STATEWIDE</span>
         </div>
       </div>
@@ -168,7 +168,8 @@
         <h2>See your price and book</h2>
         <div class="booking__grid">
           <div class="booking__slot">
-            <div data-workmon-book data-tenant="loadup" data-brand="fdp" data-category="furniture" data-region="ME"></div>
+            <button class="btn btn--lg" data-workmon-open>Get Instant Price</button>
+            <p class="booking__slot-note">Answer a few questions and see your exact price. No phone call, no on-site estimate.</p>
           </div>
           <div class="price-card">
             <div class="price-card__head">Upfront pricing</div>
@@ -188,7 +189,7 @@
     <div class="container">
       <h2>Ready to clear the clutter?</h2>
       <p>Get your instant price in under 60 seconds.</p>
-      <a class="btn btn--lg" href="/#book">Get my price</a>
+      <button class="btn btn--lg" data-workmon-open>Get my price</button>
       <p class="closing-cta__text">or text <a href="sms:+18442397711">(844) 239-7711</a></p>
     </div>
   </section>
@@ -216,6 +217,7 @@
           <h3>Company</h3>
           <ul>
             <li><a href="/about/">About</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
             <li><a href="/contact/">Contact</a></li>
             <li><a href="/faq/">FAQ</a></li>
           </ul>
@@ -249,8 +251,10 @@
       </div>
     </div>
 
-    <div data-workmon-trust="loadup" data-variant="floating" data-style="sources" data-position="bottom-right"></div>
-    <div data-workmon-text data-brand="loadup"></div>
+    <div data-workmon-launcher data-tenant="loadup" data-brand="fdp"></div>
+    <div data-workmon-trust="loadup" data-brand="fdp" data-variant="sources"></div>
+    <script type="module" src="https://workmon.ai/embed.js"></script>
+    <script src="https://workmon.ai/embed/trust.js" async></script>
   </footer>
 </body>
 </html>
