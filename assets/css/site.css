@@ -1209,3 +1209,9 @@ button.btn { font-family: inherit; }
 @media (max-width: 900px) {
   .bookx__grid { grid-template-columns: 1fr; gap: var(--space-8); }
 }
+
+/* Coverage section on white (Aug 2026): light variant, dark ticker divider softened */
+.coverage:not(.section--dark) { background: #FFFFFF; border-top: 1px solid var(--rule); }
+.coverage:not(.section--dark) .state-ticker { border-top-color: var(--rule); color: var(--ash); }
+.coverage:not(.section--dark) .state-ticker a { color: var(--ash); }
+.coverage:not(.section--dark) .state-ticker a:hover { color: var(--signal); }
