@@ -90,6 +90,12 @@
   justify-content: center;
   gap: var(--space-8); align-items: stretch;
 }
+.booking .section__label,
+.booking h2,
+.booking .section__lead {
+  max-width: 640px; margin-left: auto; margin-right: auto; text-align: center;
+}
+.booking .section__label { justify-content: center; }
 
 .booking__slot {
   border: 1px solid var(--rule); border-top: 4px solid var(--signal);
