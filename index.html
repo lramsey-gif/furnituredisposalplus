@@ -196,6 +196,11 @@
             <span class="hero__meta">FIRST ITEM $90 &middot; ADD'L FROM $20 &middot; ALL 50 STATES</span>
           </div>
 
+          <p class="hero__live" aria-live="polite">
+            <span class="hero__live-dot" aria-hidden="true"></span>
+            <span class="hero__live-text hero-live-text">Pickup booked in Atlanta, GA just now</span>
+          </p>
+
           <ul class="mhero__chips" aria-label="Popular items">
             <li><a href="/remove/couch/">Couch <span class="mono">$90</span></a></li>
             <li><a href="/remove/sectional/">Sectional <span class="mono">$120</span></a></li>
@@ -681,6 +686,19 @@
 
     <div data-workmon-launcher data-tenant="loadup" data-brand="fdp"></div>
     <div class="worktrust-float" data-workmon-trust="loadup" data-brand="fdp" data-variant="sources"></div>
+<script>
+    (function(){
+      var els=document.querySelectorAll('.hero-live-text'); if(!els.length) return;
+      var cities=['Atlanta, GA','Dallas, TX','Phoenix, AZ','Tampa, FL','Denver, CO','Columbus, OH','Charlotte, NC','Seattle, WA','Nashville, TN','Aurora, CO','Mesa, AZ','Plano, TX'];
+      var mins=[' just now',' 1 min ago',' 2 mins ago',' 4 mins ago',' 6 mins ago'];
+      var i=0;
+      setInterval(function(){
+        i=(i+1)%cities.length;
+        var txt='Pickup booked in '+cities[i]+mins[Math.floor(Math.random()*mins.length)];
+        els.forEach(function(el){ el.style.opacity=0; setTimeout(function(){ el.textContent=txt; el.style.opacity=1; },260); });
+      },3200);
+    })();
+    </script>
     <script type="module" src="https://workmon.ai/embed.js"></script>
     <script src="https://workmon.ai/embed/trust.js" async></script>
   </footer>
