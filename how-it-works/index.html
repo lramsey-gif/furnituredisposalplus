@@ -14,8 +14,8 @@
   <link rel="icon" href="/assets/svg/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=4">
-  <link rel="stylesheet" href="/assets/css/site.css?v=4">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=5">
+  <link rel="stylesheet" href="/assets/css/site.css?v=5">
   <style>
     .site-header { background: var(--dark); border-bottom: 1px solid #2A2A2A; position: relative; }
     .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 4.25rem; }
@@ -154,30 +154,87 @@
       </div>
     </section>
 
-
-    <section class="section">
+    <section class="section how how--dark section--dark">
       <div class="container">
         <p class="section__label">The process</p>
-        <h2>Three steps, no phone calls</h2>
-        <ol class="steps">
-          <li class="step"><span class="step__num mono">01</span><h3>Pick your item, see the price</h3><p>Choose your furniture from the item list, enter your address, and the exact price appears before you book. No walkthrough, no estimate visit, no callback.</p></li>
-          <li class="step"><span class="step__num mono">02</span><h3>Book a pickup window</h3><p>Choose a time that works, often same-day or next-day. You do not need to be home if the item is accessible in a driveway, porch, garage, or curb.</p></li>
-          <li class="step"><span class="step__num mono">03</span><h3>Loaders haul it away</h3><p>Your Loaders do all the lifting and loading, including stairs and tight doorways, then donate or recycle the item wherever possible.</p></li>
+        <h2>From booking to gone in three steps</h2>
+        <ol class="steps steps--big">
+          <li class="step">
+            <span class="step__num mono">01</span>
+            <h3>Pick your item, see the price</h3>
+            <p>Choose your furniture, enter your address, and get an upfront price. No walkthrough, no phone call, no estimate visit.</p>
+            <span class="step__badge">Avg 60 seconds</span>
+          </li>
+          <li class="step">
+            <span class="step__num mono">02</span>
+            <h3>Book a pickup window</h3>
+            <p>Choose a time that works, often same-day or next-day. You do not need to be home if the item is accessible.</p>
+            <span class="step__badge">No waiting on callbacks</span>
+          </li>
+          <li class="step">
+            <span class="step__num mono">03</span>
+            <h3>Loaders haul it away</h3>
+            <p>Your Loaders do all the lifting and loading, then donate or recycle the item wherever possible.</p>
+            <span class="step__badge">No in-person charges</span>
+          </li>
         </ol>
       </div>
     </section>
-    <section class="section" style="background:#F5F5F2;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
-      <div class="container prose">
-        <p class="section__label">What to expect</p>
-        <h2>On service day</h2>
-        <p>You get a notification when your Loaders are on the way. They arrive in the window you chose, confirm the items, and get to work. Legs come off, doors come off, and walls get protected when clearances are tight.</p>
-        <p>If you booked a no-contact pickup, leave the item accessible and the team handles the rest. Payment happened online at booking, so there is nothing to settle in person.</p>
-        <h2>After the pickup</h2>
-        <p>Usable furniture goes to a local donation center first. What cannot be donated is recycled where facilities exist, and only the remainder goes to disposal. Metal frames, mattresses in EPR states, and solid wood pieces all have recycling paths.</p>
-        <p style="margin-top:2rem;"><button class="btn" data-workmon-open>Get Price</button></p>
+
+    <section class="section promise">
+      <div class="container promise__grid">
+        <figure class="promise__media">
+          <img
+            src="/assets/img/loaders-loading-sectional-640.webp"
+            srcset="/assets/img/loaders-loading-sectional-640.webp 640w, /assets/img/loaders-loading-sectional-1000.webp 1000w"
+            sizes="(max-width: 900px) 100vw, 46vw"
+            width="1000" height="750"
+            alt="Two Furniture Disposal Plus Loaders lifting a gray sectional into the back of a box truck"
+            loading="lazy" decoding="async">
+          <figcaption class="mono">Loaders on service day</figcaption>
+        </figure>
+        <div class="promise__copy">
+          <p class="section__label">On service day</p>
+          <h2>What happens when the Loaders arrive</h2>
+          <dl class="promise__list">
+            <div>
+              <dt>You get a heads-up</dt>
+              <dd>A notification goes out when your Loaders are on the way, and they arrive in the window you chose.</dd>
+            </div>
+            <div>
+              <dt>They handle the hard part</dt>
+              <dd>Legs come off, doors come off, and walls get protected when clearances are tight. Stairs and back bedrooms included.</dd>
+            </div>
+            <div>
+              <dt>Nothing to settle in person</dt>
+              <dd>Payment happened online at booking. For a no-contact pickup, leave the item accessible and the team does the rest.</dd>
+            </div>
+          </dl>
+          <button class="btn" data-workmon-open>Get Price</button>
+        </div>
       </div>
     </section>
-  </main>
+
+    <section class="section" style="background:var(--cream-sink);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
+      <div class="container">
+        <p class="section__label">After the pickup</p>
+        <h2>Where your furniture goes</h2>
+        <div class="svc-table-wrap" style="max-width:48rem;">
+          <table class="specs">
+            <thead>
+              <tr><th scope="col">Path</th><th scope="col">What takes it</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Donation first</th><td>Usable pieces go to a local donation center so the furniture gets a second life.</td></tr>
+              <tr><th scope="row">Recycling second</th><td>Metal frames, mattresses in EPR states, and solid wood have recycling paths where facilities exist.</td></tr>
+              <tr><th scope="row">Disposal last</th><td>Only what cannot be donated or recycled goes to responsible disposal.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+</main>
 
   <section class="closing-cta">
     <div class="container">
