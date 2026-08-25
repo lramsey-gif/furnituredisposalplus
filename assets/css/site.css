@@ -928,7 +928,7 @@ button.btn { font-family: inherit; }
 .item-card:hover .item-card__top svg { transform: translateY(-2px); transition: transform var(--fast) var(--ease); }
 
 /* Title breathing room below the icon tile */
-.item-card__body { padding-top: var(--space-6); }
+.item-card__body { padding-top: var(--space-6); padding-left: var(--space-6); padding-right: var(--space-6); }
 .item-card__body h3 { margin-top: 0; }
 
 /* --------------------------------------------------------------------------
