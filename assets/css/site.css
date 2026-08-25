@@ -923,3 +923,18 @@ button.btn { font-family: inherit; }
   filter: drop-shadow(0 2px 4px rgba(23,181,174,0.18));
 }
 .item-card:hover .item-card__top svg { transform: translateY(-2px); transition: transform var(--fast) var(--ease); }
+
+/* --------------------------------------------------------------------------
+   Section background rhythm (scroll cadence)
+   dark -> bone -> sink -> dark -> bone -> sink -> dark
+   Every seam is an intentional step; adjacent light sections never repeat.
+   -------------------------------------------------------------------------- */
+.booking  { background: var(--bone); border-bottom: 1px solid var(--rule); }
+.items    { background: var(--cream-sink); border-top: 0; border-bottom: 0; }
+.why      { background: var(--bone); border-top: 1px solid var(--rule); border-bottom: 0; }
+.how--dark, .how.section--dark { background: var(--dark); }
+.coverage.section--dark { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.08); }
+.reviews  { background: var(--cream-sink); border-top: 0; border-bottom: 0; }
+.faq      { background: var(--bone); border-top: 1px solid var(--rule); }
+.closing-cta { border-top: 0; }
+
