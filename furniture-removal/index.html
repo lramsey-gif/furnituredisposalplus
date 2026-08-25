@@ -17,20 +17,20 @@
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/site.css">
   <style>
-    .site-header { background: #FFFFFF; border-bottom: 1px solid var(--rule); position: relative; }
+    .site-header { background: var(--dark); border-bottom: 1px solid #2A2A2A; position: relative; }
     .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 4.25rem; }
     .site-logo { display: inline-flex; align-items: center; text-decoration: none; }
     .site-logo svg { height: 24px; width: auto; }
     .nav-toggle-input { position: absolute; opacity: 0; pointer-events: none; }
-    .nav-toggle { display: none; cursor: pointer; padding: var(--space-3); border: 1px solid var(--rule); border-radius: var(--radius); font-weight: 500; font-size: var(--text-sm); color: var(--ink); }
+    .nav-toggle { display: none; cursor: pointer; padding: var(--space-3); border: 1px solid #3A3A3A; border-radius: var(--radius); font-weight: 500; font-size: var(--text-sm); color: var(--bone); }
     .site-nav ul { display: flex; align-items: center; gap: var(--space-6); list-style: none; padding: 0; margin: 0; }
-    .site-nav a { text-decoration: none; font-size: var(--text-sm); font-weight: 500; color: var(--ink); white-space: nowrap; }
+    .site-nav a { text-decoration: none; font-size: var(--text-sm); font-weight: 500; color: var(--bone); white-space: nowrap; }
     .site-nav a:not(.btn):hover { text-decoration: underline; text-decoration-color: var(--signal); text-decoration-thickness: 2px; text-underline-offset: 6px; }
     .site-nav .btn { display: inline-block; padding: 0.7rem 1.1rem; line-height: 1; background: var(--signal); color: #111111; font-weight: 600; font-size: var(--text-sm); border: 0; border-radius: 5px; text-decoration: none !important; }
     .site-nav .btn:hover { transform: translateY(-1px); box-shadow: 0 2px 0 rgba(212,255,58,0.4); }
     @media (max-width: 1080px) {
       .nav-toggle { display: inline-block; }
-      .site-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #FFFFFF; border-bottom: 1px solid var(--rule); padding: var(--space-4); z-index: 10; }
+      .site-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--dark); border-bottom: 1px solid #2A2A2A; padding: var(--space-4); z-index: 10; }
       .nav-toggle-input:checked ~ .site-nav { display: block; }
       .nav-toggle-input:focus-visible ~ .nav-toggle { outline: 3px solid var(--signal); outline-offset: 2px; }
       .site-nav ul { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
@@ -90,7 +90,7 @@
       <a class="site-logo" href="/" aria-label="Furniture Disposal Plus home">
         <svg viewBox="0 0 500 52" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Furniture Disposal Plus">
           <text x="0" y="42" font-family="'Archivo Variable', Archivo, sans-serif" font-weight="800" font-size="34" font-style="italic" font-stretch="expanded" letter-spacing="-1" fill="#17B5AE">FURNITURE</text>
-          <text x="253" y="42" font-family="'Archivo Variable', Archivo, sans-serif" font-weight="800" font-size="34" font-style="italic" font-stretch="expanded" letter-spacing="-1" fill="#22303A">DISPOSAL</text>
+          <text x="253" y="42" font-family="'Archivo Variable', Archivo, sans-serif" font-weight="800" font-size="34" font-style="italic" font-stretch="expanded" letter-spacing="-1" fill="#FFFFFF">DISPOSAL</text>
           <g transform="translate(468, 11)">
             <rect x="12" y="0" width="8" height="34" rx="1" fill="#17B5AE" transform="skewX(-8)"></rect>
             <rect x="0" y="13" width="34" height="8" rx="1" fill="#17B5AE" transform="skewX(-8)"></rect>
