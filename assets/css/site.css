@@ -945,3 +945,28 @@ button.btn { font-family: inherit; }
 .faq      { background: var(--bone); border-top: 1px solid var(--rule); }
 .closing-cta { border-top: 0; }
 
+
+/* --------------------------------------------------------------------------
+   Price numerals in the display face (matches the stats-bar style)
+   Applies to item cards, the pricing service table, and any price <data>.
+   The "from" prefix keeps its small mono label; only the number changes.
+   -------------------------------------------------------------------------- */
+.item-card__price data,
+.item-grid__price data,
+.svc-table .svc-price data,
+.hero__answer data,
+.price-card td data {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 125;
+  font-weight: 800; font-style: italic;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+/* Bold prices in the booking checklist ($90 / $20) match too */
+.booking__slot-list li strong {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 125;
+  font-weight: 800; font-style: italic;
+  font-size: 1.15em; letter-spacing: -0.02em;
+  color: var(--signal);
+}
