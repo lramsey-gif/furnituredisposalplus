@@ -1125,3 +1125,32 @@ button.btn { font-family: inherit; }
 
 /* Item page redesign (Aug 2026): single review card variant */
 .review-cards--single { grid-template-columns: minmax(0, 44rem); }
+
+/* --------------------------------------------------------------------------
+   White-top flip (Aug 2026): heroes and header go light, the booking
+   section carries the dark teal-slate instead.
+   -------------------------------------------------------------------------- */
+
+/* Light heroes: text colors resolve to ink on the white ground */
+.hero .eyebrow, .page-hero .eyebrow, .item-hero .eyebrow { color: var(--signal); }
+.page-hero .breadcrumb, .page-hero .breadcrumb a,
+.item-hero .breadcrumb, .item-hero .breadcrumb a { color: var(--ash); }
+.item-hero .hero__answer, .page-hero .hero__answer { color: var(--ink); }
+
+/* Homepage hero chips on white */
+.mhero__chips a {
+  border-color: var(--rule);
+  color: var(--ink);
+  background: var(--cream-card);
+}
+.mhero__chips a:hover { border-color: var(--signal); background: var(--signal-12); }
+.mhero__chips .mono { color: var(--signal); }
+
+/* Pickup ticket needs an edge on the light hero */
+.ticket { border: 1px solid var(--rule); box-shadow: 0 14px 34px rgba(14,20,23,0.18); }
+
+/* Booking section carries the dark slate */
+.booking.section--dark h2 { color: #FFFFFF; }
+.booking.section--dark .section__lead { color: #C9CDD0; }
+.booking.section--dark .section__label { color: var(--signal-soft); }
+.booking.section--dark .booking__slot { border-color: rgba(255,255,255,0.14); border-top-color: var(--signal); }
