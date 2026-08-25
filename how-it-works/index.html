@@ -115,6 +115,10 @@
             <button class="btn btn--lg" data-workmon-open>Get Price</button>
             <span class="hero__meta">THREE STEPS &middot; NO PHONE CALLS</span>
           </div>
+          <p class="hero__live reveal" style="--i:4" aria-live="polite">
+            <span class="hero__live-dot" aria-hidden="true"></span>
+            <span class="hero__live-text" id="hero-live-text">Pickup booked in Atlanta, GA just now</span>
+          </p>
         </div>
         <div class="hero__media reveal reveal--media" style="--i:2">
           <img
@@ -304,6 +308,22 @@
 
     <div data-workmon-launcher data-tenant="loadup" data-brand="fdp"></div>
     <div class="worktrust-float" data-workmon-trust="loadup" data-brand="fdp" data-variant="sources"></div>
+<script>
+    (function(){
+      var el=document.getElementById('hero-live-text'); if(!el) return;
+      var cities=['Atlanta, GA','Dallas, TX','Phoenix, AZ','Tampa, FL','Denver, CO','Columbus, OH','Charlotte, NC','Seattle, WA','Nashville, TN','Aurora, CO','Mesa, AZ','Plano, TX'];
+      var mins=[' just now',' 1 min ago',' 2 mins ago',' 4 mins ago',' 6 mins ago'];
+      var i=0;
+      setInterval(function(){
+        i=(i+1)%cities.length;
+        el.style.opacity=0;
+        setTimeout(function(){
+          el.textContent='Pickup booked in '+cities[i]+mins[Math.floor(Math.random()*mins.length)];
+          el.style.opacity=1;
+        },260);
+      },3200);
+    })();
+    </script>
     <script type="module" src="https://workmon.ai/embed.js"></script>
     <script src="https://workmon.ai/embed/trust.js" async></script>
   </footer>

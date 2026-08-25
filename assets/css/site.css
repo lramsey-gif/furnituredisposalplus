@@ -1267,3 +1267,26 @@ button.btn { font-family: inherit; }
   .hero--anim .hero__media:hover { transform: none; }
   .hero--anim .hero__cta-row .btn { animation: none; }
 }
+
+/* How-it-works hero: live pickup line with pulsing dot (Aug 2026) */
+.hero__live {
+  display: inline-flex; align-items: center; gap: var(--space-3);
+  margin-top: var(--space-6);
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  letter-spacing: 0.04em; color: var(--ash);
+}
+.hero__live-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--signal); flex-shrink: 0;
+  box-shadow: 0 0 0 0 rgba(23,181,174,0.5);
+  animation: live-pulse 2s var(--ease) infinite;
+}
+.hero__live-text { transition: opacity 0.26s var(--ease); }
+@keyframes live-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(23,181,174,0.5); }
+  70% { box-shadow: 0 0 0 9px rgba(23,181,174,0); }
+  100% { box-shadow: 0 0 0 0 rgba(23,181,174,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__live-dot { animation: none; }
+}
