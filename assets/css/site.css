@@ -1122,3 +1122,6 @@ button.btn { font-family: inherit; }
   .reviews__head { flex-direction: column; align-items: flex-start; }
   .reviews__score-inline { text-align: left; }
 }
+
+/* Item page redesign (Aug 2026): single review card variant */
+.review-cards--single { grid-template-columns: minmax(0, 44rem); }
