@@ -45,6 +45,7 @@
       .site-nav ul { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
     }
     .item-hero { padding-block: var(--space-16); }
+    .doorway-card { position: relative; }
     .item-hero__grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--space-12); align-items: center; }
     @media (max-width: 900px) { .item-hero__grid { grid-template-columns: 1fr; } }
     .breadcrumb { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--ash); letter-spacing: 0.05em; margin-bottom: var(--space-6); max-width: none; }
@@ -221,6 +222,10 @@
 
         </div>
         <figure class="doorway-card reveal reveal--media" style="--i:2">
+          <div class="hero-badge" role="note">
+            <span class="hero-badge__dot" aria-hidden="true"></span>
+            <span class="hero-badge__text">Same-day pickup if booked before 2 PM</span>
+          </div>
           <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dt-title dt-desc">
       <title id="dt-title">The Doorway Test: Recliner</title>
       <desc id="dt-desc">A to-scale diagram comparing a typical recliner, 35 inches wide and 40 inches tall, to a standard 32 inch wide by 80 inch tall interior doorway. Yes, tilted.</desc>
