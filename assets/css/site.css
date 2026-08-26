@@ -1257,7 +1257,7 @@ button.btn { font-family: inherit; }
 }
 
 /* Get Price button in this hero gets a gentle attention pulse once, after reveal */
-.hero--anim .hero__cta-row .btn {
+.hero__cta-row .btn {
   animation: cta-pulse 2.6s var(--ease) 1.3s infinite;
 }
 @keyframes cta-pulse {
@@ -1269,7 +1269,7 @@ button.btn { font-family: inherit; }
   .hero--anim .reveal { opacity: 1; transform: none; animation: none; }
   .hero--anim .hero__media::after { opacity: 1; transform: none; animation: none; }
   .hero--anim .hero__media:hover { transform: none; }
-  .hero--anim .hero__cta-row .btn { animation: none; }
+  .hero__cta-row .btn { animation: none; }
 }
 
 /* How-it-works hero: live pickup line with pulsing dot (Aug 2026) */
