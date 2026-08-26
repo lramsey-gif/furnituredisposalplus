@@ -178,29 +178,29 @@
 
   <main id="main">
 
-    <section class="hero mhero">
+    <section class="hero mhero hero--anim">
       <div class="container hero__grid mhero__grid">
         <div class="hero__copy">
-          <p class="eyebrow">Nationwide furniture removal</p>
-          <h1>Old furniture, gone.<br>No truck. <em>No guessing.</em></h1>
+          <p class="eyebrow reveal" style="--i:0">Nationwide furniture removal</p>
+          <h1 class="reveal" style="--i:1">Old furniture, gone.<br>No truck. <em>No guessing.</em></h1>
 
-          <p class="hero__answer">
+          <p class="hero__answer reveal" style="--i:2">
             To get rid of old furniture, pick your item, see an upfront
             price starting at <data value="90">$90</data>, and book a pickup
             online in under a minute. Your Loaders handle all the lifting.
             Same-day and next-day slots in most areas.
           </p>
 
-          <div class="hero__cta-row">
+          <div class="hero__cta-row reveal" style="--i:3">
             <button class="btn btn--lg" data-workmon-open>Get Price</button>
           </div>
 
-          <p class="hero__live" aria-live="polite">
+          <p class="hero__live reveal" style="--i:4" aria-live="polite">
             <span class="hero__live-dot" aria-hidden="true"></span>
             <span class="hero__live-text hero-live-text">Pickup booked in Atlanta, GA just now</span>
           </p>
 
-          <ul class="mhero__chips" aria-label="Popular items">
+          <ul class="mhero__chips reveal" style="--i:5" aria-label="Popular items">
             <li><a href="/remove/couch/">Couch <span class="mono">$90</span></a></li>
             <li><a href="/remove/sectional/">Sectional <span class="mono">$120</span></a></li>
             <li><a href="/remove/mattress/">Mattress <span class="mono">$90</span></a></li>
@@ -209,7 +209,7 @@
           </ul>
         </div>
 
-        <div class="hero__media mhero__media">
+        <div class="hero__media mhero__media reveal reveal--media" style="--i:2">
           <img
             src="/assets/img/loader-carrying-patio-lounger-700.webp"
             srcset="/assets/img/loader-carrying-patio-lounger-480.webp 480w, /assets/img/loader-carrying-patio-lounger-700.webp 700w"
