@@ -45,8 +45,8 @@
       .site-nav ul { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
     }
     .item-hero { padding-block: var(--space-16); }
-    .doorway-card { position: relative; }
-    .hero-photo { display: block; width: 100%; height: auto; border-radius: 14px; object-fit: cover; }
+    .doorway-card { position: relative; background: none; padding: 0; border: 0; border-radius: 16px; overflow: hidden; }
+    .hero-photo { display: block; width: 100%; height: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 3 / 2; }
     .item-hero__grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--space-12); align-items: center; }
     @media (max-width: 900px) { .item-hero__grid { grid-template-columns: 1fr; } }
     .breadcrumb { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--ash); letter-spacing: 0.05em; margin-bottom: var(--space-6); max-width: none; }
