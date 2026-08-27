@@ -651,7 +651,9 @@
   font-size: var(--text-xs);
   color: #1A3A3A;
   max-width: none;
+  white-space: nowrap;
 }
+.closing-cta__live .hero-live-text { white-space: nowrap; }
 .closing-cta__dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--dark);
@@ -680,7 +682,11 @@
   font-size: var(--text-sm);
   color: #1A3A3A;
   margin-top: var(--space-5);
+  max-width: 46ch;
+  margin-inline: auto;
+  line-height: 1.6;
 }
+.closing-cta__text .nowrap { white-space: nowrap; }
 .closing-cta__text .stars { color: var(--signal); letter-spacing: 1px; }
 .closing-cta__text strong { color: var(--dark); font-weight: 600; }
 .closing-cta__sep { margin: 0 var(--space-2); color: rgba(34,48,58,0.4); }
