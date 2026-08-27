@@ -47,6 +47,13 @@
     .state-grid .mono { color: var(--ash); font-size: var(--text-xs); }
     @media (max-width:1000px) { .state-grid { grid-template-columns:repeat(3,1fr); } }
     @media (max-width:640px) { .state-grid { grid-template-columns:repeat(2,1fr); } }
+    .state-hero__grid { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr); gap:var(--space-12); align-items:center; }
+    @media (max-width:900px){ .state-hero__grid{ grid-template-columns:1fr; } }
+    .state-hero__copy { min-width:0; }
+    .hero__media { position:relative; min-width:0; }
+    .hero__media .hero-photo { display:block; width:100%; height:100%; border-radius:16px; object-fit:cover; aspect-ratio:3/2; }
+    .hero__cta-row { display:flex; align-items:center; gap:var(--space-6); flex-wrap:wrap; margin-block:var(--space-6); }
+    .hero__cta-row .btn { flex:0 0 auto; }
   </style>
   <script type="application/ld+json">
   {
@@ -153,7 +160,6 @@
         <p class="hero__answer reveal" style="font-size:var(--text-lg);line-height:1.55;--i:2">Furniture Disposal Plus removes couches, mattresses, dressers, and every other bulky piece across Maryland, including Baltimore, Columbia, and Silver Spring. Pick your item, see the exact price for your address, and book a pickup window online in under a minute.</p>
         <div class="hero__cta-row reveal" style="margin-top:var(--space-6);--i:3">
           <button class="btn btn--lg" data-workmon-open>Get Price</button>
-          <span class="hero__meta">FROM $90 &middot; MD STATEWIDE</span>
         </div>
           <p class="hero__live reveal" style="--i:4" aria-live="polite">
             <span class="hero__live-dot" aria-hidden="true"></span>
@@ -163,12 +169,15 @@
       </div>
         <div class="hero__media reveal reveal--media" style="--i:2">
           <img
-            src="/assets/img/loaders-trailer-portrait-700.webp"
-            srcset="/assets/img/loaders-trailer-portrait-480.webp 480w, /assets/img/loaders-trailer-portrait-700.webp 700w"
-            sizes="(max-width: 900px) 100vw, 40vw"
-            width="700" height="933"
-            alt="A Furniture Disposal Plus Loader loading furniture into the truck trailer, serving Maryland"
-            fetchpriority="high" decoding="async">
+            class="hero-photo"
+            src="/assets/img/loaders-removing-large-couch-1000.webp"
+            srcset="/assets/img/loaders-removing-large-couch-640.webp 640w,
+                    /assets/img/loaders-removing-large-couch-1000.webp 1000w,
+                    /assets/img/loaders-removing-large-couch-1600.webp 1600w"
+            sizes="(max-width: 900px) 100vw, 46vw"
+            width="1000" height="667"
+            fetchpriority="high" decoding="async"
+            alt="A Furniture Disposal Plus Loader loading furniture into the truck trailer, serving Maryland">
           <div class="hero-badge" role="note">
             <span class="hero-badge__dot" aria-hidden="true"></span>
             <span class="hero-badge__text">Same-day pickup if booked before 2 PM</span>
