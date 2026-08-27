@@ -46,6 +46,11 @@
     }
     .item-hero { padding-block: var(--space-16); }
     .doorway-card { position: relative; }
+    .item-hero__photo { margin: 0; position: relative; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+    .item-hero__photo img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg, 16px); object-fit: cover; }
+    .item-hero__photo:hover { transform: translateY(-6px); }
+    .item-hero__photo .ticket { left: -3.25rem; bottom: 1.25rem; width: min(14rem, 66%); }
+    @media (max-width: 900px) { .item-hero__photo .ticket { left: var(--space-4); bottom: var(--space-4); width: min(15.5rem, 78%); } .item-hero__photo:hover { transform: none; } }
     .item-hero__grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--space-12); align-items: center; }
     @media (max-width: 900px) { .item-hero__grid { grid-template-columns: 1fr; } }
     .breadcrumb { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--ash); letter-spacing: 0.05em; margin-bottom: var(--space-6); max-width: none; }
@@ -221,49 +226,18 @@
           </p>
 
         </div>
-        <figure class="doorway-card reveal reveal--media" style="--i:2">
+        <figure class="item-hero__photo reveal reveal--media" style="--i:2">
+          <img
+            src="/assets/img/loader-removing-recliner-1024.webp"
+            srcset="/assets/img/loader-removing-recliner-640.webp 640w, /assets/img/loader-removing-recliner-1000.webp 1000w, /assets/img/loader-removing-recliner-1024.webp 1024w"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            width="1024" height="681"
+            fetchpriority="high" decoding="async"
+            alt="Two LoadUp Loaders carrying a black leather recliner out of a basement workshop">
           <div class="hero-badge" role="note">
             <span class="hero-badge__dot" aria-hidden="true"></span>
             <span class="hero-badge__text">Same-day pickup if booked before 2 PM</span>
           </div>
-          <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dt-title dt-desc">
-      <title id="dt-title">The Doorway Test: Recliner</title>
-      <desc id="dt-desc">A to-scale diagram comparing a typical recliner, 35 inches wide and 40 inches tall, to a standard 32 inch wide by 80 inch tall interior doorway. Yes, tilted.</desc>
-      <line x1="16" y1="320" x2="544" y2="320" stroke="#3A3A3A" stroke-width="2"/>
-<line x1="40" y1="320" x2="40" y2="312" stroke="#3A3A3A" stroke-width="1"/>
-<line x1="88" y1="320" x2="88" y2="314" stroke="#3A3A3A" stroke-width="1"/>
-<line x1="136" y1="320" x2="136" y2="312" stroke="#3A3A3A" stroke-width="1"/>
-<line x1="184" y1="320" x2="184" y2="314" stroke="#3A3A3A" stroke-width="1"/>
-<line x1="232" y1="320" x2="232" y2="312" stroke="#3A3A3A" stroke-width="1"/>
-<line x1="280" y1="320" x2="280" y2="314" stroke="#3A3A3A" stroke-width="1"/>
-<line x1="328" y1="320" x2="328" y2="312" stroke="#3A3A3A" stroke-width="1"/>
-<line x1="376" y1="320" x2="376" y2="314" stroke="#3A3A3A" stroke-width="1"/>
-<line x1="424" y1="320" x2="424" y2="312" stroke="#3A3A3A" stroke-width="1"/>
-<line x1="472" y1="320" x2="472" y2="314" stroke="#3A3A3A" stroke-width="1"/>
-<line x1="520" y1="320" x2="520" y2="312" stroke="#3A3A3A" stroke-width="1"/>
-      <g>
-      <rect x="420" y="88" width="104" height="232" fill="none" stroke="#F7F4EE" stroke-width="3"/>
-      <rect x="432" y="100" width="80" height="220" fill="none" stroke="#4A4A4A" stroke-width="2"/>
-      <circle cx="504" cy="210" r="3.5" fill="#F7F4EE"/>
-      <g stroke="#F7F4EE" stroke-width="1.5" opacity="0.85">
-        <line x1="432" y1="68" x2="512" y2="68"/>
-        <line x1="432" y1="62" x2="432" y2="74"/>
-        <line x1="512" y1="62" x2="512" y2="74"/>
-      </g>
-      <text x="472" y="54" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="14" fill="#F7F4EE">32 in door</text>
-    </g>
-      <path d="M55.375 304 L55.375 214.0 Q55.375 204.0 65.525 204.0 L101.05 204.0 Q111.2 204.0 111.2 214.0 L111.2 304" stroke="#17B5AE" stroke-width="3" fill="none"/>
-<path d="M55.375 267.8 Q30 267.8 30 287.52 L30 312 L131.5 312 L131.5 287.52 Q131.5 267.8 111.2 267.8" stroke="#17B5AE" stroke-width="3" fill="none"/>
-<line x1="36" y1="312" x2="26" y2="320" stroke="#17B5AE" stroke-width="2"/>
-<line x1="126" y1="312" x2="136" y2="320" stroke="#17B5AE" stroke-width="2"/>
-      <g stroke="#17B5AE" stroke-width="1.5" opacity="0.9">
-      <line x1="30" y1="180.0" x2="131.5" y2="180.0"/>
-      <line x1="30" y1="174.0" x2="30" y2="186.0"/>
-      <line x1="131.5" y1="174.0" x2="131.5" y2="186.0"/>
-    </g>
-    <text x="80.0" y="168.0" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="14" fill="#17B5AE">35 in</text>
-    </svg>
-        
           <aside class="ticket" aria-label="Example completed pickup">
             <p class="ticket__tag mono">Completed pickup</p>
             <p class="ticket__item">Recliner chair</p>
