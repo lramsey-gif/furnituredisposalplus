@@ -47,9 +47,6 @@
     .state-grid .mono { color: var(--ash); font-size: var(--text-xs); }
     @media (max-width:1000px) { .state-grid { grid-template-columns:repeat(3,1fr); } }
     @media (max-width:640px) { .state-grid { grid-template-columns:repeat(2,1fr); } }
-    .state-hero__grid { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr); gap:var(--space-12); align-items:center; }
-    @media (max-width:900px){ .state-hero__grid{ grid-template-columns:1fr; } }
-    .state-hero__copy { min-width:0; }
     .hero__media { position:relative; min-width:0; }
     .hero__media .hero-photo { display:block; width:100%; height:100%; border-radius:16px; object-fit:cover; aspect-ratio:3/2; }
     .hero__cta-row { display:flex; align-items:center; gap:var(--space-5); flex-wrap:wrap; margin-block:var(--space-6); }
@@ -125,15 +122,15 @@
     </div>
   </header>
   <main id="main">
-    <section class="page-hero hero--anim">
-      <div class="container state-hero__grid">
-        <div class="state-hero__copy">
+    <section class="hero hero--anim">
+      <div class="container hero__grid">
+        <div class="hero__copy">
         <p class="eyebrow reveal" style="--i:0">Furniture removal in all 50 states</p>
         <h1 class="reveal" style="--i:1">Furniture removal in all 50 states</h1>
-        <p class="hero__answer reveal" style="font-size:var(--text-lg);line-height:1.55;--i:2">A nationwide network of vetted Loaders covers every state. Pick yours for local disposal rules, recycling programs, and pickup availability. Pricing starts at $90 everywhere, with the exact price shown before you book.</p>
-          <p class="hero__cta-row reveal" style="--i:3">
+        <p class="hero__answer reveal" style="--i:2">A nationwide network of vetted Loaders covers every state. Pick yours for local disposal rules, recycling programs, and pickup availability. Pricing starts at $90 everywhere, with the exact price shown before you book.</p>
+          <div class="hero__cta-row reveal" style="--i:3">
             <button class="btn btn--lg" data-workmon-open>Get Price</button>
-          </p>
+          </div>
           <p class="hero__live reveal" style="--i:4" aria-live="polite">
             <span class="hero__live-dot" aria-hidden="true"></span>
             <span class="hero__live-text hero-live-text">Pickup booked in Atlanta, GA just now</span>
