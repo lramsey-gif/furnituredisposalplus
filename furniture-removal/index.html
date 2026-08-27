@@ -53,6 +53,15 @@
     .hero__cta-row .btn { flex:0 0 auto; }
     .hero__cta-note { font-family:var(--font-mono); color:var(--ash); font-size:var(--text-xs); letter-spacing:0.05em; }
     .page-hero h1 { border-bottom: 0; padding-bottom: 0; }
+    .hub-steps { list-style:none; padding:0; margin:var(--space-6) 0 0; display:grid; gap:var(--space-5); max-width:none; }
+    .hub-steps li { display:flex; gap:var(--space-4); align-items:flex-start; }
+    .hub-steps__n { flex:0 0 auto; width:1.9rem; height:1.9rem; border-radius:50%; background:var(--accent,#17B5AE); color:#fff; display:flex; align-items:center; justify-content:center; font-size:var(--text-sm); }
+    .hub-price { width:100%; border-collapse:collapse; margin:var(--space-5) 0 var(--space-3); max-width:none; }
+    .hub-price th, .hub-price td { text-align:left; padding:var(--space-3) var(--space-4); border-bottom:1px solid var(--rule); }
+    .hub-price th { font-size:var(--text-xs); letter-spacing:0.05em; text-transform:uppercase; color:var(--ash); }
+    .hub-price td a { text-decoration:none; font-weight:500; }
+    .hub-price td a:hover { text-decoration:underline; }
+    .hub-price__note { color:var(--ash); font-size:var(--text-xs); }
   </style>
   <script type="application/ld+json">
   {
@@ -87,6 +96,18 @@
           "name": "Service Areas",
           "item": "https://furnituredisposalplus.com/furniture-removal/"
         }
+      ]
+    }
+    ,{
+      "@type": "FAQPage",
+      "@id": "https://furnituredisposalplus.com/furniture-removal/#faq",
+      "mainEntity": [
+        {"@type":"Question","name":"How much does furniture removal cost?","acceptedAnswer":{"@type":"Answer","text":"Removal starts at $90 for the first item and $20 for each additional piece. Pricing is item-based and identical in every state, and your exact price shows before you book. Labor, stairs, loading, and disposal or donation are all included."}},
+        {"@type":"Question","name":"What states do you serve?","acceptedAnswer":{"@type":"Answer","text":"All 50 states. Furniture Disposal Plus is powered by the LoadUp network, which covers every state with a roster of vetted independent Loaders."}},
+        {"@type":"Question","name":"Do you offer same-day pickup?","acceptedAnswer":{"@type":"Answer","text":"Same-day and next-day windows are available in most areas, typically when you book before 2 PM local time. Your available windows appear during booking once you enter your address."}},
+        {"@type":"Question","name":"What furniture do you take?","acceptedAnswer":{"@type":"Answer","text":"Couches, sectionals, recliners, mattresses, dressers, dining sets, bed frames, desks, bookshelves, office furniture, patio furniture, and armoires, plus most other bulky household pieces."}},
+        {"@type":"Question","name":"Do I need to be home for the pickup?","acceptedAnswer":{"@type":"Answer","text":"Not always. If the piece is in an accessible spot such as a garage, porch, or curb, your Loaders can complete the pickup without you present."}},
+        {"@type":"Question","name":"What happens to my furniture after pickup?","acceptedAnswer":{"@type":"Answer","text":"Usable furniture is donated first. Solid, good-condition pieces are routed to local donation partners such as Habitat ReStore where available. What cannot be donated is recycled where facilities exist, and only the remainder is disposed of responsibly."}}
       ]
     }
   ]
@@ -243,6 +264,56 @@
           <li><a href="/furniture-removal/wisconsin/">Wisconsin<span class="mono">WI</span></a></li>
           <li><a href="/furniture-removal/wyoming/">Wyoming<span class="mono">WY</span></a></li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <p class="section__label">How it works</p>
+        <h2>Nationwide furniture removal in three steps</h2>
+        <p>Furniture Disposal Plus runs on the LoadUp network, so the same booking flow works in every state. There is no walkthrough, no phone quote, and no waiting on a municipal bulk-trash schedule. You pick the piece, your Loaders come to the door, and the price you saw online is the price you pay.</p>
+        <ol class="hub-steps">
+          <li><span class="hub-steps__n mono">1</span><span><strong>Pick your item and address.</strong> Choose what you need gone and enter your ZIP. To-scale size guidance on each item page helps you pick the right piece so the quote holds.</span></li>
+          <li><span class="hub-steps__n mono">2</span><span><strong>See your exact price.</strong> Upfront pricing appears before you book, with labor, stairs, loading, and disposal or donation all included.</span></li>
+          <li><span class="hub-steps__n mono">3</span><span><strong>Loaders handle the rest.</strong> Your Loaders carry the piece out from anywhere in the home. Same-day and next-day windows are available in most areas.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--bone);">
+      <div class="container prose">
+        <p class="section__label">Pricing</p>
+        <h2>What furniture removal costs</h2>
+        <p>Every item is priced individually, starting at <data value="90">$90</data> for the first piece and <data value="20">$20</data> for each additional item. Prices are the same nationwide, with the exact figure for your address shown before you book. Here are common starting prices.</p>
+        <table class="hub-price">
+          <thead>
+            <tr><th scope="col">Item</th><th scope="col">Starts at</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="/remove/couch/">Couch</a></td><td class="mono"><data value="90">$90</data></td></tr>
+            <tr><td><a href="/remove/sectional/">Sectional</a></td><td class="mono"><data value="120">$120</data></td></tr>
+            <tr><td><a href="/remove/recliner/">Recliner</a></td><td class="mono"><data value="90">$90</data></td></tr>
+            <tr><td><a href="/remove/mattress/">Mattress</a></td><td class="mono"><data value="90">$90</data></td></tr>
+            <tr><td><a href="/remove/dresser/">Dresser</a></td><td class="mono"><data value="90">$90</data></td></tr>
+            <tr><td><a href="/remove/dining-set/">Dining set</a></td><td class="mono"><data value="110">$110</data></td></tr>
+            <tr><td><a href="/remove/desk/">Desk</a></td><td class="mono"><data value="90">$90</data></td></tr>
+            <tr><td><a href="/remove/armoire/">Armoire</a></td><td class="mono"><data value="110">$110</data></td></tr>
+          </tbody>
+        </table>
+        <p class="hub-price__note mono">First item from $90 &middot; add&#39;l from $20 &middot; all labor and disposal included</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <p class="section__label">Common questions</p>
+        <h2>Furniture removal FAQs</h2>
+        <details><summary>How much does furniture removal cost?</summary><p>Removal starts at <data value="90">$90</data> for the first item and <data value="20">$20</data> for each additional piece. Pricing is item-based and identical in every state, and your exact price shows before you book. Labor, stairs, loading, and disposal or donation are all included.</p></details>
+        <details><summary>What states do you serve?</summary><p>All 50 states. Furniture Disposal Plus is powered by the LoadUp network, which covers every state with a roster of vetted independent Loaders. Pick your state above for local disposal rules and pickup availability.</p></details>
+        <details><summary>Do you offer same-day pickup?</summary><p>Same-day and next-day windows are available in most areas, typically when you book before 2 PM local time. Your available windows appear during booking once you enter your address.</p></details>
+        <details><summary>What furniture do you take?</summary><p>Couches, sectionals, recliners, mattresses, dressers, dining sets, bed frames, desks, bookshelves, office furniture, patio furniture, and armoires, plus most other bulky household pieces. Each item type has its own page with size guidance and pricing.</p></details>
+        <details><summary>Do I need to be home for the pickup?</summary><p>Not always. If the piece is in an accessible spot such as a garage, porch, or curb, your Loaders can complete the pickup without you present. You arrange the details during booking.</p></details>
+        <details><summary>What happens to my furniture after pickup?</summary><p>Usable furniture is donated first. Solid, good-condition pieces are routed to local donation partners such as Habitat ReStore where available. What cannot be donated is recycled where facilities exist, and only the remainder is disposed of responsibly.</p></details>
       </div>
     </section>
   </main>
