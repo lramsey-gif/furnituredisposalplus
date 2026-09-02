@@ -171,7 +171,7 @@
           <li><a href="/furniture-removal/">Service Areas</a></li>
           <li><a href="/donation-pickup/">Donation Pickup</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><button class="btn js-getprice" type="button">Get Price</button></li>
+          <li><button class="btn" data-workmon-open>Get Price</button></li>
         </ul>
       </nav>
     </div>
@@ -193,7 +193,7 @@
           </p>
 
           <div class="hero__cta-row reveal" style="--i:3">
-            <button class="btn btn--lg js-getprice" type="button">Get Price</button>
+            <button class="btn btn--lg" data-workmon-open>Get Price</button>
           </div>
 
           <p class="hero__live reveal" style="--i:4" aria-live="polite">
@@ -284,7 +284,7 @@
             <li><span class="mono">3</span>See your exact price</li>
           </ol>
           <p class="bookx__price mono">FIRST ITEM FROM $90 &middot; ADD&#39;L FROM $20</p>
-          <button class="btn btn--lg js-getprice" type="button">Get Price</button>
+          <button class="btn btn--lg" data-workmon-open>Get Price</button>
           <p class="bookx__panel-note">Avg 60 seconds. No obligation.</p>
           <p class="bookx__panel-alt">or text <a href="sms:+18442397711">(844) 239-7711</a></p>
         </div>
@@ -524,7 +524,7 @@
               <dd>Usable pieces are passed along for donation or recycling when local options allow.</dd>
             </div>
           </dl>
-          <button class="btn js-getprice" type="button">Get Price</button>
+          <button class="btn" data-workmon-open>Get Price</button>
         </div>
       </div>
     </section>
@@ -631,7 +631,7 @@
       </p>
       <h2>Ready to clear the clutter?</h2>
       <p class="closing-cta__sub">Get your instant price in under 60 seconds.</p>
-      <button class="btn btn--lg js-getprice" type="button">Get Price</button>
+      <button class="btn btn--lg" data-workmon-open>Get Price</button>
       <p class="closing-cta__text"><span class="nowrap"><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.8</strong> across 350,000+ reviews</span> <span class="closing-cta__sep" aria-hidden="true">&middot;</span> <span class="nowrap">or text <a href="sms:+18442397711">(844) 239-7711</a></span></p>
     </div>
   </section>
@@ -708,43 +708,7 @@
       },3200);
     })();
     </script>
-    <!-- New booking modal widget, mounted off-screen; Get Price buttons open it via the bridge (Sep 2026). -->
-    <div id="wb1-mount" style="position:absolute;opacity:0;pointer-events:none;height:0;overflow:visible;">
-      <div data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Book a pickup"></div>
-    </div>
-    <script>
-    (function(){
-      function findWidgetBtn(){
-        var m=document.getElementById('wb1-mount');
-        var b = m && m.querySelector('button, a[role="button"], a, [role="button"]');
-        if(b) return b;
-        // Fallback: widget may portal its button elsewhere. Match by its label text.
-        var all=document.querySelectorAll('[data-workmon-wb1] button, [data-workmon-wb1] a, button, a[role="button"]');
-        for(var i=0;i<all.length;i++){
-          var el=all[i];
-          if(/book a pickup/i.test((el.textContent||'').trim())) return el;
-        }
-        return null;
-      }
-      function openModal(){
-        var b=findWidgetBtn();
-        if(b){ b.click(); return true; }
-        return false;
-      }
-      document.addEventListener('click', function(e){
-        var t = e.target.closest && e.target.closest('.js-getprice');
-        if(!t) return;
-        e.preventDefault();
-        if(openModal()) return;
-        // Widget button not ready yet: poll briefly for it.
-        var tries=0;
-        var iv=setInterval(function(){
-          tries++;
-          if(openModal() || tries>20){ clearInterval(iv); if(tries>20) console.warn('[FDP] booking widget button not found'); }
-        },100);
-      });
-    })();
-    </script>
+    <div data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Book a pickup" style="display:none"></div>
     <script src="https://workmon.ai/embed.js" async></script>
     <script>
     /* Route clicks on the floating review badge to the reviews page (Sep 2026).
