@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Furniture Disposal Plus</title>
+  <meta name="description" content="Practical guides on furniture and appliance removal: what it costs, how to get rid of an old refrigerator, when to donate a couch, and more.">
+  <link rel="canonical" href="https://furnituredisposalplus.com/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Furniture Disposal Plus">
+  <meta property="og:title" content="Furniture Disposal Plus Blog">
+  <meta property="og:description" content="Practical guides on furniture and appliance removal: what it costs, how to get rid of an old refrigerator, when to donate a couch, and more.">
+  <meta property="og:url" content="https://furnituredisposalplus.com/blog/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Furniture Disposal Plus Blog">
+  <meta name="twitter:description" content="Practical guides on furniture and appliance removal: what it costs, how to get rid of an old refrigerator, when to donate a couch, and more.">
+  <meta name="twitter:image" content="https://furnituredisposalplus.com/assets/img/og-default-1600.webp">
+  <link rel="icon" href="/assets/svg/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=10">
+  <link rel="stylesheet" href="/assets/css/site.css?v=16">
+  <style>
+    .site-header { background: var(--dark); border-bottom: 1px solid #2A2A2A; position: relative; }
+    .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 4.25rem; }
+    .site-logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .site-logo svg { height: 24px; width: auto; }
+    .nav-toggle-input { position: absolute; opacity: 0; pointer-events: none; }
+    .nav-toggle { display: none; cursor: pointer; padding: var(--space-3); border: 1px solid #3A3A3A; border-radius: var(--radius); font-weight: 500; font-size: var(--text-sm); color: var(--bone); }
+    .site-nav ul { display: flex; align-items: center; gap: var(--space-6); list-style: none; padding: 0; margin: 0; }
+    .site-nav a { text-decoration: none; font-size: var(--text-sm); font-weight: 500; color: var(--bone); white-space: nowrap; }
+    .site-nav a:not(.btn):hover { text-decoration: underline; text-decoration-color: var(--signal); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+    .site-nav .btn { display: inline-block; padding: 0.7rem 1.1rem; line-height: 1; background: var(--signal); color: #FFFFFF; font-weight: 600; font-size: var(--text-sm); border: 0; border-radius: 5px; text-decoration: none !important; }
+    .site-nav .btn:hover { transform: translateY(-1px); box-shadow: 0 2px 0 rgba(212,255,58,0.4); }
+    @media (max-width: 1080px) {
+      .nav-toggle { display: inline-block; }
+      .site-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--dark); border-bottom: 1px solid #2A2A2A; padding: var(--space-4); z-index: 10; }
+      .nav-toggle-input:checked ~ .site-nav { display: block; }
+      .site-nav ul { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+    }
+    .page-hero { padding-block: var(--space-12); }
+    .prose h2 { margin-top: var(--space-12); margin-bottom: var(--space-3); }
+    .prose h3 { margin-top: var(--space-8); margin-bottom: var(--space-2); }
+    .prose p, .prose ul { margin-bottom: var(--space-4); color: #333; }
+    .prose ul { padding-left: 1.2rem; }
+    .prose li { margin-bottom: var(--space-2); }
+    .post-meta { color: var(--ash, #6E7A80); font-size: var(--text-sm); margin-bottom: var(--space-2); }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-6); }
+    .blog-card { border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
+    .blog-card img { width: 100%; height: 190px; object-fit: cover; }
+    .blog-card__body { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); flex: 1; }
+    .blog-card h2 { font-size: var(--text-lg); margin: 0; }
+    .blog-card a.card-link { text-decoration: none; color: var(--ink); }
+    .blog-card a.card-link:hover h2 { color: var(--teal, #17B5AE); }
+    .blog-card p { color: #555; font-size: var(--text-sm); margin: 0; flex: 1; }
+    .blog-card .btn { align-self: flex-start; margin-top: var(--space-3); }
+    .post-cta { margin: var(--space-8) 0; padding: var(--space-6); background: var(--cream-sink, #F3EEE4); border: 1px solid var(--rule); border-radius: 10px; text-align: center; }
+    .post-cta p { margin-bottom: var(--space-4); font-weight: 500; color: var(--ink); }
+    .post-hero-img { width: 100%; max-height: 380px; object-fit: cover; border-radius: 10px; margin-bottom: var(--space-6); }
+    
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://furnituredisposalplus.com/#org",
+        "name": "Furniture Disposal Plus",
+        "url": "https://furnituredisposalplus.com/",
+        "logo": "https://furnituredisposalplus.com/assets/svg/logo.svg",
+        "parentOrganization": { "@type": "Organization", "name": "LoadUp Technologies, LLC", "url": "https://goloadup.com/" },
+        "telephone": "+1-844-239-7711",
+        "areaServed": { "@type": "Country", "name": "United States" }
+      },
+      {
+        "@type": "Blog",
+        "@id": "https://furnituredisposalplus.com/blog/#blog",
+        "name": "Furniture Disposal Plus Blog",
+        "url": "https://furnituredisposalplus.com/blog/",
+        "publisher": { "@id": "https://furnituredisposalplus.com/#org" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://furnituredisposalplus.com/blog/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://furnituredisposalplus.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://furnituredisposalplus.com/blog/" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-logo" href="/" aria-label="Furniture Disposal Plus home">
+        <svg viewBox="0 0 500 52" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Furniture Disposal Plus">
+          <text x="0" y="42" font-family="'Archivo Variable', Archivo, sans-serif" font-weight="800" font-size="34" font-style="italic" font-stretch="expanded" letter-spacing="-1" fill="#17B5AE">FURNITURE</text>
+          <text x="253" y="42" font-family="'Archivo Variable', Archivo, sans-serif" font-weight="800" font-size="34" font-style="italic" font-stretch="expanded" letter-spacing="-1" fill="#FFFFFF">DISPOSAL</text>
+          <g transform="translate(468, 11)">
+            <rect x="12" y="0" width="8" height="34" rx="1" fill="#17B5AE" transform="skewX(-8)"></rect>
+            <rect x="0" y="13" width="34" height="8" rx="1" fill="#17B5AE" transform="skewX(-8)"></rect>
+          </g>
+        </svg>
+      </a>
+      <input class="nav-toggle-input" type="checkbox" id="nav-toggle" aria-label="Open menu">
+      <label class="nav-toggle" for="nav-toggle">Menu</label>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/what-we-take/">What We Take</a></li>
+          <li><a href="/how-it-works/">How It Works</a></li>
+          <li><a href="/furniture-removal/">Service Areas</a></li>
+          <li><a href="/donation-pickup/">Donation Pickup</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><button class="btn" data-workmon-open>Get Price</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero hero--anim">
+      <div class="container">
+        <p class="eyebrow reveal" style="--i:0">Furniture Disposal Plus blog</p>
+        <h1 class="reveal" style="--i:1">Guides to getting rid of furniture and appliances</h1>
+        <p class="hero__answer reveal" style="--i:2">Practical, plain-language guides on what removal costs, how to handle a refrigerator or a couch, and how to clear a room without the guesswork. Every guide ends where the work does, with an upfront price and a booked pickup.</p>
+        <div class="hero__cta-row reveal" style="--i:3">
+          <button class="btn btn--lg" data-workmon-open>Get Price</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="blog-grid">
+          <article class="blog-card">
+            <a class="card-link" href="/blog/how-much-does-furniture-removal-cost/"><img src="/assets/img/loaders-hauling-junk-640.webp" width="640" height="190" alt="Two Furniture Disposal Plus Loaders carrying furniture out to a truck" loading="lazy" decoding="async"></a>
+            <div class="blog-card__body">
+              <p class="post-meta">September 2, 2026</p>
+              <a class="card-link" href="/blog/how-much-does-furniture-removal-cost/"><h2>How Much Does Furniture Removal Cost?</h2></a>
+              <p>Furniture removal starts at $90 for the first item, with additional items from $20. See what drives the price and how to get an exact quote before you book.</p>
+              <a class="btn" href="/blog/how-much-does-furniture-removal-cost/">Read more</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <a class="card-link" href="/blog/how-to-get-rid-of-an-old-refrigerator/"><img src="/assets/img/loaders-refrigerator-removal-640.webp" width="640" height="190" alt="Two Furniture Disposal Plus Loaders removing a refrigerator from a kitchen" loading="lazy" decoding="async"></a>
+            <div class="blog-card__body">
+              <p class="post-meta">September 2, 2026</p>
+              <a class="card-link" href="/blog/how-to-get-rid-of-an-old-refrigerator/"><h2>How to Get Rid of an Old Refrigerator</h2></a>
+              <p>An old refrigerator cannot go out with the trash. Learn the Freon rules, why cities charge to take a fridge, and the fastest way to get one hauled away.</p>
+              <a class="btn" href="/blog/how-to-get-rid-of-an-old-refrigerator/">Read more</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <a class="card-link" href="/blog/donate-or-toss-old-couch/"><img src="/assets/img/loaders-removing-large-couch-640.webp" width="640" height="190" alt="Two Furniture Disposal Plus Loaders carrying a large sofa out of a living room" loading="lazy" decoding="async"></a>
+            <div class="blog-card__body">
+              <p class="post-meta">September 2, 2026</p>
+              <a class="card-link" href="/blog/donate-or-toss-old-couch/"><h2>Donate or Toss? What to Do With an Old Couch</h2></a>
+              <p>A clean couch can often be donated, but charities refuse sectionals, sleepers, and stained pieces. Here is how to decide, and how to get either one hauled.</p>
+              <a class="btn" href="/blog/donate-or-toss-old-couch/">Read more</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="closing-cta">
+    <div class="container">
+      <p class="closing-cta__live" aria-live="polite">
+        <span class="closing-cta__dot" aria-hidden="true"></span>
+        <span class="hero-live-text">Pickup booked in Brooklyn, NY just now</span>
+      </p>
+      <h2>Ready to clear the clutter?</h2>
+      <p class="closing-cta__sub">Get your instant price in under 60 seconds.</p>
+      <button class="btn btn--lg" data-workmon-open>Get Price</button>
+      <p class="closing-cta__text"><span class="nowrap"><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.8</strong> across 350,000+ reviews</span> <span class="closing-cta__sep" aria-hidden="true">&middot;</span> <span class="nowrap">or text <a href="sms:+18442397711">(844) 239-7711</a></span></p>
+    </div>
+  </section>
+
+  <footer class="site-footer section--dark">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="/what-we-take/">What We Take</a></li>
+            <li><a href="/donation-pickup/">Donation Pickup</a></li>
+            <li><a href="/how-it-works/">How It Works</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Coverage</h3>
+          <ul>
+            <li><a href="/furniture-removal/">Service Areas</a></li>
+            <li><a href="/furniture-removal/">All 50 States</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy/">Privacy</a></li>
+            <li><a href="/terms/">Terms</a></li>
+          </ul>
+        </div>
+        <div class="footer-parent">
+          <p>Furniture Disposal Plus is a technology platform connecting you with vetted local Loaders for furniture removal, haul-away, and donation pickup across all 50 states.</p>
+          <p class="footer-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            (844) 239-7711
+          </p>
+          <p class="loadup-lockup">
+            <svg class="loadup-mark" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" fill="currentColor"><rect x="1" y="1" width="12" height="12" rx="2"></rect></svg>
+            A brand of <a href="https://goloadup.com/">LoadUp Technologies, LLC</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <small>&copy; 2026 LoadUp Technologies, LLC. All rights reserved.</small>
+        <nav aria-label="Legal">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms of use</a>
+        </nav>
+      </div>
+    </div>
+
+    <div data-workmon-launcher data-tenant="loadup" data-brand="fdp"></div>
+    <div class="worktrust-float" data-workmon-trust="loadup" data-brand="fdp" data-variant="sources"></div>
+<script>
+    (function(){
+      var el=document.getElementById('hero-live-text'); if(!el) return;
+      var cities=['Atlanta, GA','Dallas, TX','Phoenix, AZ','Tampa, FL','Denver, CO','Columbus, OH','Charlotte, NC','Seattle, WA','Nashville, TN','Aurora, CO','Mesa, AZ','Plano, TX'];
+      var mins=[' just now',' 1 min ago',' 2 mins ago',' 4 mins ago',' 6 mins ago'];
+      var i=0;
+      setInterval(function(){
+        i=(i+1)%cities.length;
+        el.style.opacity=0;
+        setTimeout(function(){
+          el.textContent='Pickup booked in '+cities[i]+mins[Math.floor(Math.random()*mins.length)];
+          el.style.opacity=1;
+        },260);
+      },3200);
+    })();
+    </script>
+    <script>
+    (function(){
+      var els=document.querySelectorAll('.hero-live-text'); if(!els.length) return;
+      var cities=['Atlanta, GA','Dallas, TX','Phoenix, AZ','Tampa, FL','Denver, CO','Columbus, OH','Charlotte, NC','Seattle, WA','Nashville, TN','Aurora, CO','Mesa, AZ','Plano, TX'];
+      var mins=[' just now',' 1 min ago',' 2 mins ago',' 4 mins ago',' 6 mins ago'];
+      var i=0;
+      setInterval(function(){
+        i=(i+1)%cities.length;
+        var txt='Pickup booked in '+cities[i]+mins[Math.floor(Math.random()*mins.length)];
+        els.forEach(function(el){ el.style.opacity=0; setTimeout(function(){ el.textContent=txt; el.style.opacity=1; },260); });
+      },3200);
+    })();
+    </script>
+    <script type="module" src="https://workmon.ai/embed.js"></script>
+    <script src="https://workmon.ai/embed/trust.js" async></script>
+  </footer>
+</body>
+</html>
