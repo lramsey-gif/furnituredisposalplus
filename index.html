@@ -143,19 +143,45 @@
   }
   </script>
 <style>
-  /* Style the wb1 widget's rendered booking button to match the site CTA (Sep 2026). */
+  /* Style the wb1 widget's rendered booking button to exactly match the original .btn (Sep 2026). */
   .fdp-book { display: inline-block; }
-  .fdp-book button, .fdp-book a[role="button"], .fdp-book a, .fdp-book [role="button"] {
-    display: inline-block !important; cursor: pointer; border: 0 !important;
-    background: var(--signal) !important; color: #fff !important;
-    font-family: var(--font-body) !important; font-weight: 600 !important;
-    text-decoration: none !important; border-radius: 5px !important;
-    padding: 0.7rem 1.1rem !important; line-height: 1 !important; font-size: var(--text-sm) !important;
+  .fdp-book button, .fdp-book a, .fdp-book a[role="button"], .fdp-book [role="button"] {
+    display: inline-block !important;
+    font-family: var(--font-body) !important;
+    font-weight: 500 !important;
+    font-size: var(--text-base) !important;
+    line-height: 1 !important;
+    padding: var(--space-4) var(--space-6) !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: var(--signal) !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease), background var(--fast) var(--ease);
   }
-  .fdp-book--lg button, .fdp-book--lg a[role="button"], .fdp-book--lg a, .fdp-book--lg [role="button"] {
-    padding: 0.95rem 1.6rem !important; font-size: var(--text-base) !important; border-radius: 8px !important;
+  .fdp-book button:hover, .fdp-book a:hover {
+    transform: translateY(-1px) !important;
+    background: #12A099 !important;
+    box-shadow: var(--lift-lime) !important;
   }
-  .fdp-book button:hover, .fdp-book a:hover { transform: translateY(-1px); }
+  .fdp-book button:active, .fdp-book a:active { transform: translateY(0) !important; box-shadow: none !important; }
+  /* Large CTA variant */
+  .fdp-book--lg button, .fdp-book--lg a, .fdp-book--lg a[role="button"], .fdp-book--lg [role="button"] {
+    font-size: var(--text-lg) !important;
+    padding: var(--space-4) var(--space-8) !important;
+  }
+  /* Restore the gentle attention pulse the hero/large CTAs had */
+  .fdp-book--lg button, .fdp-book--lg a, .fdp-book--lg a[role="button"] {
+    animation: cta-pulse 2.6s var(--ease) 1.3s infinite;
+  }
+  @keyframes cta-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(23,181,174,0); }
+    50% { box-shadow: 0 0 0 8px rgba(23,181,174,0.14); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fdp-book--lg button, .fdp-book--lg a { animation: none; }
+  }
 </style>
 </head>
 <body>
