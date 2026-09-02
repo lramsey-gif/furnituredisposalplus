@@ -709,21 +709,39 @@
     })();
     </script>
     <!-- New booking modal widget, mounted off-screen; Get Price buttons open it via the bridge (Sep 2026). -->
-    <div id="wb1-mount" style="position:fixed;left:-9999px;top:0;">
+    <div id="wb1-mount" style="position:absolute;opacity:0;pointer-events:none;height:0;overflow:visible;">
       <div data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Book a pickup"></div>
     </div>
     <script>
     (function(){
-      function widgetBtn(){
+      function findWidgetBtn(){
         var m=document.getElementById('wb1-mount');
-        return m ? m.querySelector('button, a, [role="button"]') : null;
+        var b = m && m.querySelector('button, a[role="button"], a, [role="button"]');
+        if(b) return b;
+        // Fallback: widget may portal its button elsewhere. Match by its label text.
+        var all=document.querySelectorAll('[data-workmon-wb1] button, [data-workmon-wb1] a, button, a[role="button"]');
+        for(var i=0;i<all.length;i++){
+          var el=all[i];
+          if(/book a pickup/i.test((el.textContent||'').trim())) return el;
+        }
+        return null;
+      }
+      function openModal(){
+        var b=findWidgetBtn();
+        if(b){ b.click(); return true; }
+        return false;
       }
       document.addEventListener('click', function(e){
         var t = e.target.closest && e.target.closest('.js-getprice');
         if(!t) return;
         e.preventDefault();
-        var b = widgetBtn();
-        if(b){ b.click(); }
+        if(openModal()) return;
+        // Widget button not ready yet: poll briefly for it.
+        var tries=0;
+        var iv=setInterval(function(){
+          tries++;
+          if(openModal() || tries>20){ clearInterval(iv); if(tries>20) console.warn('[FDP] booking widget button not found'); }
+        },100);
       });
     })();
     </script>
