@@ -68,15 +68,23 @@
     @keyframes rvpulse { 0% { box-shadow: 0 0 0 0 rgba(79,211,207,0.5);} 70% { box-shadow: 0 0 0 8px rgba(79,211,207,0);} 100% { box-shadow: 0 0 0 0 rgba(79,211,207,0);} }
     .hero-live-text { transition: opacity .26s ease; }
 
-    .rv-signals { background: var(--cream-sink); border-bottom: 1px solid var(--rule); padding-block: var(--space-10); }
+    .rv-signals { background: var(--cream-sink); border-bottom: 1px solid var(--rule); padding-block: var(--space-12); }
+    .rv-signals__head { text-align: center; max-width: 40ch; margin: 0 auto var(--space-8); }
+    .rv-signals__eyebrow { color: var(--signal); letter-spacing: 0.12em; text-transform: uppercase; font-size: var(--text-sm); font-weight: 600; margin: 0 0 var(--space-2); }
+    .rv-signals__head h2 { font-family: var(--font-display); font-weight: 800; font-stretch: expanded; font-size: clamp(1.6rem, 3.2vw, 2.2rem); letter-spacing: -0.015em; margin: 0; color: var(--ink); }
     .rv-signals__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
     @media (max-width: 820px) { .rv-signals__grid { grid-template-columns: 1fr; } }
-    .rv-signal { background: #fff; border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: var(--space-6); transition: transform .18s ease, box-shadow .18s ease; }
-    .rv-signal:hover { transform: translateY(-3px); box-shadow: 0 16px 34px -18px rgba(34,48,58,0.24); }
-    .rv-signal__icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: var(--signal-soft, rgba(23,181,174,0.1)); color: var(--signal); margin-bottom: var(--space-4); }
-    .rv-signal__icon svg { width: 22px; height: 22px; }
+    .rv-signal { position: relative; background: #fff; border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: var(--space-8) var(--space-6) var(--space-6); overflow: hidden; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .rv-signal::before { content:""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--signal), var(--loadup-teal)); transform: scaleX(0); transform-origin: left; transition: transform .28s ease; }
+    .rv-signal:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -20px rgba(34,48,58,0.28); border-color: transparent; }
+    .rv-signal:hover::before { transform: scaleX(1); }
+    .rv-signal__num { position: absolute; top: var(--space-5); right: var(--space-6); font-family: var(--font-mono); font-weight: 700; font-size: var(--text-xl); color: var(--rule); transition: color .2s ease; letter-spacing: -0.02em; }
+    .rv-signal:hover .rv-signal__num { color: var(--signal); }
+    .rv-signal__icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, rgba(23,181,174,0.16), rgba(79,211,207,0.10)); color: var(--signal); margin-bottom: var(--space-5); box-shadow: inset 0 0 0 1px rgba(23,181,174,0.14); transition: transform .2s ease; }
+    .rv-signal:hover .rv-signal__icon { transform: scale(1.06) rotate(-3deg); }
+    .rv-signal__icon svg { width: 24px; height: 24px; }
     .rv-signal h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg); margin: 0 0 var(--space-2); color: var(--ink); }
-    .rv-signal p { color: #5C554C; font-size: var(--text-base); line-height: 1.55; margin: 0; }
+    .rv-signal p { color: #5C554C; font-size: var(--text-base); line-height: 1.6; margin: 0; }
 
     .rv-widget-section { padding-block: var(--space-12); }
     .rv-widget-head { max-width: 60ch; margin-bottom: var(--space-8); }
@@ -186,8 +194,13 @@
 
     <section class="rv-signals">
       <div class="container">
+        <div class="rv-signals__head">
+          <p class="rv-signals__eyebrow">Why these reviews are credible</p>
+          <h2>Verification you can trust</h2>
+        </div>
         <div class="rv-signals__grid">
           <div class="rv-signal">
+            <span class="rv-signal__num" aria-hidden="true">01</span>
             <span class="rv-signal__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </span>
@@ -195,6 +208,7 @@
             <p>Every rating request goes to the customer of a completed, booked job. Nobody else can rate.</p>
           </div>
           <div class="rv-signal">
+            <span class="rv-signal__num" aria-hidden="true">02</span>
             <span class="rv-signal__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </span>
@@ -202,6 +216,7 @@
             <p>Happy or not, every customer gets the same ask. Private feedback goes straight to the business.</p>
           </div>
           <div class="rv-signal">
+            <span class="rv-signal__num" aria-hidden="true">03</span>
             <span class="rv-signal__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </span>
