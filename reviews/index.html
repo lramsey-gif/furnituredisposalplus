@@ -39,9 +39,49 @@
       .nav-toggle-input:focus-visible ~ .nav-toggle { outline: 3px solid var(--signal); outline-offset: 2px; }
       .site-nav ul { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
     }
-    .page-hero { padding-block: var(--space-12); }
-    .page-hero h1 { margin-top: var(--space-4); margin-bottom: var(--space-4); }
-    .page-hero .hero__answer { margin-bottom: 0; }
+    /* ---------- Reviews page redesign (Sep 2026) ---------- */
+    .rv-hero { background: var(--dark); color: var(--bone); padding-block: var(--space-12) var(--space-16); position: relative; overflow: hidden; }
+    .rv-hero::before { content:""; position:absolute; right:-80px; top:-100px; width:420px; height:420px; border-radius:50%; background: radial-gradient(circle, rgba(79,211,207,0.16), transparent 70%); pointer-events:none; }
+    .rv-hero::after { content:""; position:absolute; left:-120px; bottom:-160px; width:360px; height:360px; border-radius:50%; background: radial-gradient(circle, rgba(23,181,174,0.12), transparent 70%); pointer-events:none; }
+    .rv-hero .container { position: relative; }
+    .rv-hero__eyebrow { color: var(--loadup-teal); letter-spacing: 0.14em; text-transform: uppercase; font-size: var(--text-sm); font-weight: 600; margin: 0 0 var(--space-4); display:flex; align-items:center; gap:var(--space-3); }
+    .rv-hero__eyebrow::before { content:""; width:34px; height:2px; background: var(--loadup-teal); }
+    .rv-hero__title { font-family: var(--font-display); font-weight: 800; font-stretch: expanded; font-size: clamp(2.1rem, 5vw, 3.5rem); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 var(--space-5); max-width: 20ch; }
+    .rv-hero__accent { color: var(--loadup-teal); white-space: nowrap; }
+    .rv-hero__lead { font-size: var(--text-lg); line-height: 1.6; color: #D7E0E3; max-width: 60ch; margin: 0 0 var(--space-8); }
+
+    .rv-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin-bottom: var(--space-8); }
+    @media (max-width: 760px) { .rv-stats { grid-template-columns: repeat(2, 1fr); } }
+    .rv-stat { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg); padding: var(--space-5); display: flex; flex-direction: column; gap: 6px; position: relative; transition: transform .18s ease, border-color .18s ease, background .18s ease; }
+    .rv-stat:hover { transform: translateY(-3px); border-color: var(--loadup-teal); background: rgba(79,211,207,0.06); }
+    .rv-stat__num { font-family: var(--font-mono); font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 700; line-height: 1; color: #fff; }
+    .rv-stat__unit { font-size: 0.5em; color: var(--loadup-teal); margin-left: 2px; }
+    .rv-stat__label { font-size: var(--text-sm); color: #A9B7BC; text-transform: uppercase; letter-spacing: 0.05em; }
+    .rv-stat__stars { color: var(--loadup-teal); font-size: var(--text-sm); letter-spacing: 2px; }
+    .rv-stat--score { border-color: rgba(79,211,207,0.4); background: rgba(79,211,207,0.08); }
+    .rv-stat__badge { align-self: flex-start; margin-top: 2px; background: rgba(79,211,207,0.16); color: var(--loadup-teal); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+
+    .rv-hero__cta { display: flex; align-items: center; gap: var(--space-6); flex-wrap: wrap; }
+    .rv-hero__cta .btn { background: var(--signal); color: #fff; }
+    .rv-hero__live { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: var(--text-sm); color: #A9B7BC; margin: 0; }
+    .rv-hero__live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--loadup-teal); box-shadow: 0 0 0 0 rgba(79,211,207,0.6); animation: rvpulse 2s infinite; }
+    @keyframes rvpulse { 0% { box-shadow: 0 0 0 0 rgba(79,211,207,0.5);} 70% { box-shadow: 0 0 0 8px rgba(79,211,207,0);} 100% { box-shadow: 0 0 0 0 rgba(79,211,207,0);} }
+    .hero-live-text { transition: opacity .26s ease; }
+
+    .rv-signals { background: var(--cream-sink); border-bottom: 1px solid var(--rule); padding-block: var(--space-10); }
+    .rv-signals__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+    @media (max-width: 820px) { .rv-signals__grid { grid-template-columns: 1fr; } }
+    .rv-signal { background: #fff; border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: var(--space-6); transition: transform .18s ease, box-shadow .18s ease; }
+    .rv-signal:hover { transform: translateY(-3px); box-shadow: 0 16px 34px -18px rgba(34,48,58,0.24); }
+    .rv-signal__icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: var(--signal-soft, rgba(23,181,174,0.1)); color: var(--signal); margin-bottom: var(--space-4); }
+    .rv-signal__icon svg { width: 22px; height: 22px; }
+    .rv-signal h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg); margin: 0 0 var(--space-2); color: var(--ink); }
+    .rv-signal p { color: #5C554C; font-size: var(--text-base); line-height: 1.55; margin: 0; }
+
+    .rv-widget-section { padding-block: var(--space-12); }
+    .rv-widget-head { max-width: 60ch; margin-bottom: var(--space-8); }
+    .rv-widget-head h2 { font-family: var(--font-display); font-weight: 800; font-stretch: expanded; font-size: clamp(1.7rem, 3.5vw, 2.4rem); letter-spacing: -0.015em; margin: var(--space-2) 0 var(--space-3); }
+    .rv-widget-sub { color: var(--ash); font-size: var(--text-base); line-height: 1.55; margin: 0; }
     .reviews-widget { min-height: 480px; }
     button.btn { cursor: pointer; border: 0; font: inherit; font-weight: 600; }
   </style>
@@ -107,75 +147,78 @@
   </header>
 
   <main id="main">
-    <section class="hero page-hero hero--anim">
-      <div class="container state-hero__grid">
-        <div class="state-hero__copy">
-        <p class="eyebrow reveal" style="--i:0">Reviews</p>
-        <h1 class="reveal" style="--i:1">Furniture Disposal Plus Customer Reviews</h1>
-        <p class="hero__answer reveal" style="--i:2">Furniture Disposal Plus pickups are performed by the LoadUp network of vetted Loaders, rated 4.8 out of 5 across more than 350,000 verified reviews on the WorkTrust platform. Every review below comes from a completed pickup, collected and verified independently.</p>
-        <div class="hero__cta-row reveal" style="--i:3">
-          <button class="btn btn--lg" data-workmon-open>Get Price</button>
-        </div>
-          <p class="hero__live reveal" style="--i:4" aria-live="polite">
-            <span class="hero__live-dot" aria-hidden="true"></span>
-            <span class="hero__live-text hero-live-text">Pickup booked in Atlanta, GA just now</span>
-          </p>
-
-        </div>
-        <div class="hero__media reveal reveal--media" style="--i:2">
-          <img
-            src="/assets/img/loaders-trailer-portrait-700.webp"
-            srcset="/assets/img/loaders-trailer-portrait-480.webp 480w, /assets/img/loaders-trailer-portrait-700.webp 700w"
-            sizes="(max-width: 900px) 100vw, 40vw"
-            width="700" height="933"
-            alt="A Furniture Disposal Plus Loader loading furniture into the truck trailer"
-            fetchpriority="high" decoding="async">
-          <div class="hero-badge" role="note">
-            <span class="hero-badge__dot" aria-hidden="true"></span>
-            <span class="hero-badge__text">Same-day pickup if booked before 2 PM</span>
-          </div>
-        
-          <aside class="ticket" aria-label="Example completed pickup">
-            <p class="ticket__tag mono">Completed pickup</p>
-            <p class="ticket__item">Dining set</p>
-            <p class="ticket__meta"><span>Mesa, AZ</span><span class="mono">$110</span></p>
-            <p class="ticket__foot"><span>Booked online, gone same day</span></p>
-          </aside>
-        </div>
-      </div>
-    </section>
-    <section class="netband" aria-label="Network activity">
-      <div class="netband__inner">
-        <p class="netband__stat"><strong class="mono">1.8M+</strong> items removed <span class="netband__dot" aria-hidden="true"></span> <strong class="mono">4.8&#9733;</strong> across the LoadUp network</p>
-        <div class="feed" aria-hidden="true">
-          <div class="feed__track">
-            <span>Couch &middot; Alpharetta, GA &middot; <b class="mono">$90</b></span>
-            <span>Mattress + box spring &middot; Plano, TX &middot; <b class="mono">$110</b></span>
-            <span>Sectional &middot; Aurora, CO &middot; <b class="mono">$120</b></span>
-            <span>Recliner &middot; Tampa, FL &middot; <b class="mono">$90</b></span>
-            <span>Dining set &middot; Mesa, AZ &middot; <b class="mono">$110</b></span>
-            <span>Dresser &middot; Columbus, OH &middot; <b class="mono">$90</b></span>
-            <span>Armoire &middot; Bellevue, WA &middot; <b class="mono">$110</b></span>
-            <span>Patio set &middot; Charlotte, NC &middot; <b class="mono">$90</b></span>
-            <span>Couch &middot; Alpharetta, GA &middot; <b class="mono">$90</b></span>
-            <span>Mattress + box spring &middot; Plano, TX &middot; <b class="mono">$110</b></span>
-            <span>Sectional &middot; Aurora, CO &middot; <b class="mono">$120</b></span>
-            <span>Recliner &middot; Tampa, FL &middot; <b class="mono">$90</b></span>
-            <span>Dining set &middot; Mesa, AZ &middot; <b class="mono">$110</b></span>
-            <span>Dresser &middot; Columbus, OH &middot; <b class="mono">$90</b></span>
-            <span>Armoire &middot; Bellevue, WA &middot; <b class="mono">$110</b></span>
-            <span>Patio set &middot; Charlotte, NC &middot; <b class="mono">$90</b></span>
-          </div>
-        </div>
-        <p class="netband__note">Representative recent pickups from the LoadUp network, which powers Furniture Disposal Plus.</p>
-      </div>
-    </section>
-
-
-    <section class="section">
+    <section class="rv-hero">
       <div class="container">
-        <p class="section__label">Verified by WorkTrust</p>
-        <h2>All reviews, unfiltered</h2>
+        <p class="rv-hero__eyebrow reveal" style="--i:0">Verified reviews</p>
+        <h1 class="rv-hero__title reveal" style="--i:1">351,000+ pickups, rated <span class="rv-hero__accent">4.8 out of 5</span></h1>
+        <p class="rv-hero__lead reveal" style="--i:2">Every Furniture Disposal Plus pickup is performed by the LoadUp network of vetted Loaders. Every review below is tied to a completed, booked job and verified independently on the WorkTrust platform, no self-reported ratings.</p>
+
+        <div class="rv-stats reveal" style="--i:3">
+          <div class="rv-stat">
+            <span class="rv-stat__num mono">4.8<span class="rv-stat__unit">/5</span></span>
+            <span class="rv-stat__label">Aggregate rating</span>
+            <span class="rv-stat__stars" aria-hidden="true">★★★★★</span>
+          </div>
+          <div class="rv-stat">
+            <span class="rv-stat__num mono">351K<span class="rv-stat__unit">+</span></span>
+            <span class="rv-stat__label">Verified reviews</span>
+          </div>
+          <div class="rv-stat rv-stat--score">
+            <span class="rv-stat__num mono">94<span class="rv-stat__unit">/100</span></span>
+            <span class="rv-stat__label">WorkTrust score</span>
+            <span class="rv-stat__badge">Excellent</span>
+          </div>
+          <div class="rv-stat">
+            <span class="rv-stat__num mono">12<span class="rv-stat__unit">yrs</span></span>
+            <span class="rv-stat__label">In business</span>
+          </div>
+        </div>
+
+        <div class="rv-hero__cta reveal" style="--i:4">
+          <button class="btn btn--lg" data-workmon-open>Get Price</button>
+          <p class="rv-hero__live" aria-live="polite">
+            <span class="rv-hero__live-dot" aria-hidden="true"></span>
+            <span class="hero-live-text">Pickup booked in Phoenix, AZ 2 mins ago</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="rv-signals">
+      <div class="container">
+        <div class="rv-signals__grid">
+          <div class="rv-signal">
+            <span class="rv-signal__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </span>
+            <h3>Tied to real jobs</h3>
+            <p>Every rating request goes to the customer of a completed, booked job. Nobody else can rate.</p>
+          </div>
+          <div class="rv-signal">
+            <span class="rv-signal__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <h3>Every voice counts</h3>
+            <p>Happy or not, every customer gets the same ask. Private feedback goes straight to the business.</p>
+          </div>
+          <div class="rv-signal">
+            <span class="rv-signal__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </span>
+            <h3>Aggregated, not self-reported</h3>
+            <p>Verified job ratings are combined with public review signals from across the web.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rv-widget-section">
+      <div class="container">
+        <div class="rv-widget-head">
+          <p class="section__label">Verified by WorkTrust</p>
+          <h2>All reviews, unfiltered</h2>
+          <p class="rv-widget-sub">The full, live WorkTrust record for Furniture Disposal Plus, updated as new pickups are completed.</p>
+        </div>
         <div class="reviews-widget">
           <div data-workmon-worktrust data-tenant="loadup" data-brand="fdp"></div>
         </div>
