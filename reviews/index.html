@@ -312,7 +312,10 @@
       </div>
     </div>
 
-    <div data-workmon-launcher data-tenant="loadup" data-brand="fdp"></div>
+    <!-- New booking modal widget (Sep 2026). Hidden; existing Get Price buttons open it via the bridge script below. -->
+    <div id="wb1-mount" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;">
+      <div data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Book a pickup"></div>
+    </div>
     <div class="worktrust-float" data-workmon-trust="loadup" data-brand="fdp" data-variant="sources"></div>
 <script>
     (function(){
@@ -330,7 +333,25 @@
       },3200);
     })();
     </script>
-    <script type="module" src="https://workmon.ai/embed.js"></script>
+    <script>
+    /* Booking bridge (Sep 2026): existing "Get Price" buttons (data-workmon-open) open
+       the new pop-up modal by forwarding the click to the wb1 widget's own button. */
+    (function(){
+      function findWidgetButton(){
+        var mount = document.getElementById('wb1-mount');
+        if(!mount) return null;
+        return mount.querySelector('button, a, [role="button"]');
+      }
+      document.addEventListener('click', function(e){
+        var trigger = e.target.closest && e.target.closest('[data-workmon-open]');
+        if(!trigger) return;
+        e.preventDefault();
+        var btn = findWidgetButton();
+        if(btn){ btn.click(); }
+      });
+    })();
+    </script>
+    <script src="https://workmon.ai/embed.js" async></script>
     <script src="https://workmon.ai/embed/trust.js" async></script>
   </footer>
 </body>
