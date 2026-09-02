@@ -158,7 +158,7 @@
           <li><a href="/furniture-removal/">Service Areas</a></li>
           <li><a href="/donation-pickup/">Donation Pickup</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><button class="btn" data-workmon-open>Get Price</button></li>
+          <li><button class="btn" data-workmon-open="wb1">Get Price</button></li>
         </ul>
       </nav>
     </div>
@@ -170,7 +170,7 @@
         <p class="eyebrow">Furniture Disposal Plus Blog</p>
         <h1>Guides to getting rid of furniture and appliances</h1>
         <p>Plain-language guides on what removal costs, how to handle a refrigerator or a couch, and how to clear a room without the guesswork. Every guide ends where the work does, with an upfront price and a booked pickup.</p>
-        <button class="btn btn--lg" data-workmon-open>Get Price</button>
+        <button class="btn btn--lg" data-workmon-open="wb1">Get Price</button>
       </div>
     </section>
 
@@ -232,7 +232,7 @@
       </p>
       <h2>Ready to clear the clutter?</h2>
       <p class="closing-cta__sub">Get your instant price in under 60 seconds.</p>
-      <button class="btn btn--lg" data-workmon-open>Get Price</button>
+      <button class="btn btn--lg" data-workmon-open="wb1">Get Price</button>
       <p class="closing-cta__text"><span class="nowrap"><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.8</strong> across 350,000+ reviews</span> <span class="closing-cta__sep" aria-hidden="true">&middot;</span> <span class="nowrap">or text <a href="sms:+18442397711">(844) 239-7711</a></span></p>
     </div>
   </section>
@@ -295,10 +295,6 @@
       </div>
     </div>
 
-    <!-- New booking modal widget (Sep 2026). Hidden; existing Get Price buttons open it via the bridge script below. -->
-    <div id="wb1-mount" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;">
-      <div data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Book a pickup"></div>
-    </div>
     <a class="worktrust-float-link" href="/reviews/" aria-label="Read our customer reviews"><div class="worktrust-float" data-workmon-trust="loadup" data-brand="fdp" data-variant="sources"></div></a>
 <script>
     (function(){
@@ -329,25 +325,7 @@
       },3200);
     })();
     </script>
-    <script>
-    /* Booking bridge (Sep 2026): existing "Get Price" buttons (data-workmon-open) open
-       the new pop-up modal by forwarding the click to the wb1 widget's own button. */
-    (function(){
-      function findWidgetButton(){
-        var mount = document.getElementById('wb1-mount');
-        if(!mount) return null;
-        return mount.querySelector('button, a, [role="button"]');
-      }
-      document.addEventListener('click', function(e){
-        var trigger = e.target.closest && e.target.closest('[data-workmon-open]');
-        if(!trigger) return;
-        e.preventDefault();
-        var btn = findWidgetButton();
-        if(btn){ btn.click(); }
-      });
-    })();
-    </script>
-    <script src="https://workmon.ai/embed.js" async></script>
+    <script src="https://workmon.ai/embed.js" data-tenant="loadup" data-brand="fdp" async></script>
     <script>
     /* Route clicks on the floating review badge to the reviews page (Sep 2026).
        Capture phase runs before the widget's own handler, so this wins. */

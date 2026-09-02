@@ -193,7 +193,7 @@
           <li><a href="/furniture-removal/">Service Areas</a></li>
           <li><a href="/donation-pickup/">Donation Pickup</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><button class="btn" data-workmon-open>Get Price</button></li>
+          <li><button class="btn" data-workmon-open="wb1">Get Price</button></li>
         </ul>
       </nav>
     </div>
@@ -207,7 +207,7 @@
           <h1 class="reveal" style="--i:1">Refrigerator Removal</h1>
           <p class="hero__answer reveal" style="--i:2">Refrigerator removal starts at $119 with the price shown before you book. Your Loaders carry it out from the kitchen, garage, or basement, no need to empty or move it first. Refrigerators contain Freon, so they route to certified recycling where the refrigerant is safely recovered. Same-day and next-day pickups are available in most areas.</p>
           <div class="hero__cta-row reveal" style="--i:3">
-            <button class="btn btn--lg" data-workmon-open>Get Price</button>
+            <button class="btn btn--lg" data-workmon-open="wb1">Get Price</button>
           </div>
           <p class="hero__live reveal" style="--i:4" aria-live="polite">
             <span class="hero__live-dot" aria-hidden="true"></span>
@@ -286,7 +286,7 @@
             <li><span class="mono">3</span>See your exact price</li>
           </ol>
           <p class="bookx__price mono">REFRIGERATOR FROM $119 &middot; ADD&#39;L FROM $20</p>
-          <button class="btn btn--lg bookx__btn" data-workmon-open>Get Price</button>
+          <button class="btn btn--lg bookx__btn" data-workmon-open="wb1">Get Price</button>
           <p class="bookx__panel-note">Avg 60 seconds. No obligation.</p>
           <p class="bookx__panel-alt">or text <a href="sms:+18442397711">(844) 239-7711</a></p>
         </div>
@@ -321,7 +321,7 @@
               <dd>Refrigerators route to certified appliance recycling where refrigerant is recovered and steel is reclaimed.</dd>
             </div>
           </dl>
-          <button class="btn" data-workmon-open>Get Price</button>
+          <button class="btn" data-workmon-open="wb1">Get Price</button>
         </div>
       </div>
     </section>
@@ -411,7 +411,7 @@
       </p>
       <h2>Ready to clear the clutter?</h2>
       <p class="closing-cta__sub">Get your instant price in under 60 seconds.</p>
-      <button class="btn btn--lg" data-workmon-open>Get Price</button>
+      <button class="btn btn--lg" data-workmon-open="wb1">Get Price</button>
       <p class="closing-cta__text"><span class="nowrap"><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.8</strong> across 350,000+ reviews</span> <span class="closing-cta__sep" aria-hidden="true">&middot;</span> <span class="nowrap">or text <a href="sms:+18442397711">(844) 239-7711</a></span></p>
     </div>
   </section>
@@ -474,10 +474,6 @@
       </div>
     </div>
 
-    <!-- New booking modal widget (Sep 2026). Hidden; existing Get Price buttons open it via the bridge script below. -->
-    <div id="wb1-mount" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;">
-      <div data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Book a pickup"></div>
-    </div>
     <a class="worktrust-float-link" href="/reviews/" aria-label="Read our customer reviews"><div class="worktrust-float" data-workmon-trust="loadup" data-brand="fdp" data-variant="sources"></div></a>
 <script>
     (function(){
@@ -495,25 +491,7 @@
       },3200);
     })();
     </script>
-    <script>
-    /* Booking bridge (Sep 2026): existing "Get Price" buttons (data-workmon-open) open
-       the new pop-up modal by forwarding the click to the wb1 widget's own button. */
-    (function(){
-      function findWidgetButton(){
-        var mount = document.getElementById('wb1-mount');
-        if(!mount) return null;
-        return mount.querySelector('button, a, [role="button"]');
-      }
-      document.addEventListener('click', function(e){
-        var trigger = e.target.closest && e.target.closest('[data-workmon-open]');
-        if(!trigger) return;
-        e.preventDefault();
-        var btn = findWidgetButton();
-        if(btn){ btn.click(); }
-      });
-    })();
-    </script>
-    <script src="https://workmon.ai/embed.js" async></script>
+    <script src="https://workmon.ai/embed.js" data-tenant="loadup" data-brand="fdp" async></script>
     <script>
     /* Route clicks on the floating review badge to the reviews page (Sep 2026).
        Capture phase runs before the widget's own handler, so this wins. */
