@@ -142,47 +142,6 @@
     ]
   }
   </script>
-<style>
-  /* Style the wb1 widget's rendered booking button to exactly match the original .btn (Sep 2026). */
-  .fdp-book { display: inline-block; }
-  .fdp-book button, .fdp-book a, .fdp-book a[role="button"], .fdp-book [role="button"] {
-    display: inline-block !important;
-    font-family: var(--font-body) !important;
-    font-weight: 500 !important;
-    font-size: var(--text-base) !important;
-    line-height: 1 !important;
-    padding: var(--space-4) var(--space-6) !important;
-    border: 0 !important;
-    border-radius: 999px !important;
-    background: var(--signal) !important;
-    color: #FFFFFF !important;
-    text-decoration: none !important;
-    cursor: pointer;
-    transition: transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease), background var(--fast) var(--ease);
-  }
-  .fdp-book button:hover, .fdp-book a:hover {
-    transform: translateY(-1px) !important;
-    background: #12A099 !important;
-    box-shadow: var(--lift-lime) !important;
-  }
-  .fdp-book button:active, .fdp-book a:active { transform: translateY(0) !important; box-shadow: none !important; }
-  /* Large CTA variant */
-  .fdp-book--lg button, .fdp-book--lg a, .fdp-book--lg a[role="button"], .fdp-book--lg [role="button"] {
-    font-size: var(--text-lg) !important;
-    padding: var(--space-4) var(--space-8) !important;
-  }
-  /* Restore the gentle attention pulse the hero/large CTAs had */
-  .fdp-book--lg button, .fdp-book--lg a, .fdp-book--lg a[role="button"] {
-    animation: cta-pulse 2.6s var(--ease) 1.3s infinite;
-  }
-  @keyframes cta-pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(23,181,174,0); }
-    50% { box-shadow: 0 0 0 8px rgba(23,181,174,0.14); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .fdp-book--lg button, .fdp-book--lg a { animation: none; }
-  }
-</style>
 </head>
 <body>
 
@@ -212,7 +171,7 @@
           <li><a href="/furniture-removal/">Service Areas</a></li>
           <li><a href="/donation-pickup/">Donation Pickup</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><div class="fdp-book fdp-book--nav" data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Get Price"></div></li>
+          <li><button class="btn js-getprice" type="button">Get Price</button></li>
         </ul>
       </nav>
     </div>
@@ -234,7 +193,7 @@
           </p>
 
           <div class="hero__cta-row reveal" style="--i:3">
-            <div class="fdp-book fdp-book--lg" data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Get Price"></div>
+            <button class="btn btn--lg js-getprice" type="button">Get Price</button>
           </div>
 
           <p class="hero__live reveal" style="--i:4" aria-live="polite">
@@ -325,7 +284,7 @@
             <li><span class="mono">3</span>See your exact price</li>
           </ol>
           <p class="bookx__price mono">FIRST ITEM FROM $90 &middot; ADD&#39;L FROM $20</p>
-          <div class="fdp-book fdp-book--lg" data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Get Price"></div>
+          <button class="btn btn--lg js-getprice" type="button">Get Price</button>
           <p class="bookx__panel-note">Avg 60 seconds. No obligation.</p>
           <p class="bookx__panel-alt">or text <a href="sms:+18442397711">(844) 239-7711</a></p>
         </div>
@@ -565,7 +524,7 @@
               <dd>Usable pieces are passed along for donation or recycling when local options allow.</dd>
             </div>
           </dl>
-          <div class="fdp-book fdp-book--nav" data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Get Price"></div>
+          <button class="btn js-getprice" type="button">Get Price</button>
         </div>
       </div>
     </section>
@@ -672,7 +631,7 @@
       </p>
       <h2>Ready to clear the clutter?</h2>
       <p class="closing-cta__sub">Get your instant price in under 60 seconds.</p>
-      <div class="fdp-book fdp-book--lg" data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Get Price"></div>
+      <button class="btn btn--lg js-getprice" type="button">Get Price</button>
       <p class="closing-cta__text"><span class="nowrap"><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.8</strong> across 350,000+ reviews</span> <span class="closing-cta__sep" aria-hidden="true">&middot;</span> <span class="nowrap">or text <a href="sms:+18442397711">(844) 239-7711</a></span></p>
     </div>
   </section>
@@ -747,6 +706,25 @@
         var txt='Pickup booked in '+cities[i]+mins[Math.floor(Math.random()*mins.length)];
         els.forEach(function(el){ el.style.opacity=0; setTimeout(function(){ el.textContent=txt; el.style.opacity=1; },260); });
       },3200);
+    })();
+    </script>
+    <!-- New booking modal widget, mounted off-screen; Get Price buttons open it via the bridge (Sep 2026). -->
+    <div id="wb1-mount" style="position:fixed;left:-9999px;top:0;">
+      <div data-workmon-wb1 data-tenant="loadup" data-brand="fdp" data-button="Book a pickup"></div>
+    </div>
+    <script>
+    (function(){
+      function widgetBtn(){
+        var m=document.getElementById('wb1-mount');
+        return m ? m.querySelector('button, a, [role="button"]') : null;
+      }
+      document.addEventListener('click', function(e){
+        var t = e.target.closest && e.target.closest('.js-getprice');
+        if(!t) return;
+        e.preventDefault();
+        var b = widgetBtn();
+        if(b){ b.click(); }
+      });
     })();
     </script>
     <script src="https://workmon.ai/embed.js" async></script>
