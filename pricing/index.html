@@ -378,6 +378,19 @@
     })();
     </script>
     <script type="module" src="https://workmon.ai/embed.js"></script>
+    <script>
+    /* Route clicks on the floating review badge to the reviews page (Sep 2026).
+       Capture phase runs before the widget's own handler, so this wins. */
+    (function(){
+      document.addEventListener('click', function(e){
+        var link = e.target.closest && e.target.closest('.worktrust-float-link, .worktrust-float');
+        if(!link) return;
+        e.preventDefault();
+        e.stopPropagation();
+        window.location.href = '/reviews/';
+      }, true);
+    })();
+    </script>
     <script src="https://workmon.ai/embed/trust.js" async></script>
   </footer>
 </body>
