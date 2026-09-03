@@ -20,7 +20,7 @@
   <link rel="preload" href="/assets/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/tokens.css?v=11">
-  <link rel="stylesheet" href="/assets/css/site.css?v=17">
+  <link rel="stylesheet" href="/assets/css/site.css?v=18">
   <style>
     .site-header { background: var(--dark); border-bottom: 1px solid #2A2A2A; position: relative; }
     .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 4.25rem; }
@@ -266,7 +266,7 @@
       <div class="container prose">
         <p class="section__label">Local know-how</p>
         <h2>How furniture disposal works in Phoenix</h2>
-        <p>Phoenix switched to an appointment-only bulk trash system in fall 2024, replacing the old quarterly neighborhood set-out. You book a pickup online at phoenix.gov or by calling 602-262-6251 at least three business days ahead, and each household gets only four collection opportunities per calendar year. The pile is capped at 10 cubic yards and must be out by 5:30 a.m. on your appointment day, since crews start early and do not circle back.</p>
+        <p>Phoenix switched to an appointment-only bulk trash system in fall 2024, replacing the old quarterly neighborhood set-out. You book a pickup online at phoenix.gov or by calling 602-262-6251 at least three business days ahead, and each household gets only four collection opportunities per calendar year. The pile is capped at 10 cubic yards and must be out by 5:30 a.m. on your appointment day, since collection teams start early and do not circle back.</p>
         <p>The rules have teeth. You cannot place bulk trash at the curb more than seven days before your appointment, and doing so is a city ordinance violation the city can make you clean up at your own cost. Appliances with Freon or refrigerants, like refrigerators, freezers, and AC units, are excluded, along with tires, hazardous materials, and heavy construction debris. Put a prohibited item in the pile and the collection team can skip the whole appointment.</p>
         <p>A booked Furniture Disposal Plus pickup skips all of that. Your Loaders come to the piece wherever it sits, out of the house or up from the garage, on a window you choose, often same-day or next-day across Phoenix ZIP codes. There is no four-per-year cap, no 10-cubic-yard limit, and no 5:30 a.m. curb rule, and Furniture Disposal Plus serves Phoenix and the wider Valley from Scottsdale to Tempe and Mesa.</p>
 
@@ -275,7 +275,13 @@
     </section>
     <section class="section" style="padding-block: var(--space-6); border-top:1px solid var(--rule);">
       <div class="container">
-        <p class="prose__note">Statewide coverage: Phoenix is one of the Arizona metros we serve. See <a href="/furniture-removal/arizona/">furniture removal in Arizona</a> for state disposal rules and every covered city.</p>
+        <div class="statewide">
+          <span class="statewide__pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.686-6-10a6 6 0 0 1 12 0c0 4.314-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span>
+          <div class="statewide__body">
+            <p class="statewide__title">We serve every address in Arizona</p>
+            <p class="statewide__text">Phoenix is one of our Arizona metros. See <a href="/furniture-removal/arizona/">furniture removal in Arizona<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a> for statewide disposal rules and every city we cover.</p>
+          </div>
+        </div>
       </div>
     </section>
 
