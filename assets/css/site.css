@@ -1443,12 +1443,15 @@ a.worktrust-float-link .worktrust-float { position: static; left: auto; bottom: 
   .statewide, .statewide__arrow{ transition:none; }
 }
 
-/* Click-to-call nav button */
+/* Click-to-call nav button: mobile menu only */
+.site-nav .nav-call { display: none; }
 .site-nav .btn--call {
-  background: transparent;
-  color: var(--bone);
-  border: 1px solid var(--signal);
+  background: var(--signal);
+  color: #FFFFFF;
+  border: 0;
   display: inline-flex; align-items: center; gap: 6px;
 }
-.site-nav .btn--call:hover { background: rgba(23,181,174,0.12); box-shadow: none; }
 .site-nav .btn--call svg { width: 15px; height: 15px; }
+@media (max-width: 1080px) {
+  .site-nav .nav-call { display: block; }
+}
