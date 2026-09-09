@@ -1451,10 +1451,16 @@ a.worktrust-float-link .worktrust-float { position: static; left: auto; bottom: 
   border: 0;
   white-space: nowrap;
 }
-.site-nav .btn--call svg { width: 15px; height: 15px; vertical-align: -2px; margin-right: 7px; }
+.site-nav .btn--call svg { width: 15px; height: 15px; }
 @media (max-width: 1080px) {
   .site-nav .nav-call { display: block; width: 100%; }
-  .site-nav .btn--call { display: block; width: 100%; text-align: center; }
+  .site-nav .btn--call {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
   .site-nav ul > li:last-child { width: 100%; }
   .site-nav ul > li:last-child .btn { display: block; width: 100%; text-align: center; }
 }
