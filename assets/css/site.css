@@ -1449,13 +1449,12 @@ a.worktrust-float-link .worktrust-float { position: static; left: auto; bottom: 
   background: var(--signal);
   color: #FFFFFF;
   border: 0;
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   white-space: nowrap;
 }
-.site-nav .btn--call svg { width: 16px; height: 16px; flex-shrink: 0; }
+.site-nav .btn--call svg { width: 16px; height: 16px; vertical-align: middle; margin-right: 8px; margin-top: -2px; }
 @media (max-width: 1080px) {
   .site-nav .nav-call { display: block; width: 100%; }
-  .site-nav .btn--call { width: 100%; }
+  .site-nav .btn--call { display: block; width: 100%; text-align: center; }
   .site-nav ul > li:last-child { width: 100%; }
   .site-nav ul > li:last-child .btn { display: block; width: 100%; text-align: center; }
 }
