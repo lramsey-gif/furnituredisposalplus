@@ -915,7 +915,17 @@
 .item-card .btn { display: block; text-align: center; width: 100%; background: var(--dark); color: #FFFFFF; }
 .item-card .btn:hover { background: #17232B; }
 @media (max-width: 1000px) { .item-cards { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .item-cards { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .item-cards { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+  .item-card__top { min-height: 76px; padding: var(--space-4) var(--space-3); }
+  .item-card__top svg { width: 44px; height: 44px; }
+  .item-card__badge { top: var(--space-2); right: var(--space-2); font-size: 10px; padding: 2px 6px; }
+  .item-card__body { padding: var(--space-3); }
+  .item-card__body h3 { font-size: var(--text-base); margin-bottom: var(--space-1); }
+  .item-card__body p { display: none; }
+  .item-card__price { margin-bottom: var(--space-2); }
+  .item-card__price data { font-size: var(--text-lg); }
+}
 
 /* Launcher-era additions */
 button.btn { font-family: inherit; }
