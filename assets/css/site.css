@@ -1442,3 +1442,13 @@ a.worktrust-float-link .worktrust-float { position: static; left: auto; bottom: 
   .statewide__pin{ animation:none; }
   .statewide, .statewide__arrow{ transition:none; }
 }
+
+/* Click-to-call nav button */
+.site-nav .btn--call {
+  background: transparent;
+  color: var(--bone);
+  border: 1px solid var(--signal);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.site-nav .btn--call:hover { background: rgba(23,181,174,0.12); box-shadow: none; }
+.site-nav .btn--call svg { width: 15px; height: 15px; }
