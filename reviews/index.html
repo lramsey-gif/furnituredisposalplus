@@ -74,13 +74,13 @@
     .rv-signals__head h2 { font-family: var(--font-display); font-weight: 800; font-stretch: expanded; font-size: clamp(1.6rem, 3.2vw, 2.2rem); letter-spacing: -0.015em; margin: 0; color: var(--ink); }
     .rv-signals__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
     @media (max-width: 820px) { .rv-signals__grid { grid-template-columns: 1fr; } }
-    .rv-signal { position: relative; background: #fff; border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: var(--space-6) var(--space-6) var(--space-6); overflow: hidden; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .rv-signal { position: relative; background: #fff; border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-6) var(--space-6); overflow: hidden; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
     .rv-signal::before { content:""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--signal), var(--loadup-teal)); transform: scaleX(0); transform-origin: left; transition: transform .28s ease; }
     .rv-signal:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -20px rgba(34,48,58,0.28); border-color: transparent; }
     .rv-signal:hover::before { transform: scaleX(1); }
-    .rv-signal__num { position: absolute; top: var(--space-5); right: var(--space-6); font-family: var(--font-mono); font-weight: 700; font-size: var(--text-xl); color: var(--rule); transition: color .2s ease; letter-spacing: -0.02em; }
+    .rv-signal__num { position: absolute; top: var(--space-4); right: var(--space-6); font-family: var(--font-mono); font-weight: 700; font-size: var(--text-xl); color: var(--rule); transition: color .2s ease; letter-spacing: -0.02em; }
     .rv-signal:hover .rv-signal__num { color: var(--signal); }
-    .rv-signal__icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, rgba(23,181,174,0.16), rgba(79,211,207,0.10)); color: var(--signal); margin-bottom: var(--space-5); box-shadow: inset 0 0 0 1px rgba(23,181,174,0.14); transition: transform .2s ease; }
+    .rv-signal__icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, rgba(23,181,174,0.16), rgba(79,211,207,0.10)); color: var(--signal); margin-bottom: var(--space-4); box-shadow: inset 0 0 0 1px rgba(23,181,174,0.14); transition: transform .2s ease; }
     .rv-signal:hover .rv-signal__icon { transform: scale(1.06) rotate(-3deg); }
     .rv-signal__icon svg { width: 24px; height: 24px; }
     .rv-signal h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg); margin: 0 0 var(--space-2); color: var(--ink); }
