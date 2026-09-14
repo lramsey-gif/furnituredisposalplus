@@ -27,7 +27,7 @@
     .site-logo { display: inline-flex; align-items: center; text-decoration: none; }
     .site-logo svg { height: 24px; width: auto; }
     .nav-toggle-input { position: absolute; opacity: 0; pointer-events: none; }
-    .nav-toggle { display: none; cursor: pointer; padding: var(--space-3); border: 1px solid #3A3A3A; border-radius: var(--radius); font-weight: 500; font-size: var(--text-sm); color: var(--bone); }
+    .nav-toggle { display: none; cursor: pointer; padding: var(--space-3); border: 1px solid #3A3A3A; border-radius: var(--radius); color: var(--bone); } .nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after { display: block; width: 22px; height: 2px; background: var(--bone); border-radius: 2px; } .nav-toggle-bars { position: relative; } .nav-toggle-bars::before, .nav-toggle-bars::after { content: ""; position: absolute; left: 0; } .nav-toggle-bars::before { top: -6px; } .nav-toggle-bars::after { top: 6px; }
     .site-nav ul { display: flex; align-items: center; gap: var(--space-6); list-style: none; padding: 0; margin: 0; }
     .site-nav a { text-decoration: none; font-size: var(--text-sm); font-weight: 500; color: var(--bone); white-space: nowrap; }
     .site-nav a:not(.btn):hover { text-decoration: underline; text-decoration-color: var(--signal); text-decoration-thickness: 2px; text-underline-offset: 6px; }
@@ -155,7 +155,7 @@
         </svg>
       </a>
       <input class="nav-toggle-input" type="checkbox" id="nav-toggle" aria-label="Open menu">
-      <label class="nav-toggle" for="nav-toggle">Menu</label>
+      <label class="nav-toggle" for="nav-toggle" aria-label="Menu"><span class="nav-toggle-bars" aria-hidden="true"></span></label>
       <nav class="site-nav" aria-label="Main">
         <ul>
           <li><a href="/pricing/">Pricing</a></li>
